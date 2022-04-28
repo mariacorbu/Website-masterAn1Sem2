@@ -4,24 +4,20 @@ using Teleasis_website.Models;
 
 namespace Teleasis_website.Controllers
 {
-    public class HomeController : Controller
+    public class AutentificareController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<AutentificareController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public AutentificareController(ILogger<AutentificareController> logger)
         {
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Autentificare()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
