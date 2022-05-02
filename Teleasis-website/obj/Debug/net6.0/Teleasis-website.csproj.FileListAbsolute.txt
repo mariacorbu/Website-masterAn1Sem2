@@ -24,3 +24,34 @@ C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\ref\Teleasis-website.dll
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.pdb
 C:\Users\Asus\source\repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.genruntimeconfig.cache
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\appsettings.json
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Teleasis-website.staticwebassets.runtime.json
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Teleasis-website.exe
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Teleasis-website.deps.json
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Teleasis-website.runtimeconfig.json
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Teleasis-website.dll
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Teleasis-website.pdb
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.AssemblyReference.cache
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.AssemblyInfoInputs.cache
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.AssemblyInfo.cs
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.CoreCompileInputs.cache
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.RazorAssemblyInfo.cache
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.RazorAssemblyInfo.cs
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\scopedcss\bundle\Teleasis-website.styles.css
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\scopedcss\projectbundle\Teleasis-website.bundle.scp.css
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.dll
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\refint\Teleasis-website.dll
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.pdb
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.genruntimeconfig.cache
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\ref\Teleasis-website.dll
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Firebase.Auth.dll
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\System.ServiceModel.dll
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.CopyComplete

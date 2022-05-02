@@ -1,21 +1,52 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Teleasis_website.Models;
+using Firebase.Auth;
 
 namespace Teleasis_website.Controllers
 {
     public class AutentificareController : Controller
     {
-        private readonly ILogger<AutentificareController> _logger;
-
-        public AutentificareController(ILogger<AutentificareController> logger)
+        FirebaseAuthProvider auth;
+        public AutentificareController()
         {
-            _logger = logger;
+            auth = new FirebaseAuthProvider(
+                         new FirebaseConfig("AIzaSyBSdoiZ3E-8azjmBo1DlbG_OUOOWzr4qBw"));
         }
 
         public IActionResult Autentificare()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Autentificare(string email, string password)
+        {
+            try
+            {
+                //log in the user
+                var authLink = await auth
+                                .SignInWithEmailAndPasswordAsync(email, password);
+                string token = authLink.FirebaseToken;
+                //saving the token in a session variable
+                if (token != null)
+                {
+                    HttpContext.Session.SetString("_UserToken", token);
+
+                    return RedirectToAction("AcasaAdministrator", "Acasa");
+                }
+                else
+                {
+                    ViewBag.Eroare = "Autentificarea a esuat! Verificati email-ul sau parola!";
+
+                    return View();
+                }
+            }
+            catch{
+                ViewBag.Eroare = "Autentificarea a esuat! Verificati email-ul sau parola!";
+                return View();
+            }
+
         }
 
 

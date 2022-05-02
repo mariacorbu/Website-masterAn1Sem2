@@ -7,4 +7,9 @@
     <RootNamespace>Teleasis_website</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Firebase.Auth" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+  </ItemGroup>
+
 </Project>

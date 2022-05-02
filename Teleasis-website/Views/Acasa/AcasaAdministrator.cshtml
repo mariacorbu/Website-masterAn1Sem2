@@ -1,0 +1,241 @@
+﻿@{
+    ViewData["Title"] = "Pagina Acasa - Administrator";
+}
+<div class="container-acasa">
+    <h1 class="text-center titlu-acasa">Administrare Conturi</h1>
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pacienti-tab" data-bs-toggle="tab" data-bs-target="#pacienti" type="button" role="tab" aria-controls="pacienti" aria-selected="true">Pacienți</button>
+      <li class="nav-item" role="presentation">
+         <button class="nav-link" id="medici-tab" data-bs-toggle="tab" data-bs-target="#medici" type="button" role="tab" aria-controls="medici" aria-selected="false">Medici</button>
+      <li class="nav-item" role="presentation">
+          <button class="nav-link" id="supraveghetori-tab" data-bs-toggle="tab" data-bs-target="#supraveghetori" type="button" role="tab" aria-controls="supraveghetori" aria-selected="false">Supraveghetori</button>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ingrijitori-tab" data-bs-toggle="tab" data-bs-target="#ingrijitori" type="button" role="tab" aria-controls="ingrijitori" aria-selected="false">Îngrijitori</button>
+    </ul>
+
+    <div class="tab-content">
+      <div id="pacienti" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pacienti-tab">
+        @*<h3 class="titlu-tab">Pacienți</h3>*@
+        <table class="table table-striped" id="tabel-pacienti">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Prenume</th>
+                    <th>Nume</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</th>
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+
+                        @*<input type="image" src="~/images/remove.png" />*@@*<input type="image" src="~/images/remove.png" />*@
+                       @* <button class="btn btn-lg btn-block button-login button-stergere-pacient" type="button" >
+                        <img src="~/images/remove.png"/>
+                    </button>*@</td>
+                </tr>
+                <tr>
+                    <td>2</th>
+                     <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                   </td>
+                </tr>
+                <tr>
+                    <td>3</th>
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td> 
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <div id="medici" class="tab-pane fade" role="tabpanel" aria-labelledby="medici-tab">
+        <table class="table table-striped" id="tabel-pacienti">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Prenume</th>
+                    <th>Nume</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</th>
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+
+                        @*<input type="image" src="~/images/remove.png" />*@@*<input type="image" src="~/images/remove.png" />*@
+                       @* <button class="btn btn-lg btn-block button-login button-stergere-pacient" type="button" >
+                        <img src="~/images/remove.png"/>
+                    </button>*@</td>
+                </tr>
+                <tr>
+                    <td>2</th>
+                     <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                   </td>
+                </tr>
+                <tr>
+                    <td>3</th>
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td> 
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <div id="supraveghetori" class="tab-pane fade" role="tabpanel" aria-labelledby="supraveghetori-tab">
+         <table class="table table-striped" id="tabel-pacienti">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Prenume</th>
+                    <th>Nume</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</th>
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+
+                        @*<input type="image" src="~/images/remove.png" />*@@*<input type="image" src="~/images/remove.png" />*@
+                       @* <button class="btn btn-lg btn-block button-login button-stergere-pacient" type="button" >
+                        <img src="~/images/remove.png"/>
+                    </button>*@</td>
+                </tr>
+                <tr>
+                    <td>2</th>
+                     <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                   </td>
+                </tr>
+                <tr>
+                    <td>3</th>
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td> 
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <div id="ingrijitori" class="tab-pane fade" role="tabpanel" aria-labelledby="ingrijitori-tab">
+         <table class="table table-striped" id="tabel-pacienti">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Prenume</th>
+                    <th>Nume</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</th>
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+
+                        @*<input type="image" src="~/images/remove.png" />*@@*<input type="image" src="~/images/remove.png" />*@
+                       @* <button class="btn btn-lg btn-block button-login button-stergere-pacient" type="button" >
+                        <img src="~/images/remove.png"/>
+                    </button>*@</td>
+                </tr>
+                <tr>
+                    <td>2</th>
+                     <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                   </td>
+                </tr>
+                <tr>
+                    <td>3</th>
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td> 
+                    <td>Roxana</th>
+                    <td>Ivanescu</th>
+                    <td>roxy@gmail.com</td>
+                    <td>                        
+                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+</div>

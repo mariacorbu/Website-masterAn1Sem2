@@ -32,3 +32,56 @@
 }
 
 /*---------------------*/
+/*PAGINA ACASA - ADMINISTRATOR*/
+
+.container-acasa {
+    color: #3f7bff;
+    padding: 35px 0px;
+}
+
+    .container-acasa .nav-tabs .nav-link.active {
+        color: white;
+        background-color: #3f7bff;
+        border: none;
+    }
+    .container-acasa .nav-tabs .nav-link {
+        color: #3f7bff;
+        border-color: #3f7bff;
+        border-bottom:none;
+        margin-bottom:-2px;
+    }
+
+    .container-acasa .nav-tabs {
+        border-bottom: 2px solid #3f7bff;
+    }
+
+    .titlu-acasa {
+        margin-bottom:25px;
+    }
+
+.button-stergere-pacient {
+    width: 35%;
+    background-color: #263238;
+}
+
+   
+
+    .titlu-tab {
+        margin-bottom: 15px;
+    }
+
+.container-acasa .table-striped > tbody > tr:nth-of-type(odd) {
+    --bs-table-accent-bg: #ecf2ff;
+    color: #263238;
+}
+
+#tabel-pacienti {
+  
+    color: #263238;
+   
+}
+    #tabel-pacienti th {
+        border:none;
+    }
+
+/*---------------------*/
