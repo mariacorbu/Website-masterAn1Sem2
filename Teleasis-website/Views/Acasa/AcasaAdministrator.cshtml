@@ -2,7 +2,11 @@
     ViewData["Title"] = "Pagina Acasa - Administrator";
 }
 <div class="container-acasa">
-    <h1 class="text-center titlu-acasa">Administrare Conturi</h1>
+    <div class="row">
+        <h1 class="text-center titlu-acasa col-10 col-md-10 col-sm-10 col-lg-11">Administrare Conturi</h1>
+        <div class="div-buton col-2 col-md-2 col-sm-2 col-lg-1">
+            <a role="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-primary btn-circle "><i class="fa-solid fa-plus"></i></a></div>
+</div>
 
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item" role="presentation">
@@ -238,4 +242,93 @@
         </table>
       </div>
     </div>
+
+   <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Creare cont nou</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          
+        <form id="formular_adaugare" method="post" autocomplete="off">
+           <div class="mb-3">
+            <label for="message-text" class="col-form-label">Alegeți tipul contului:</label>
+                <select name="tipuri" id="tipuri" onchange="selectareTip()">
+                  <option value="pacient">Pacient</option>
+                  <option value="medic">Medic</option>
+                  <option value="supraveghetor">Supraveghetor</option>
+                  <option value="ingrijitor">Îngrijitor</option>
+                </select>
+          </div>
+
+          <div id="adaugare-pacient">
+              <partial name="_AdaugarePacient" />            
+          </div>
+
+          <div id="adaugare-medic">
+               <partial name="_AdaugareMedic" /> 
+          </div>
+
+          <div id="adaugare-supraveghetor">
+                <partial name="_AdaugareSupraveghetor" /> 
+          </div>
+
+          <div id="adaugare-ingrijitor">
+                <partial name="_AdaugareIngrijitor" />   
+          </div>
+
+           <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+            <button class="btn btn-primary" type="submit">Adauga</button>
+         </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+
+</div>
+
+
+<script>
+    function selectareTip(){
+        var valoare = document.getElementById("tipuri").value;
+        document.getElementById("formular_adaugare").reset();
+        document.getElementById("tipuri").value = valoare;
+        var adaugare_pacient = document.getElementById("adaugare-pacient");
+        var adaugare_medic = document.getElementById("adaugare-medic");
+        var adaugare_ingrijitor = document.getElementById("adaugare-ingrijitor");
+        var adaugare_supraveghetor = document.getElementById("adaugare-supraveghetor");
+        if(valoare=="pacient")
+        {
+            adaugare_pacient.style.display= "block";
+            adaugare_medic.style.display= "none";
+            adaugare_ingrijitor.style.display= "none";
+            adaugare_supraveghetor.style.display= "none";
+        }
+        else if(valoare=="medic")
+        {
+            adaugare_medic.style.display="block";
+            adaugare_ingrijitor.style.display= "none";
+            adaugare_supraveghetor.style.display= "none";
+            adaugare_pacient.style.display= "none";
+        }
+        else if(valoare=="ingrijitor")
+        {
+            adaugare_ingrijitor.style.display="block";
+            adaugare_supraveghetor.style.display= "none";
+            adaugare_pacient.style.display= "none";
+            adaugare_medic.style.display="none";
+        }
+        else if(valoare=="supraveghetor")
+        {
+            adaugare_supraveghetor.style.display="block";
+            adaugare_pacient.style.display= "none";
+            adaugare_medic.style.display="none";
+            adaugare_ingrijitor.style.display= "none";
+        }
+    }
+</script>
+

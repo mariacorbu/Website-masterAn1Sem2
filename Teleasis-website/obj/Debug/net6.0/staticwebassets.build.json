@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BDG/xD6YChqj9RfZSpcdNBg/lfj6/tc/o9/YQwBGn4g=",
+  "Hash": "/e+oTxYpVgdDdWN+IIzHeAVu2CDHq4HZcgEV3M6MJYI=",
   "Source": "Teleasis-website",
   "BasePath": "_content/Teleasis-website",
   "Mode": "Default",
@@ -117,23 +117,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.svg"
-    },
-    {
-      "Identity": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\wwwroot\\images\\remove.png",
-      "SourceId": "Teleasis-website",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\wwwroot\\",
-      "BasePath": "_content/Teleasis-website",
-      "RelativePath": "images/remove.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\remove.png"
     },
     {
       "Identity": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\wwwroot\\js\\site.js",
