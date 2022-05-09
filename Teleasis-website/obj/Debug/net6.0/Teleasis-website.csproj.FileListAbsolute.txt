@@ -55,3 +55,12 @@ C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Tele
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.CopyComplete
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Firebase.Auth.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.ServiceModel.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.CopyComplete
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Firebase.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\LiteDB.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.Reactive.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.Runtime.InteropServices.WindowsRuntime.dll

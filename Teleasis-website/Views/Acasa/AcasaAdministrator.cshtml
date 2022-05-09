@@ -25,7 +25,6 @@
         <table class="table table-striped" id="tabel-pacienti">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Prenume</th>
                     <th>Nume</th>
                     <th>Email</th>
@@ -33,46 +32,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</th>
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+               @foreach(var pacienti in ViewBag.pacientiLista)
+                    {
+                        <tr>
+                        <td></td>
+                        <td></td>
+                        <td>@(pacienti.email_pacient)</td>
+                        <td>
+                            <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                        </td>
+                        </tr>
 
-                        @*<input type="image" src="~/images/remove.png" />*@@*<input type="image" src="~/images/remove.png" />*@
-                       @* <button class="btn btn-lg btn-block button-login button-stergere-pacient" type="button" >
-                        <img src="~/images/remove.png"/>
-                    </button>*@</td>
-                </tr>
-                <tr>
-                    <td>2</th>
-                     <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                   </td>
-                </tr>
-                <tr>
-                    <td>3</th>
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td> 
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
+                    }                   
+                
             </tbody>
         </table>
       </div>
@@ -80,7 +52,6 @@
         <table class="table table-striped" id="tabel-pacienti">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Prenume</th>
                     <th>Nume</th>
                     <th>Email</th>
@@ -88,46 +59,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</th>
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+               @foreach(var medici in ViewBag.mediciLista)
+                    {
+                        <tr>
+                        <td>@(medici.prenume_medic)</td>
+                        <td>@(medici.nume_medic)</td>
+                        <td>@(medici.email_medic)</td>
+                        <td>
+                            <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                        </td>
+                        </tr>
 
-                        @*<input type="image" src="~/images/remove.png" />*@@*<input type="image" src="~/images/remove.png" />*@
-                       @* <button class="btn btn-lg btn-block button-login button-stergere-pacient" type="button" >
-                        <img src="~/images/remove.png"/>
-                    </button>*@</td>
-                </tr>
-                <tr>
-                    <td>2</th>
-                     <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                   </td>
-                </tr>
-                <tr>
-                    <td>3</th>
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td> 
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
+                    }      
             </tbody>
         </table>
       </div>
@@ -135,7 +78,6 @@
          <table class="table table-striped" id="tabel-pacienti">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Prenume</th>
                     <th>Nume</th>
                     <th>Email</th>
@@ -143,46 +85,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</th>
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                @foreach(var supraveghetor in ViewBag.supraveghetoriLista)
+                    {
+                        <tr>
+                        <td>@(supraveghetor.prenume_supraveghetor)</td>
+                        <td>@(supraveghetor.nume_supraveghetor)</td>
+                        <td>@(supraveghetor.email_supraveghetor)</td>
+                        <td>
+                            <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                        </td>
+                        </tr>
 
-                        @*<input type="image" src="~/images/remove.png" />*@@*<input type="image" src="~/images/remove.png" />*@
-                       @* <button class="btn btn-lg btn-block button-login button-stergere-pacient" type="button" >
-                        <img src="~/images/remove.png"/>
-                    </button>*@</td>
-                </tr>
-                <tr>
-                    <td>2</th>
-                     <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                   </td>
-                </tr>
-                <tr>
-                    <td>3</th>
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td> 
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
+                    }      
             </tbody>
         </table>
       </div>
@@ -190,7 +104,6 @@
          <table class="table table-striped" id="tabel-pacienti">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Prenume</th>
                     <th>Nume</th>
                     <th>Email</th>
@@ -198,46 +111,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</th>
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                @foreach(var ingrijitor in ViewBag.ingrijitoriLista)
+                    {
+                        <tr>
+                        <td>@(ingrijitor.prenume_ingrijitor)</td>
+                        <td>@(ingrijitor.nume_ingrijitor)</td>
+                        <td>@(ingrijitor.email_ingrijitor)</td>
+                        <td>
+                            <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                        </td>
+                        </tr>
 
-                        @*<input type="image" src="~/images/remove.png" />*@@*<input type="image" src="~/images/remove.png" />*@
-                       @* <button class="btn btn-lg btn-block button-login button-stergere-pacient" type="button" >
-                        <img src="~/images/remove.png"/>
-                    </button>*@</td>
-                </tr>
-                <tr>
-                    <td>2</th>
-                     <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                   </td>
-                </tr>
-                <tr>
-                    <td>3</th>
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td> 
-                    <td>Roxana</th>
-                    <td>Ivanescu</th>
-                    <td>roxy@gmail.com</td>
-                    <td>                        
-                        <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>
+                    }    
             </tbody>
         </table>
       </div>
