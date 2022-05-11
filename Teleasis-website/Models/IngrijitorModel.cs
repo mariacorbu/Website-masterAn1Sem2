@@ -6,5 +6,6 @@
         public string prenume_ingrijitor { get; set; }
         public string email_ingrijitor { get; set; }
         public string parola_ingrijitor { get; set; }
+        public string? id_ingrijitor { get; set; }
     }
 }

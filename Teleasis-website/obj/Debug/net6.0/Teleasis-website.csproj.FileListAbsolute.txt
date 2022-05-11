@@ -7,7 +7,6 @@ C:\Users\Asus\source\repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Teleasis-website.dll
 C:\Users\Asus\source\repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\ref\Teleasis-website.dll
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Teleasis-website.pdb
-C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.AssemblyReference.cache
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.AssemblyInfoInputs.cache
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.AssemblyInfo.cs
@@ -64,3 +63,12 @@ C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\LiteDB.dll
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.Reactive.dll
 C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.Runtime.InteropServices.WindowsRuntime.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\FirebaseAdmin.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Api.Gax.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Api.Gax.Rest.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Apis.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Apis.Auth.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Apis.Core.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.AssemblyReference.cache

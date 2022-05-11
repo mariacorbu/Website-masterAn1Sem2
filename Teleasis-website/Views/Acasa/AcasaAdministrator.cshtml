@@ -39,7 +39,7 @@
                         <td></td>
                         <td>@(pacienti.email_pacient)</td>
                         <td>
-                            <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                            <a id="delete_pacienti" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" data-bs-id="@(pacienti.id_pacient)" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
@@ -66,7 +66,7 @@
                         <td>@(medici.nume_medic)</td>
                         <td>@(medici.email_medic)</td>
                         <td>
-                            <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                            <a  id="delete_medici" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" data-bs-id="@(medici.id_medic)" ><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
@@ -92,7 +92,7 @@
                         <td>@(supraveghetor.nume_supraveghetor)</td>
                         <td>@(supraveghetor.email_supraveghetor)</td>
                         <td>
-                            <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                            <a  id="delete_supraveghetori" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" data-bs-id="@(supraveghetor.id_supraveghetor)"><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
@@ -118,7 +118,7 @@
                         <td>@(ingrijitor.nume_ingrijitor)</td>
                         <td>@(ingrijitor.email_ingrijitor)</td>
                         <td>
-                            <a href="#" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                            <a id="delete_ingrijitori" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" data-bs-id="@(ingrijitor.id_ingrijitor)"><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
@@ -127,6 +127,31 @@
         </table>
       </div>
     </div>
+
+      <div class="modal fade " id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ștergere cont</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("DeleteAccount", "Acasa", new{id_cont=100}, FormMethod.Post, true, new{id = "formDelete_pacient"}))
+                                {
+                            <p>Sunteți sigur că doriți să ștergeți acest cont?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                        
+@*                        <form asp-controller="Acasa" asp-action="Delete" method="delete" id="formDelete_pacient">                     
+                        </form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
@@ -215,5 +240,58 @@
             adaugare_ingrijitor.style.display= "none";
         }
     }
+
+    const onClick = function() {
+        var contId = document.getElementById(this.id).getAttribute("data-bs-id");
+        document.getElementById("formDelete_pacient").setAttribute("id_cont", contId);
+        document.getElementById("formDelete_pacient").setAttribute("action", "/" + contId);
+    }
+    if(document.getElementById('delete_medici')!=null)
+        document.getElementById('delete_medici').onclick = onClick;
+    if(document.getElementById('delete_pacienti')!=null)
+        document.getElementById('delete_pacienti').onclick = onClick;
+    if(document.getElementById('delete_ingrijitori')!=null)
+        document.getElementById('delete_ingrijitori').onclick = onClick;
+    if(document.getElementById('delete_supraveghetori')!=null)
+        document.getElementById('delete_supraveghetori').onclick = onClick;
+
+
+    //var deleteModalPacient = document.getElementById("deleteModal");
+    //deleteModalPacient.addEventListener("show.bs.modal", function (event) 
+    //{
+    //    var contId;
+
+    //    if(document.getElementById('delete_pacienti').clicked == true)
+    //    {
+    //        contId = document.getElementById("delete_pacienti").getAttribute("data-bs-id");
+
+    //    }
+    //    else if(document.getElementById('delete_medici').clicked == true)
+    //    {
+    //        contId = document.getElementById("delete_medici").getAttribute("data-bs-id");
+
+    //    }
+    //    else if(document.getElementById('delete_ingrijitori').clicked == true)
+    //    {
+    //        contId = document.getElementById("delete_ingrijitori").getAttribute("data-bs-id");
+
+    //    }
+    //    else if(document.getElementById('delete_supraveghetori').clicked == true)
+    //    {
+    //        contId = document.getElementById("delete_supraveghetori").getAttribute("data-bs-id");
+
+    //    }
+
+
+
+    //});
+
+
+    //$(document).on("click", "#delete_pacienti", function () {
+    //     var pacientId = $(this).data('data-bs-id');
+    //     $("#deleteModal #formDelete_pacient").setAttribute("id_pacient", pacientId);
+    //});
+
+
 </script>
 

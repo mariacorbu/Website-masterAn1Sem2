@@ -7,10 +7,10 @@ namespace Teleasis_website.Controllers
 {
     public class AutentificareController : Controller
     {
-        FirebaseAuthProvider auth;
+        Firebase.Auth.FirebaseAuthProvider auth;
         public AutentificareController()
         {
-            auth = new FirebaseAuthProvider(
+            auth = new Firebase.Auth.FirebaseAuthProvider(
                          new FirebaseConfig("AIzaSyBSdoiZ3E-8azjmBo1DlbG_OUOOWzr4qBw"));
         }
 
