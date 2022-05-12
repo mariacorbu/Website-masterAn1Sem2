@@ -8,53 +8,53 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Teleasis_website
 build_property.RootNamespace = Teleasis_website
-build_property.ProjectDir = C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\
+build_property.ProjectDir = C:\Users\Maria\Source\Repos\Website-masterAn1Sem2\Teleasis-website\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website
+build_property.MSBuildProjectDirectory = C:\Users\Maria\Source\Repos\Website-masterAn1Sem2\Teleasis-website
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/AcasaAdministrator.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/AcasaAdministrator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQWNhc2FBZG1pbmlzdHJhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareIngrijitor.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareIngrijitor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcX0FkYXVnYXJlSW5ncmlqaXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareMedic.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareMedic.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcX0FkYXVnYXJlTWVkaWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugarePacient.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugarePacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcX0FkYXVnYXJlUGFjaWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareSupraveghetor.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareSupraveghetor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcX0FkYXVnYXJlU3VwcmF2ZWdoZXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Autentificare/Autentificare.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Autentificare/Autentificare.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0ZW50aWZpY2FyZVxBdXRlbnRpZmljYXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Shared/Error.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/_ViewImports.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/_ViewStart.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Asus/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Shared/_Layout.cshtml]
+[C:/Users/Maria/Source/Repos/Website-masterAn1Sem2/Teleasis-website/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mq8l6qrr9t

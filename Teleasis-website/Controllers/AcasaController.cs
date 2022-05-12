@@ -29,7 +29,7 @@ namespace Teleasis_website.Controllers
                     AuthTokenAsyncFactory = () => Task.FromResult(databaseSecret)
                 });
 
-            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Users\\Asus\\Desktop\\teleasisfirebase-firebase-adminsdk-dgw38-2c95afeecc.json");
+            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "FirebaseApp/teleasisfirebase-firebase-adminsdk-dgw38-2c95afeecc.json");
 
             if (FirebaseApp.DefaultInstance == null)
             {

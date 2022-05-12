@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj": {}
+    "C:\\Users\\Maria\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj": {
+    "C:\\Users\\Maria\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
+        "projectUniqueName": "C:\\Users\\Maria\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
         "projectName": "Teleasis-website",
-        "projectPath": "C:\\Users\\Asus\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\obj\\",
+        "projectPath": "C:\\Users\\Maria\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
+        "packagesPath": "C:\\Users\\Maria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Maria\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

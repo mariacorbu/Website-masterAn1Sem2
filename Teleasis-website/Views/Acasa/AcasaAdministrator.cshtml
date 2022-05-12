@@ -39,7 +39,7 @@
                         <td></td>
                         <td>@(pacienti.email_pacient)</td>
                         <td>
-                            <a id="delete_pacienti" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" data-bs-id="@(pacienti.id_pacient)" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                            <a id="delete_pacienti" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" onclick=sendId("@(pacienti.id_pacient)") data-bs-id="@(pacienti.id_pacient)" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
@@ -66,7 +66,7 @@
                         <td>@(medici.nume_medic)</td>
                         <td>@(medici.email_medic)</td>
                         <td>
-                            <a  id="delete_medici" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" data-bs-id="@(medici.id_medic)" ><i class="fas fa-trash"></i></a>
+                            <a  id="delete_medici" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal" onclick=sendId("@(medici.id_medic)")  data-bs-target="#deleteModal" data-bs-id="@(medici.id_medic)" ><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
@@ -92,7 +92,7 @@
                         <td>@(supraveghetor.nume_supraveghetor)</td>
                         <td>@(supraveghetor.email_supraveghetor)</td>
                         <td>
-                            <a  id="delete_supraveghetori" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" data-bs-id="@(supraveghetor.id_supraveghetor)"><i class="fas fa-trash"></i></a>
+                            <a  id="delete_supraveghetori" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal" onclick=sendId("@(supraveghetor.id_supraveghetor)")  data-bs-target="#deleteModal" data-bs-id="@(supraveghetor.id_supraveghetor)"><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
@@ -118,7 +118,7 @@
                         <td>@(ingrijitor.nume_ingrijitor)</td>
                         <td>@(ingrijitor.email_ingrijitor)</td>
                         <td>
-                            <a id="delete_ingrijitori" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" data-bs-id="@(ingrijitor.id_ingrijitor)"><i class="fas fa-trash"></i></a>
+                            <a id="delete_ingrijitori" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal" onclick=sendId("@(ingrijitor.id_ingrijitor)")  data-bs-target="#deleteModal" data-bs-id="@(ingrijitor.id_ingrijitor)"><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
@@ -241,6 +241,7 @@
         }
     }
 
+    /*
     const onClick = function() {
         var contId = document.getElementById(this.id).getAttribute("data-bs-id");
         document.getElementById("formDelete_pacient").setAttribute("id_cont", contId);
@@ -254,6 +255,16 @@
         document.getElementById('delete_ingrijitori').onclick = onClick;
     if(document.getElementById('delete_supraveghetori')!=null)
         document.getElementById('delete_supraveghetori').onclick = onClick;
+
+     */
+
+
+    function sendId(id_cont){ //, tip_cont
+
+        document.getElementById("formDelete_pacient").setAttribute("id_cont", id_cont);
+        document.getElementById("formDelete_pacient").setAttribute("action", "/" + id_cont);
+
+    }
 
 
     //var deleteModalPacient = document.getElementById("deleteModal");
