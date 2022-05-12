@@ -288,5 +288,28 @@ namespace Teleasis_website.Controllers
 
 
         }
+
+
+        public async Task<IActionResult> AdaugarePacient()
+		{
+            return View();
+		}
+
+        public async Task<IActionResult> AcasaMedic()
+        {
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+            var pacientiLista = query_pacienti.Select(item => new PacientModel
+            {
+                nume_pacient = "",
+                prenume_pacient = "",
+                CNP = "",
+                email_pacient = item.Object.email,
+                id_pacient = item.Key
+            }).ToList();
+
+            ViewBag.pacientiLista = pacientiLista;
+            return View();
+        }
+
     }
 }

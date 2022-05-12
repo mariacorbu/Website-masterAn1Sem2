@@ -1,0 +1,172 @@
+﻿@{
+    ViewData["Title"] = "Pagina Adăugare Pacient";
+}
+
+<div class="container-acasa" id="container-adaugare-pacienti">
+    
+
+    <div class="formular">
+        <div class="row">
+            <h1 class="text-center titlu-acasa col-10 col-md-10 col-sm-10 col-lg-11">Adăugare Pacient</h1>        
+        </div>
+
+        <form id="formular_adaugare" method="post" autocomplete="off">                         
+
+            <fieldset>
+                <legend>Date demografice:</legend>
+                <div class="row">
+                    <div class="mb-3 col-5">
+                        <label for="recipient-name" class="col-form-label">Nume:</label>
+                        <input type="text" class="form-control" id="input-nume-pacient" name="nume_pacient"/>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="mb-3 col-5">
+                        <label for="message-text" class="col-form-label">Prenume:</label>
+                        <input type="text" class="form-control" id="input-prenume-pacient" name="prenume_pacient"/>
+                    </div>
+                </div>
+
+                <div class="row">    
+                    <div class="mb-3 col-5">
+                        <label for="message-text" class="col-form-label">CNP:</label>
+                        <input type="number" class="form-control" id="input-cnp" name="CNP"/>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="mb-3 col-2">
+                        <label for="message-text" class="col-form-label">Vârstă:</label>
+                        <input type="number" disabled class="form-control" id="input-varsta-pacient" name="varsta_pacient"/>
+                    </div>
+                    <div class="mb-3 col-2">
+                        <label for="message-text" class="col-form-label">Data nașterii:</label>
+                        <input type="text" disabled class="form-control" id="input-nastere-pacient" name="nastere_pacient"/>
+                    </div>
+                </div>
+           
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label for="message-text" class="col-form-label">Județ:</label>
+                        <br />
+                        <div class="select_box">
+                            <select name="judet" id="judet">
+    	                        <option value="Alba">Alba</option>
+    	                        <option value="Arges">Arges</option>
+    	                        <option value="Arad">Arad</option>
+    	                        <option value="Bucuresti" >Bucuresti</option>
+    	                        <option value="Bacau">Bacau</option>
+    	                        <option value="Bihor">Bihor</option>
+    	                        <option value="Bistrita">Bistrita</option>
+    	                        <option value="Braila">Braila</option>
+    	                        <option value="Botosani">Botosani</option>
+    	                        <option value="Brasov">Brasov</option>
+    	                        <option value="Buzau">Buzau</option>
+    	                        <option value="Cluj">Cluj</option>
+    	                        <option value="Calarasi">Calarasi</option>
+    	                        <option value="Caras-Severin">Caras-Severin</option>
+    	                        <option value="Constanta">Constanta</option>
+    	                        <option value="Covasna">Covasna</option>
+    	                        <option value="Dambovita">Dambovita</option>
+    	                        <option value="Dolj">Dolj</option>
+    	                        <option value="Gorj">Gorj</option>
+    	                        <option value="Galati">Galati</option>
+    	                        <option value="Giurgiu">Giurgiu</option>
+    	                        <option value="Hunedoara">Hunedoara</option>
+    	                        <option value="Harghita">Harghita</option>
+    	                        <option value="Ilfov">Ilfov</option>
+    	                        <option value="Ialomita">Ialomita</option>
+    	                        <option value="Iasi">Iasi</option>
+    	                        <option value="Mehedinti">Mehedinti</option>
+    	                        <option value="Maramures">Maramures</option>
+    	                        <option value="Mures">Mures</option>
+    	                        <option value="Neamt">Neamt</option>
+    	                        <option value="Olt">Olt</option>
+    	                        <option value="Prahova">Prahova</option>
+    	                        <option value="Sibiu">Sibiu</option>
+    	                        <option value="Salaj">Salaj</option>
+    	                        <option value="Satu-Mare">Satu-Mare</option>
+    	                        <option value="Suceava">Suceava</option>
+    	                        <option value="Tulcea">Tulcea</option>
+    	                        <option value="Timis">Timis</option>
+    	                        <option value="Teleorman">Teleorman</option>
+    	                        <option value="Valcea">Valcea</option>
+    	                        <option value="Vrancea">Vrancea</option>
+    	                        <option value="Vaslui">Vaslui</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="mb-3 col-3">
+                        <label for="message-text" class="col-form-label">Oraș:</label>
+                        <input type="text" class="form-control" id="input-oras-pacient" name="oras_pacient"/>
+                    </div>
+
+                    <div class="mb-3 col-6">
+                        <label for="message-text" class="col-form-label">Strada:</label>
+                        <input type="text" class="form-control" id="input-strada-pacient" name="strada_pacient"/>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label for="message-text" class="col-form-label">Nr. telefon:</label>
+                        <input type="text" class="form-control" id="input-telefon-pacient" name="telefon_pacient"/>
+                    </div>
+
+                    <div class="mb-3 col-3">
+                        <label for="message-text" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" id="input-email-pacient" name="email_pacient" />
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="mb-3 col-5">
+                        <label for="message-text" class="col-form-label">Profesie:</label>
+                        <input class="form-control" type="text" id="input-profesie-pacient" name="profesie_pacient" />
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="mb-3 col-5">
+                        <label for="message-text" class="col-form-label">Loc de muncă:</label>
+                        <input class="form-control" type="text" id="input-locmunca-pacient" name="locmunca_pacient" />
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <br />
+
+            <fieldset>
+                <legend>Istoric medical:</legend>
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Diagnostice:</label>
+                    <textarea class="form-control" type="text" id="input-diagnostice-pacient" name="diagnostice_pacient"></textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Tratamente:</label>
+                    <textarea class="form-control" type="text" id="input-tratamente-pacient" name="tratamente_pacient"></textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Lista de alergii:</label>
+                    <textarea class="form-control" type="text" id="input-alergii-pacient" name="alergii_pacient"></textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Recomandări medicale:</label>
+                    <textarea class="form-control" type="text" id="input-recomandari-pacient" name="recomandari_pacient"></textarea>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Scheme de medicație:</label>
+                    <textarea class="form-control" type="text" id="input-medicatie-pacient" name="medicatie_pacient"></textarea>
+                </div>
+            </fieldset>
+
+               <div class="modal-footer butoane_adauga_pacient">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
+                   <button class="btn btn-primary buton-adauga" type="submit">Adauga</button>
+               </div>
+        </form>
+
+    </div>
+
+</div>

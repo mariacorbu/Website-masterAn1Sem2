@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Pagina Acasa - Medic";
+}
+
+<div class="container-acasa">
+    <div class="row">
+        <h1 class="text-center titlu-acasa col-10 col-md-10 col-sm-10 col-lg-11">Listă Pacienți</h1>
+        
+    </div>
+
+    <div class="row linie_listaPacienti">
+
+        <div class="col-3">
+            <div class="input-group rounded search_pacienti">
+                <input id="search" type="search" class="form-control rounded" placeholder="Search..." aria-label="Search" aria-describedby="search-addon" />
+                <a class="button_search">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <a type="button" class="buton_sortare"><img class="imagine_sortare" src="~/images/AZ.svg"/></a>
+@*            <a type="button" class="buton_sortare"><img class="imagine_sortare" src="~/images/ZA.svg"/></a>
+*@        </div>
+        <div class="col-3"></div>
+        <div class="col-2">
+            <button class="btn btn-lg btn-block button-login button_home" type="button" onclick="location.href='@Url.Action("AdaugarePacient","Acasa")'" >Adăugare pacient</button>
+        </div>
+        
+        <div class="col-2">
+            <button class="btn btn-lg btn-block button-login button_home" type="submit" >Arhivă</button>
+        </div>
+    </div>
+
+
+    <div class="tab-content">
+          <div id="pacienti" class="tab-pane fade show active" role="tabpanel" aria-labelledby="pacienti-tab">
+            @*<h3 class="titlu-tab">Pacienți</h3>*@
+            <table class="table table-striped" id="tabel-pacienti">
+                <thead>
+                    <tr>
+                        <th>Prenume</th>
+                        <th>Nume</th>
+                        <th>Email</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                   @foreach(var pacienti in ViewBag.pacientiLista)
+                        {
+                            <tr>
+                            <td></td>
+                            <td></td>
+                            <td>@(pacienti.email_pacient)</td>
+                            <td>
+                                <a id="accesare_pacienti" role="button"  class="btn btn-danger btn-circle">Accesare pacient</a>
+                            </td>
+                            </tr>
+
+                        }                   
+                
+                </tbody>
+            </table>
+          </div>
+    </div>
+</div>
+
+
+<script>
+
+        $("#search").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#tabel-pacienti tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+        // document.getElementById("search").addEventListener("keyup", function() {
+        //  var value = this.value.toLowerCase();
+        //  document.getElementById("tabel-pacienti tr").filter(function() {
+        //    this.toggle(this.text().toLowerCase().indexOf(value) > -1)
+        //  });
+        //});
+
+</script>

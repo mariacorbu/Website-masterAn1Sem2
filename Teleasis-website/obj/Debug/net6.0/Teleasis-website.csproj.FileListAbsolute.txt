@@ -116,3 +116,4 @@ C:\Users\Maria\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net
 C:\Users\Maria\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.pdb
 C:\Users\Maria\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.genruntimeconfig.cache
 C:\Users\Maria\Source\Repos\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\ref\Teleasis-website.dll
+C:\Users\Asus\Source\Repos\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\FirebaseApp\teleasisfirebase-firebase-adminsdk-dgw38-2c95afeecc.json

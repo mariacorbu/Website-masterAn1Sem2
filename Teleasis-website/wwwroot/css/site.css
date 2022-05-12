@@ -110,3 +110,122 @@ input[type=number] {
 }
 
 /*----------------------*/
+
+
+/*
+    ACASA MEDIC
+
+*/
+.linie_listaPacienti {
+    background-color: #3f7bff;
+    padding: 10px;
+}
+.imagine_sortare{
+    width: 15%;
+}
+.button_home{
+    border: 2px solid white;
+    font-size: 15px;
+}
+.search_pacienti{
+    margin-top: 1px;
+
+}
+    .search_pacienti input {
+        background-color: #3f7bff;
+        color: white;
+        border: 2px solid white;
+        border-right: none;
+        border-top-right-radius: 0!important ;
+        border-bottom-right-radius: 0!important ;
+    }
+        .search_pacienti input::placeholder {
+            color:white;
+        }
+
+.button_search {
+    background-color: #3f7bff;
+    border: 2px solid white;
+    border-radius: .25rem;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 5px 15px 2px;
+}
+.button_search i{
+    color: white;
+}
+.search_pacienti input:focus {
+    background-color: #3f7bff;
+    color: white;
+    border-color: white;
+    outline: 0;
+    box-shadow: none;
+}
+/*-----------------------*/
+
+/*
+    ADAUGARE PACIENT MEDIC
+
+*/
+.formular {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    color: #3f7bff;
+}
+#container-adaugare-pacienti {
+    background: #3f7bff;
+    padding: 20px 80px 20px 80px;
+}
+fieldset {
+    border: 2px solid #3f7bff;
+    border-radius: 10px;
+    padding: 10px;
+}
+#container-adaugare-pacienti input, #container-adaugare-pacienti textarea {
+    border: 2px solid #3f7bff;
+}
+.butoane_adauga_pacient {
+    justify-content: space-evenly!important;
+}
+    .butoane_adauga_pacient button {
+        width: 25%;
+    }
+.buton-adauga {
+    background-color: #1cc88a;
+    border: none;
+}
+.select_box {
+    width: 200px;
+    overflow: hidden;
+    border: 2px solid #3f7bff;
+    position: relative;
+    padding: 5px 0;
+    border-radius: .25rem;
+}
+
+    .select_box:after {
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #3f7bff;
+        position: absolute;
+        top: 40%;
+        right: 5px;
+        content: "";
+        z-index: 98;
+    }
+
+    .select_box select {
+        width: 220px;
+        border: 0;
+        position: relative;
+        z-index: 99;
+        background: none;
+    }
+.input-group-append {
+    cursor: pointer;
+}
+/*-----------------------*/
