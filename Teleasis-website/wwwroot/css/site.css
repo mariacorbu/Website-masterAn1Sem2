@@ -228,4 +228,19 @@ fieldset {
 .input-group-append {
     cursor: pointer;
 }
+
+.buton-accesare-pacient {
+    background-color: #F86F15;
+    border-color: #F86F15;
+    color:white;
+}
+    .buton-accesare-pacient:hover {
+        background-color: #FF9936;
+        border-color: #FF9936;
+        color: white;
+    }
+
+.button_home {
+    border: 2px solid white!important;
+}
 /*-----------------------*/

@@ -16,7 +16,7 @@ namespace Teleasis_website.Controllers
         FirebaseApp defaultApp;
         private const String databaseUrl = "https://teleasisfirebase-default-rtdb.firebaseio.com/";
         private const String databaseSecret = "r6fXFNlgsApi1LwKa3qcVIwZYXE8UM1PjfmU7wDg";
-
+        public string IdMedic;
         public AcasaController()
         {
             auth = new FirebaseAuthProvider(
@@ -290,13 +290,24 @@ namespace Teleasis_website.Controllers
         }
 
 
-        public async Task<IActionResult> AdaugarePacient()
+        public async Task<IActionResult> AdaugarePacient( string id_medic)
 		{
+            
+            ViewBag.IdMedic = id_medic;
             return View();
 		}
 
-        public async Task<IActionResult> AcasaMedic()
+        [HttpPost]
+        public async Task<IActionResult> AdaugarePacient(AdaugarePacientModel pacient)
         {
+            await firebase.Child("Conturi/Administrator/Cereri/" + pacient.CNP).PutAsync<AdaugarePacientModel>(pacient);
+
+            return View();
+        }
+
+        public async Task<IActionResult> AcasaMedic(string medic_id)
+        {
+            ViewBag.id_medic = medic_id;
             var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
             var pacientiLista = query_pacienti.Select(item => new PacientModel
             {

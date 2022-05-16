@@ -1,9 +1,13 @@
-﻿@{
+﻿@model Teleasis_website.Models.AdaugarePacientModel
+
+@{
     ViewData["Title"] = "Pagina Adăugare Pacient";
 }
 
 <div class="container-acasa" id="container-adaugare-pacienti">
-    
+    @{
+        var str = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+    }
 
     <div class="formular">
         <div class="row">
@@ -15,21 +19,29 @@
             <fieldset>
                 <legend>Date demografice:</legend>
                 <div class="row">
+                    <input hidden id="input-id-medic-pacient" name="id_medic" value="@ViewBag.IdMedic" />
                     <div class="mb-3 col-5">
                         <label for="recipient-name" class="col-form-label">Nume:</label>
-                        <input type="text" class="form-control" id="input-nume-pacient" name="nume_pacient"/>
+                        <input type="text" class="form-control" id="input-nume-pacient" name="nume_pacient" onfocusout='validareText(event, "text")'/>
+                        <span id="eroare-input-nume-pacient" class="text-danger"></span>
                     </div>
                     <div class="col-1"></div>
                     <div class="mb-3 col-5">
                         <label for="message-text" class="col-form-label">Prenume:</label>
-                        <input type="text" class="form-control" id="input-prenume-pacient" name="prenume_pacient"/>
+                        <input type="text" class="form-control" id="input-prenume-pacient" name="prenume_pacient" onfocusout='validareText(event, "text")'/>
+                        <span id="eroare-input-prenume-pacient" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 col-1">
+                        <label for="message-text" class="col-form-label">Sex:</label>
+                        <input type="text" disabled class="form-control" id="input-sex-pacient" name="sex_pacient"/>
                     </div>
                 </div>
 
                 <div class="row">    
                     <div class="mb-3 col-5">
                         <label for="message-text" class="col-form-label">CNP:</label>
-                        <input type="number" class="form-control" id="input-cnp" name="CNP"/>
+                        <input required  type="number" class="form-control" id="input-cnp" name="CNP" onfocusout="calculareVarstaSiDataNasterii()"/>
+                        <span id="eroare-cnp" class="text-danger"></span>
                     </div>
                     <div class="col-1"></div>
                     <div class="mb-3 col-2">
@@ -38,7 +50,7 @@
                     </div>
                     <div class="mb-3 col-2">
                         <label for="message-text" class="col-form-label">Data nașterii:</label>
-                        <input type="text" disabled class="form-control" id="input-nastere-pacient" name="nastere_pacient"/>
+                        <input type="text" disabled class="form-control" id="input-nastere-pacient" name="data_nasterii_pacient"/>
                     </div>
                 </div>
            
@@ -47,7 +59,7 @@
                         <label for="message-text" class="col-form-label">Județ:</label>
                         <br />
                         <div class="select_box">
-                            <select name="judet" id="judet">
+                            <select required  name="judet_pacient" id="judet">
     	                        <option value="Alba">Alba</option>
     	                        <option value="Arges">Arges</option>
     	                        <option value="Arad">Arad</option>
@@ -96,36 +108,44 @@
         
                     <div class="mb-3 col-3">
                         <label for="message-text" class="col-form-label">Oraș:</label>
-                        <input type="text" class="form-control" id="input-oras-pacient" name="oras_pacient"/>
+                        <input type="text" class="form-control" id="input-oras-pacient" name="oras_pacient" onfocusout='validareText(event, "text")'/>
+                        <span id="eroare-input-oras-pacient" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3 col-6">
                         <label for="message-text" class="col-form-label">Strada:</label>
-                        <input type="text" class="form-control" id="input-strada-pacient" name="strada_pacient"/>
+                        <input required  type="text" class="form-control" id="input-strada-pacient" name="strada_pacient" onfocusout='validareText(event, "")'/>
+                        <span id="eroare-input-strada-pacient" class="text-danger"></span>
+
                     </div>
                 </div>
             
                 <div class="row">
                     <div class="mb-3 col-3">
                         <label for="message-text" class="col-form-label">Nr. telefon:</label>
-                        <input type="text" class="form-control" id="input-telefon-pacient" name="telefon_pacient"/>
+                        <input type="text" class="form-control" id="input-telefon-pacient" name="numar_telefon_pacient" onfocusout='validareText(event, "numar")'/>
+                        <span id="eroare-input-telefon-pacient" class="text-danger"></span>
                     </div>
 
                     <div class="mb-3 col-3">
                         <label for="message-text" class="col-form-label">Email:</label>
-                        <input type="email" class="form-control" id="input-email-pacient" name="email_pacient" />
+                        <input  type="email" class="form-control" rgx=@str id="input-email-pacient" name="email_pacient" onfocusout='validareText(event, "email")'/>
+                        <span id="eroare-input-email-pacient" class="text-danger"></span>
                     </div>
                 </div>
             
                 <div class="row">
                     <div class="mb-3 col-5">
                         <label for="message-text" class="col-form-label">Profesie:</label>
-                        <input class="form-control" type="text" id="input-profesie-pacient" name="profesie_pacient" />
+                        <input class="form-control" type="text" id="input-profesie-pacient" name="profesie_pacient" onfocusout='validareText(event, "text")' />
+                        <span id="eroare-input-profesie-pacient" class="text-danger"></span>
                     </div>
                     <div class="col-1"></div>
                     <div class="mb-3 col-5">
                         <label for="message-text" class="col-form-label">Loc de muncă:</label>
-                        <input class="form-control" type="text" id="input-locmunca-pacient" name="locmunca_pacient" />
+                        <input required  class="form-control" type="text" id="input-locmunca-pacient" name="loc_de_munca_pacient" onfocusout='validareText(event, "")' />
+                        <span id="eroare-input-locmunca-pacient" class="text-danger"></span>
+
                     </div>
                 </div>
 
@@ -133,40 +153,182 @@
 
             <br />
 
-            <fieldset>
+           @* <fieldset>
                 <legend>Istoric medical:</legend>
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Diagnostice:</label>
-                    <textarea class="form-control" type="text" id="input-diagnostice-pacient" name="diagnostice_pacient"></textarea>
+                    <textarea required  class="form-control" type="text" id="input-diagnostice-pacient" name="diagnostice_pacient"></textarea>
                 </div>
         
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Tratamente:</label>
-                    <textarea class="form-control" type="text" id="input-tratamente-pacient" name="tratamente_pacient"></textarea>
+                    <textarea required  class="form-control" type="text" id="input-tratamente-pacient" name="tratamente_pacient"></textarea>
                 </div>
         
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Lista de alergii:</label>
-                    <textarea class="form-control" type="text" id="input-alergii-pacient" name="alergii_pacient"></textarea>
+                    <textarea required  class="form-control" type="text" id="input-alergii-pacient" name="alergii_pacient"></textarea>
                 </div>
         
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Recomandări medicale:</label>
-                    <textarea class="form-control" type="text" id="input-recomandari-pacient" name="recomandari_pacient"></textarea>
+                    <textarea required  class="form-control" type="text" id="input-recomandari-pacient" name="recomandari_pacient"></textarea>
                 </div>
         
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Scheme de medicație:</label>
-                    <textarea class="form-control" type="text" id="input-medicatie-pacient" name="medicatie_pacient"></textarea>
+                    <textarea required  class="form-control" type="text" id="input-medicatie-pacient" name="medicatie_pacient"></textarea>
                 </div>
-            </fieldset>
+            </fieldset>*@
 
                <div class="modal-footer butoane_adauga_pacient">
                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Inchide</button>
                    <button class="btn btn-primary buton-adauga" type="submit">Adauga</button>
                </div>
         </form>
-
+       
     </div>
 
 </div>
+
+<script>
+
+    function is_valid_cnp(value) {
+    var m;
+    if (m = /^([1-8])(0[1-9]|[1-9][0-9])(0[1-9]|1[0-2])(\d{2})(\d{2})(\d{3})(\d)$/.exec(value)) {
+        var ll = parseInt(m[3])
+        var zz = parseInt(m[4])
+        switch (ll) {
+            case 2:
+                if (zz > 29) {
+                    return false
+                }
+            case 3:
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if (zz > 30) {
+                    return false
+                }
+            default:
+                if (zz > 31) {
+                    return false
+                }
+        }
+        var jj = parseInt(m[5])
+        if (jj < 0 || (jj > 46 && jj < 51) || jj > 52) {
+            return false
+        }
+        var nnn = parseInt(m[6])
+        if (nnn < 0) {
+            return false
+        }
+        var c = parseInt(m[7])
+        var constanta = "279146358279"
+        var suma = 0
+        for(var i = 0; i < constanta.length; i++) {
+            suma = suma + parseInt(m[0].charAt(i)) * constanta.charAt(i)
+        }
+        var rest = suma % 11
+        return (((rest < 10) && (rest == m[0].charAt(12))) || ((rest == 10) && (m[0].charAt(12) == 1))) ? true : false
+        }
+     return false
+    }
+
+    function calculareVarstaSiDataNasterii(){
+        var CNPElement = document.getElementById("input-cnp");
+        var valoareCNP = CNPElement.value;
+        var textEroare = document.getElementById("eroare-cnp");
+
+        CNPElement.style.borderColor = "#3f7bff";
+        textEroare.innerText = "";
+
+        if(is_valid_cnp(valoareCNP)){
+            var an = valoareCNP[1]+valoareCNP[2];
+            var sex = valoareCNP[0];
+            if(sex == "1" || sex == "2"){
+               an = "19" + an;
+            }else if(sex == "5" || sex == "6"){
+               an = "20" + an;
+            }
+            if(sex == "1" || sex == "5") {
+               document.getElementById("input-sex-pacient").value = "M";
+            }else if(sex=="2" || sex=="6"){
+               document.getElementById("input-sex-pacient").value = "F";
+            }
+            var luna = valoareCNP[3] + valoareCNP[4];
+            var ziua = valoareCNP[5] + valoareCNP[6];
+            var dataNasterii = ziua + "/" + luna + "/" + an;
+            document.getElementById("input-nastere-pacient").value = dataNasterii;
+
+            var today = new Date();
+            var birthDate = new Date(an + "/" + luna + "/" + ziua);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            document.getElementById("input-varsta-pacient").value = age;
+        } 
+        else 
+        {
+            CNPElement.style.borderColor = "#c53629";
+            CNPElement.value = "";
+            textEroare.innerText = "CNP Invalid!";
+        }
+
+
+         
+        
+    }
+
+    //function validate(id) {
+    //    var regex = /^[a-zA-Z ]{2,30}$/;
+    //    var ctrl =  document.getElementById(id);
+    //    return regex.test(ctrl.value);
+    //}
+
+    function validareText(event, tip) {
+        var element = document.getElementById(event.target.id);
+        element.style.borderColor = "#3f7bff";
+        document.getElementById("eroare-" + event.target.id).innerText = ""
+
+         if(event.target.value == ""){
+            element.style.borderColor = "#c53629";
+            document.getElementById("eroare-" + event.target.id).innerText = "Câmp obligatoriu!"
+        }
+
+        else if(tip == "text"){
+           
+            if(!(/^[a-zA-Z ]{2,30}$/.test(element.value)))
+            {
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Text invalid!"
+            }
+        } 
+        else if(tip == "numar")
+        {
+            if(!(/^\d*$/.test(element.value)))
+            {
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Sunt permise doar cifre!"
+            }
+        }
+        else if(tip == "email")
+        {
+            var reg = new RegExp(element.getAttribute("rgx"));
+            if(!(reg.test(element.value))){
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Email invalid!";
+                console.log("CACA");
+            }
+        }
+
+        
+        
+    
+    }
+
+
+</script>

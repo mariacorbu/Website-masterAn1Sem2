@@ -25,7 +25,7 @@
 *@        </div>
         <div class="col-3"></div>
         <div class="col-2">
-            <button class="btn btn-lg btn-block button-login button_home" type="button" onclick="location.href='@Url.Action("AdaugarePacient","Acasa")'" >Adăugare pacient</button>
+            <button class="btn btn-lg btn-block button-login button_home" type="button" onclick="location.href='@Url.Action("AdaugarePacient","Acasa",new { id_medic = @ViewBag.id_medic })'" >Adăugare pacient</button>
         </div>
         
         <div class="col-2">
@@ -40,6 +40,7 @@
             <table class="table table-striped" id="tabel-pacienti">
                 <thead>
                     <tr>
+                        <th>CNP</th>
                         <th>Prenume</th>
                         <th>Nume</th>
                         <th>Email</th>
@@ -52,9 +53,10 @@
                             <tr>
                             <td></td>
                             <td></td>
+                            <td></td>
                             <td>@(pacienti.email_pacient)</td>
-                            <td>
-                                <a id="accesare_pacienti" role="button"  class="btn btn-danger btn-circle">Accesare pacient</a>
+                            <td class="text-center">
+                                <a id="accesare_pacienti" role="button"  class="btn buton-accesare-pacient btn-circle">Accesare pacient</a>
                             </td>
                             </tr>
 

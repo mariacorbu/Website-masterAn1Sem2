@@ -60,7 +60,7 @@ namespace Teleasis_website.Controllers
                     {
                         if (medic.Key.Equals(authLink.User.LocalId))
                         {
-                            return RedirectToAction("AcasaMedic", "Acasa");
+                            return RedirectToAction("AcasaMedic", "Acasa", new { medic_id = authLink.User.LocalId });
 
                         }
                     }
