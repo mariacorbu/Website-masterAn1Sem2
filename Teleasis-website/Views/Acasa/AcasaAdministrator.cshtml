@@ -4,8 +4,10 @@
 <div class="container-acasa">
     <div class="row">
         <h1 class="text-center titlu-acasa col-10 col-md-10 col-sm-10 col-lg-11">Administrare Conturi</h1>
-        <div class="div-buton col-2 col-md-2 col-sm-2 col-lg-1">
-            <a role="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-primary btn-circle "><i class="fa-solid fa-plus"></i></a></div>
+        <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
+            <a role="button" data-bs-toggle="modal"  data-bs-target="#exampleModal" class="btn btn-adauga-verde btn-circle "><i class="fa-solid fa-plus"></i></a>
+            <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
 </div>
 
     <ul class="nav nav-tabs" role="tablist">
@@ -17,6 +19,8 @@
           <button class="nav-link" id="supraveghetori-tab" data-bs-toggle="tab" data-bs-target="#supraveghetori" type="button" role="tab" aria-controls="supraveghetori" aria-selected="false">Supraveghetori</button>
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="ingrijitori-tab" data-bs-toggle="tab" data-bs-target="#ingrijitori" type="button" role="tab" aria-controls="ingrijitori" aria-selected="false">Îngrijitori</button>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="cereri-tab" data-bs-toggle="tab" data-bs-target="#cereri" type="button" role="tab" aria-controls="cereri" aria-selected="false">Cereri</button>
     </ul>
 
     <div class="tab-content">
@@ -35,8 +39,8 @@
                @foreach(var pacienti in ViewBag.pacientiLista)
                     {
                         <tr>
-                        <td></td>
-                        <td></td>
+                        <td>@(pacienti.prenume_pacient)</td>
+                        <td>@(pacienti.nume_pacient)</td>
                         <td>@(pacienti.email_pacient)</td>
                         <td>
                             <a id="delete_pacienti" role="button" data-bs-toggle="modal"  data-bs-target="#deleteModal" onclick=sendId("@(pacienti.id_pacient)") data-bs-id="@(pacienti.id_pacient)" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
@@ -126,6 +130,39 @@
             </tbody>
         </table>
       </div>
+   
+    <div id="cereri" class="tab-pane fade show" role="tabpanel" aria-labelledby="cereri-tab">
+        @*<h3 class="titlu-tab">Pacienți</h3>*@
+        <table class="table table-striped" id="tabel-cereri">
+            <thead>
+                <tr>
+                    <th>Medic</th>
+                    <th>CNP</th>
+                    <th>Prenume</th>
+                    <th>Nume</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+               @foreach(var pacientiCereri in ViewBag.cereriLista)
+                    {
+                        <tr>
+                        <td>@(pacientiCereri.id_medic)</td>
+                        <td>@(pacientiCereri.CNP)</td>
+                        <td>@(pacientiCereri.prenume_pacient)</td>
+                        <td>@(pacientiCereri.nume_pacient)</td>
+                        <td>@(pacientiCereri.email_pacient)</td>
+                        <td>
+                            <a id="adauga_pacienti" role="button" data-bs-toggle="modal"  data-bs-target="#adaugaModal" onclick=sendData("@(pacientiCereri.id_medic)#@(pacientiCereri.CNP)#@(pacientiCereri.prenume_pacient)#@(pacientiCereri.nume_pacient)#@(pacientiCereri.email_pacient)#@(pacientiCereri.judet_pacient)#@(pacientiCereri.oras_pacient)#@(pacientiCereri.strada_pacient)#@(pacientiCereri.numar_telefon_pacient)#@(pacientiCereri.profesie_pacient)#@(pacientiCereri.loc_de_munca_pacient)") class="btn btn-success btn-circle"><i class="fa-solid fa-plus"></i></a>
+                        </td>
+                        </tr>
+
+                    }                   
+                
+            </tbody>
+        </table>
+      </div>
     </div>
 
       <div class="modal fade " id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -136,9 +173,58 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">   
-                        @using (Html.BeginForm("DeleteAccount", "Acasa", new{id_cont=100}, FormMethod.Post, true, new{id = "formDelete_pacient"}))
+                        @using (Html.BeginForm("DeleteAccount", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDelete_pacient"}))
                                 {
                             <p>Sunteți sigur că doriți să ștergeți acest cont?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                        
+@*                        <form asp-controller="Acasa" asp-action="Delete" method="delete" id="formDelete_pacient">                     
+                        </form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="modal fade " id="adaugaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Creeaza cont</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("CreatePacientAccount", "Acasa", new{string_date=""}, FormMethod.Post, true, new{id = "formCreate_pacient"}))
+                                {
+                            <p>Introduceți o parolă: </p>
+                            <input class="form-control" type="password" name="parola_cerere_pacient" id="parola_cerere_pacient"/>
+                            <input class="form-control" type="text" hidden name="date_pacient" id="date_pacient"/>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anulează</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonCreeazaPacient">Creează</button>
+                                  </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deconectare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("Deconectare", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDeconectare"}))
+                                {
+                            <p>Sunteți sigur că doriți să vă deconectați?</p>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
                                     <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
@@ -166,15 +252,10 @@
            <div class="mb-3">
             <label for="message-text" class="col-form-label">Alegeți tipul contului:</label>
                 <select name="tipuri" id="tipuri" onchange="selectareTip()">
-                  <option value="pacient">Pacient</option>
                   <option value="medic">Medic</option>
                   <option value="supraveghetor">Supraveghetor</option>
                   <option value="ingrijitor">Îngrijitor</option>
                 </select>
-          </div>
-
-          <div id="adaugare-pacient">
-              <partial name="_AdaugarePacient" />            
           </div>
 
           <div id="adaugare-medic">
@@ -207,101 +288,41 @@
         var valoare = document.getElementById("tipuri").value;
         document.getElementById("formular_adaugare").reset();
         document.getElementById("tipuri").value = valoare;
-        var adaugare_pacient = document.getElementById("adaugare-pacient");
         var adaugare_medic = document.getElementById("adaugare-medic");
         var adaugare_ingrijitor = document.getElementById("adaugare-ingrijitor");
         var adaugare_supraveghetor = document.getElementById("adaugare-supraveghetor");
-        if(valoare=="pacient")
-        {
-            adaugare_pacient.style.display= "block";
-            adaugare_medic.style.display= "none";
-            adaugare_ingrijitor.style.display= "none";
-            adaugare_supraveghetor.style.display= "none";
-        }
-        else if(valoare=="medic")
+        if(valoare=="medic")
         {
             adaugare_medic.style.display="block";
             adaugare_ingrijitor.style.display= "none";
             adaugare_supraveghetor.style.display= "none";
-            adaugare_pacient.style.display= "none";
         }
         else if(valoare=="ingrijitor")
         {
             adaugare_ingrijitor.style.display="block";
             adaugare_supraveghetor.style.display= "none";
-            adaugare_pacient.style.display= "none";
             adaugare_medic.style.display="none";
         }
         else if(valoare=="supraveghetor")
         {
             adaugare_supraveghetor.style.display="block";
-            adaugare_pacient.style.display= "none";
             adaugare_medic.style.display="none";
             adaugare_ingrijitor.style.display= "none";
         }
     }
 
-    /*
-    const onClick = function() {
-        var contId = document.getElementById(this.id).getAttribute("data-bs-id");
-        document.getElementById("formDelete_pacient").setAttribute("id_cont", contId);
-        document.getElementById("formDelete_pacient").setAttribute("action", "/" + contId);
-    }
-    if(document.getElementById('delete_medici')!=null)
-        document.getElementById('delete_medici').onclick = onClick;
-    if(document.getElementById('delete_pacienti')!=null)
-        document.getElementById('delete_pacienti').onclick = onClick;
-    if(document.getElementById('delete_ingrijitori')!=null)
-        document.getElementById('delete_ingrijitori').onclick = onClick;
-    if(document.getElementById('delete_supraveghetori')!=null)
-        document.getElementById('delete_supraveghetori').onclick = onClick;
 
-     */
-
-
-    function sendId(id_cont){ //, tip_cont
+    function sendId(id_cont){
 
         document.getElementById("formDelete_pacient").setAttribute("id_cont", id_cont);
         document.getElementById("formDelete_pacient").setAttribute("action", "/" + id_cont);
 
     }
 
-
-    //var deleteModalPacient = document.getElementById("deleteModal");
-    //deleteModalPacient.addEventListener("show.bs.modal", function (event) 
-    //{
-    //    var contId;
-
-    //    if(document.getElementById('delete_pacienti').clicked == true)
-    //    {
-    //        contId = document.getElementById("delete_pacienti").getAttribute("data-bs-id");
-
-    //    }
-    //    else if(document.getElementById('delete_medici').clicked == true)
-    //    {
-    //        contId = document.getElementById("delete_medici").getAttribute("data-bs-id");
-
-    //    }
-    //    else if(document.getElementById('delete_ingrijitori').clicked == true)
-    //    {
-    //        contId = document.getElementById("delete_ingrijitori").getAttribute("data-bs-id");
-
-    //    }
-    //    else if(document.getElementById('delete_supraveghetori').clicked == true)
-    //    {
-    //        contId = document.getElementById("delete_supraveghetori").getAttribute("data-bs-id");
-
-    //    }
-
-
-
-    //});
-
-
-    //$(document).on("click", "#delete_pacienti", function () {
-    //     var pacientId = $(this).data('data-bs-id');
-    //     $("#deleteModal #formDelete_pacient").setAttribute("id_pacient", pacientId);
-    //});
+    function sendData(data) {
+        document.getElementById("formCreate_pacient").setAttribute("string_date", data);
+        document.getElementById("date_pacient").value=data;
+    }
 
 
 </script>

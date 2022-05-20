@@ -5754,23 +5754,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iroxa\\.nuget\\packages\\": {},
+    "C:\\Users\\Maria\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\Teleasis-website.csproj",
+      "projectUniqueName": "C:\\Users\\Maria\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
       "projectName": "Teleasis-website",
-      "projectPath": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\Teleasis-website.csproj",
-      "packagesPath": "C:\\Users\\iroxa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\obj\\",
+      "projectPath": "C:\\Users\\Maria\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
+      "packagesPath": "C:\\Users\\Maria\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maria\\Source\\Repos\\Website-masterAn1Sem2\\Teleasis-website\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\iroxa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Maria\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5831,7 +5831,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

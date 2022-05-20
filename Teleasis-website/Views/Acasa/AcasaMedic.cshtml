@@ -5,7 +5,9 @@
 <div class="container-acasa">
     <div class="row">
         <h1 class="text-center titlu-acasa col-10 col-md-10 col-sm-10 col-lg-11">Listă Pacienți</h1>
-        
+         <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
+            <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
     </div>
 
     <div class="row linie_listaPacienti">
@@ -51,9 +53,9 @@
                    @foreach(var pacienti in ViewBag.pacientiLista)
                         {
                             <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>@(pacienti.CNP)</td>
+                            <td>@(pacienti.prenume_pacient)</td>
+                            <td>@(pacienti.nume_pacient)</td>
                             <td>@(pacienti.email_pacient)</td>
                             <td class="text-center">
                                 <a id="accesare_pacienti" role="button"  class="btn buton-accesare-pacient btn-circle">Accesare pacient</a>
@@ -66,6 +68,28 @@
             </table>
           </div>
     </div>
+
+    <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deconectare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("Deconectare", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDeconectare"}))
+                                {
+                            <p>Sunteți sigur că doriți să vă deconectați?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </div>
 
 

@@ -47,10 +47,10 @@ namespace Teleasis_website.Controllers
             var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
             var pacientiLista = query_pacienti.Select(item => new PacientModel
             {
-                nume_pacient = "",
-                prenume_pacient = "",
-                CNP = "",
-                email_pacient = item.Object.email,
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
                 id_pacient = item.Key
             }).ToList();
 
@@ -89,21 +89,33 @@ namespace Teleasis_website.Controllers
             }).ToList();
 
             ViewBag.ingrijitoriLista = ingrijitoriLista;
+
+            var query_cereri = await firebase.Child("Conturi/Administrator/Cereri/").OrderByKey().OnceAsync<dynamic>();
+            var cereriLista = query_cereri.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                email_pacient = item.Object.email_pacient,
+                CNP = item.Object.CNP,
+                judet_pacient = item.Object.judet_pacient,
+                oras_pacient = item.Object.oras_pacient,
+                strada_pacient = item.Object.strada_pacient,
+                numar_telefon_pacient = item.Object.numar_telefon_pacient,
+                profesie_pacient = item.Object.profesie_pacient,
+                loc_de_munca_pacient = item.Object.loc_de_munca_pacient,
+                id_medic = item.Object.id_medic
+            }).ToList();
+
+            ViewBag.cereriLista = cereriLista;
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> AcasaAdministrator(string tipuri, PacientModel pacientModel, MedicModel medicModel, IngrijitorModel ingrijitorModel, SupraveghetorModel supraveghetorModel)
+        public async Task<IActionResult> AcasaAdministrator(string tipuri, MedicModel medicModel, IngrijitorModel ingrijitorModel, SupraveghetorModel supraveghetorModel)
         {
 
             switch (tipuri)
             {
-                case "pacient":
-                    var result = await auth.CreateUserWithEmailAndPasswordAsync(pacientModel.email_pacient, pacientModel.parola_pacient);
-
-                    await firebase.Child("Conturi/Pacienti/" + result.User.LocalId + "/email").PutAsync<string>(pacientModel.email_pacient);
-
-                    break;
                 case "medic":
                     var medic = new
                     {
@@ -140,10 +152,10 @@ namespace Teleasis_website.Controllers
             var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
             var pacientiLista = query_pacienti.Select(item => new PacientModel
             {
-                nume_pacient = "",
-                prenume_pacient = "",
-                CNP = "",
-                email_pacient = item.Object.email,
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
                 id_pacient = item.Key
             }).ToList();
 
@@ -182,6 +194,24 @@ namespace Teleasis_website.Controllers
             }).ToList();
 
             ViewBag.ingrijitoriLista = ingrijitoriLista;
+
+            var query_cereri = await firebase.Child("Conturi/Administrator/Cereri/").OrderByKey().OnceAsync<dynamic>();
+            var cereriLista = query_cereri.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                email_pacient = item.Object.email_pacient,
+                CNP = item.Object.CNP,
+                judet_pacient = item.Object.judet_pacient,
+                oras_pacient = item.Object.oras_pacient,
+                strada_pacient = item.Object.strada_pacient,
+                numar_telefon_pacient = item.Object.numar_telefon_pacient,
+                profesie_pacient = item.Object.profesie_pacient,
+                loc_de_munca_pacient = item.Object.loc_de_munca_pacient,
+                id_medic = item.Object.id_medic
+            }).ToList();
+
+            ViewBag.cereriLista = cereriLista;
 
             return View();
 
@@ -290,6 +320,38 @@ namespace Teleasis_website.Controllers
         }
 
 
+        [HttpPost]
+        public async Task<ActionResult> CreatePacientAccount(string date_pacient, string parola_cerere_pacient)
+        {
+            AdaugarePacientModel pacient = new AdaugarePacientModel();
+            var date = date_pacient.Split("#");
+            pacient.id_medic = date[0];
+            pacient.CNP = date[1];
+            pacient.prenume_pacient = date[2];
+            pacient.nume_pacient = date[3];
+            pacient.email_pacient = date[4];
+            pacient.judet_pacient = date[5];
+            pacient.oras_pacient = date[6];
+            pacient.strada_pacient = date[7];
+            pacient.numar_telefon_pacient = date[8];
+            pacient.profesie_pacient = date[9];
+            pacient.loc_de_munca_pacient = date[10];
+            var result = await auth.CreateUserWithEmailAndPasswordAsync(pacient.email_pacient, parola_cerere_pacient);
+
+            await firebase.Child("Conturi/Pacienti/" + result.User.LocalId).PutAsync<AdaugarePacientModel>(pacient);
+
+            await firebase.Child("Conturi/Administrator/Cereri/" + pacient.CNP).DeleteAsync();
+
+            return Redirect("AcasaAdministrator");
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Deconectare()
+        {
+            HttpContext.Session.Remove("_UserToken");
+            return RedirectToAction("Autentificare", "Autentificare");
+        }
+
         public async Task<IActionResult> AdaugarePacient( string id_medic)
 		{
             
@@ -309,16 +371,28 @@ namespace Teleasis_website.Controllers
         {
             ViewBag.id_medic = medic_id;
             var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
-            var pacientiLista = query_pacienti.Select(item => new PacientModel
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+            List<AdaugarePacientModel> pacientiListaView = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = "",
-                prenume_pacient = "",
-                CNP = "",
-                email_pacient = item.Object.email,
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
+                id_medic=item.Object.id_medic,
                 id_pacient = item.Key
             }).ToList();
 
-            ViewBag.pacientiLista = pacientiLista;
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_medic.Equals(medic_id))
+                {
+                    pacientiListaView.Add(pacient);
+
+                }
+            }
+            ViewBag.pacientiLista = pacientiListaView;
             return View();
         }
 
