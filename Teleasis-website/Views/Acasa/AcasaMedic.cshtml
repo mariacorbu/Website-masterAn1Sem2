@@ -58,7 +58,7 @@
                             <td>@(pacienti.nume_pacient)</td>
                             <td>@(pacienti.email_pacient)</td>
                             <td class="text-center">
-                                <a id="accesare_pacienti" role="button"  class="btn buton-accesare-pacient btn-circle">Accesare pacient</a>
+                                <button id="accesare_pacienti" type="button" onclick="location.href='@Url.Action("AccesarePacient","Pacient",new { id_pacient = pacienti.id_pacient })'"  class="btn buton-accesare-pacient btn-circle">Accesare pacient</button>
                             </td>
                             </tr>
 

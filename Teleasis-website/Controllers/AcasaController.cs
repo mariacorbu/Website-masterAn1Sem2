@@ -227,19 +227,7 @@ namespace Teleasis_website.Controllers
                 {
                     await firebase.Child("Conturi/Pacienti/" + id_cont).DeleteAsync();
                 }
-            }
-            //var conturi = await firebase.Child("Conturi/").OrderByKey().OnceAsync<dynamic>();
-            //foreach (dynamic cont in conturi)
-            //{
-            //    var persoane = await firebase.Child("Conturi/" + cont.Key).OrderByKey().OnceAsync<dynamic>();
-            //    foreach (dynamic persoana in persoane)
-            //    {
-            //        if(persoana.Key.Equals(id_pacient))
-            //        {
-            //            await firebase.Child("Conturi/" + cont.Key + "/" + id_pacient).DeleteAsync();
-            //        }
-            //    }
-            //}            
+            }     
 
             var noduriMedici = await firebase.Child("Conturi/Medici").OrderByKey().OnceAsync<dynamic>();
             foreach (var medic in noduriMedici)
@@ -395,6 +383,8 @@ namespace Teleasis_website.Controllers
             ViewBag.pacientiLista = pacientiListaView;
             return View();
         }
+
+
 
     }
 }
