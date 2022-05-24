@@ -282,4 +282,17 @@ fieldset {
 #buton_editare{
     color: white;
 }
+
+#buton_salvare {
+    display:none;
+}
+#accesare_consultatie {
+    background-color: #3f7bff;
+    color:white;
+}
+
+#arhivare_consultatie {
+    background-color: #bb2d3b;
+    color: white;
+}
 /*----------------------*/

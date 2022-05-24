@@ -24,7 +24,7 @@
                     <legend class="col-11">Date demografice:</legend>
                     <div class="col-1 col-md-1 col-sm-1 col-lg-1">
                          <button type="button" class="btn btn-secondary" id="buton_editare"  onclick="editare_pacient()">Editare</button>
-                         <button class="btn btn-primary buton-adauga" type="submit">Salvare</button>
+                         <button class="btn btn-primary buton-adauga" id="buton_salvare" type="submit">Salvare</button>
                      @*   <a role="button" class="btn btn-warning btn-circle " id="buton_editare" onclick="editare_pacient()"><i class="fa-solid fa-pen"></i></a>
                         <a role="button" class="btn btn-warning btn-circle " id="buton_salvare" type="submit"><i class="fa-solid fa-floppy-disk"></i></a>
                    *@ </div>  
@@ -72,7 +72,7 @@
                         <label for="message-text" class="col-form-label">Județ:</label>
                         <br />
                         <div class="select_box">
-                            <select  disabled required value="@ViewBag.pacient.judet_pacient" name="judet_pacient" id="judet">
+                            <select disabled required value="@ViewBag.pacient.judet_pacient" name="judet_pacient" id="judet">
     	                        <option value="Alba">Alba</option>
     	                        <option value="Arges">Arges</option>
     	                        <option value="Arad">Arad</option>
@@ -166,8 +166,99 @@
        </form>
       
     </div>
-        
+       </br> 
     <div class="formular">
+        <fieldset>
+            <div class="row">
+                    <legend class="col-11">Istoric Medical:</legend>
+                    <div class="col-1 col-md-1 col-sm-1 col-lg-1">
+                        <a role="button" data-bs-toggle="modal"  data-bs-target="#AdaugaConsultatieModal" class="btn btn-adauga-verde btn-circle "><i class="fa-solid fa-plus"></i></a>
+                    </div>  
+                </div>
+            <div class="tab-content">
+              <div id="consultatii">
+                <table class="table table-striped" id="tabel-consultatii">
+                    <thead>
+                        <tr>
+                            <th>Data Consultatiei</th>
+                            <th>Diagnostic</th> 
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @foreach(var consultatie in ViewBag.listaConsultatii)
+                            {
+                                <tr>
+                                <td>@(consultatie.data_consultatie)</td>
+                                <td>@(consultatie.diagnostic_consultatie)</td>
+                                <td class="text-end">
+                                    <a role="button" id="accesare_consultatie" class="btn  btn-circle" data-toggle="tooltip" data-placement="bottom" title="Accesare Consultatie"><i class="fa-solid fa-eye"></i></a>
+                                    <a role="button" id="arhivare_consultatie" class="btn  btn-circle" data-bs-toggle="modal" onclick=sendId("@(consultatie.id_consultatie)#@(ViewBag.pacient.id_pacient)")  data-bs-target="#deleteModal" data-bs-id="@(consultatie.id_consultatie)" data-toggle="tooltip" data-placement="bottom" title="Arhivare Consultatie"><i class="fa-solid fa-box-archive"></i></a>
+
+                                   
+                           </td>
+                                </tr>
+
+                            }                   
+                
+                    </tbody>
+                </table>
+              </div>
+            </div>
+    </fieldset>
+
+    <div class="modal fade " id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ștergere cont</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("ArhiveazaConsultatie", "Pacient", new{id=""}, FormMethod.Post, true, new{id = "formArhivare_consultatie"}))
+                                {
+                            <p>Sunteți sigur că doriți să arhivați această consultație?</p>
+                                  <div class="modal-footer">
+                                    <input hidden id="hiddenIdPacient" value="@(ViewBag.pacient.id_pacient)"/>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="modal fade " id="AdaugaConsultatieModal" tabindex="-1" aria-labelledby="AdaugaConsultatieModal" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Creare consultatie</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          
+              @using (Html.BeginForm("AdaugareConsultatie", "Pacient", new{id_pacient=@ViewBag.pacient.id_pacient}, FormMethod.Post, true, new{id = "formAdaugareConsultatie"}))
+                 {
+
+                  <div id="adaugare-medic">
+                       <partial name="_AdaugareConsultatie" /> 
+                  </div>
+
+             
+                   <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+                    <button class="btn btn-primary" type="submit">Adaugă</button>
+                    </div>
+                    }
+     </div>
+        </div>
+      </div>
+</div>
 
 
     </div>
@@ -199,6 +290,9 @@
 
 
 <script>
+
+    document.getElementById("judet").value = "@(ViewBag.pacient.judet_pacient)";
+
     calculareVarstaSiDataNasterii();
     function is_valid_cnp(value) {
     var m;
@@ -290,11 +384,6 @@
         
     }
 
-    //function validate(id) {
-    //    var regex = /^[a-zA-Z ]{2,30}$/;
-    //    var ctrl =  document.getElementById(id);
-    //    return regex.test(ctrl.value);
-    //}
 
     function validareText(event, tip) {
         var element = document.getElementById(event.target.id);
@@ -338,16 +427,27 @@
 
     function editare_pacient()
     { 
-            var inputs = document.getElementsByTagName("input");
-            for (var i = 0; i < inputs.length; i++) { 
-                inputs[i].disabled = false;
-            }
-            document.getElementById("judet").disabled = false;             
+        var inputs = document.getElementsByTagName("input");
+        for (var i = 0; i < inputs.length; i++) { 
+            inputs[i].disabled = false;
+        }
+        document.getElementById("judet").disabled = false;             
            
+        document.getElementById("buton_editare").style.display = "none";
+        document.getElementById("buton_salvare").style.display = "initial";
+        document.getElementById("input-varsta-pacient").disabled = true;
+        document.getElementById("input-sex-pacient").disabled = true;
+        document.getElementById("input-nastere-pacient").disabled = true;
+    }
 
-       document.getElementById("input-varsta-pacient").disabled = true;
-       document.getElementById("input-sex-pacient").disabled = true;
-       document.getElementById("input-nastere-pacient").disabled = true;
+
+    function sendId(id){
+        var id_pacient ="";
+        var detrimis = id_pacient.concat("");
+        var detrimis2 = detrimis.concat(id);
+        document.getElementById("formArhivare_consultatie").setAttribute("id_consultatie", detrimis2);
+        document.getElementById("formArhivare_consultatie").setAttribute("action", "ArhiveazaConsultatie" + "/" + detrimis2);
+
     }
 
 </script>

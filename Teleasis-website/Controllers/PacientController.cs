@@ -4,6 +4,7 @@ using Firebase.Database.Query;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Teleasis_website.Models;
 
 namespace Teleasis_website.Controllers
@@ -103,6 +104,23 @@ namespace Teleasis_website.Controllers
                     ViewBag.pacient = pacient;
                 }
             }
+
+            var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<ConsultatieModel> listaConsultatii = new List<ConsultatieModel>();
+
+            listaConsultatii = query_consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                data_consultatie = item.Object.data_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie
+            }).ToList();
+            ViewBag.listaConsultatii = listaConsultatii;
+
             return View();
         }
 
@@ -128,8 +146,222 @@ namespace Teleasis_website.Controllers
             };
             await firebase.Child("Conturi/Pacienti/" + pacient.id_pacient).PutAsync<AdaugarePacientModel>(pacient);
 
+
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
+                id_medic = item.Object.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.judet_pacient,
+                oras_pacient = item.Object.oras_pacient,
+                strada_pacient = item.Object.strada_pacient,
+                numar_telefon_pacient = item.Object.numar_telefon_pacient,
+                profesie_pacient = item.Object.profesie_pacient,
+                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel p in pacientiLista)
+            {
+                if (p.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = p;
+                }
+            }
+
+            var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<ConsultatieModel> listaConsultatii = new List<ConsultatieModel>();
+
+            listaConsultatii = query_consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                data_consultatie = item.Object.data_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie
+            }).ToList();
+            ViewBag.listaConsultatii = listaConsultatii;
             return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
 
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AdaugareConsultatie(ConsultatieModel consultatie, string id_pacient) {
+            string cale = "Conturi/Pacienti/" + id_pacient + "/Consultatii";
+
+            var consultatii = await firebase.Child(cale).OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+           
+
+            if (!consultatii.Any())
+            {
+                //daca ii gol
+                consultatie.id_consultatie = "1";
+
+                await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii/1").PutAsync<ConsultatieModel>(consultatie);
+
+            }
+            else
+            {
+                List<ConsultatieModel> listaConsultatii = new List<ConsultatieModel>();
+
+                listaConsultatii = consultatii.Select(item => new ConsultatieModel
+                {
+                    id_consultatie = item.Key,
+                    motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                    simptome_consultatie = item.Object.simptome_consultatie,
+                    diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                    trimitere_consultatie = item.Object.trimitere_consultatie,
+                    retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                    data_consultatie = item.Object.data_consultatie
+                }).ToList();
+
+                int id = int.Parse(listaConsultatii[listaConsultatii.Count - 1].id_consultatie) + 1;
+                consultatie.id_consultatie = id.ToString();
+                await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii/" + id + "/").PutAsync<ConsultatieModel>(consultatie);
+
+            }
+
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
+                id_medic = item.Object.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.judet_pacient,
+                oras_pacient = item.Object.oras_pacient,
+                strada_pacient = item.Object.strada_pacient,
+                numar_telefon_pacient = item.Object.numar_telefon_pacient,
+                profesie_pacient = item.Object.profesie_pacient,
+                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+
+            var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<ConsultatieModel> listaConsultatii2 = new List<ConsultatieModel>();
+
+            listaConsultatii2 = query_consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                data_consultatie = item.Object.data_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie
+            }).ToList();
+            ViewBag.listaConsultatii = listaConsultatii2;
+            return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
+
+
+        }
+
+        [HttpPost("~/Pacient/ArhiveazaConsultatie/{id_consultatie}")]
+        public async Task<IActionResult> ArhiveazaConsultatie(string id_consultatie)
+        {
+            var splitul1 = id_consultatie.Split("!");
+            var splitul2 = splitul1[1].Split("#");
+            string id_cons = splitul2[0];
+            string id_pacient = splitul2[1];
+
+            ConsultatieModel c = new ConsultatieModel();
+
+            var consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+            List<ConsultatieModel> listaConsultatii = new List<ConsultatieModel>();
+
+            listaConsultatii = consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                data_consultatie = item.Object.data_consultatie
+            }).ToList();
+
+            foreach (ConsultatieModel consultatie in listaConsultatii)
+            {
+                if (consultatie.id_consultatie.Equals(id_cons))
+                {
+                    c = consultatie;
+                    await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ConsultatiiArhivate/" + id_cons + "/").PutAsync<ConsultatieModel>(c);
+
+                }
+            }
+
+
+            await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii/" + id_cons).DeleteAsync();
+
+
+
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
+                id_medic = item.Object.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.judet_pacient,
+                oras_pacient = item.Object.oras_pacient,
+                strada_pacient = item.Object.strada_pacient,
+                numar_telefon_pacient = item.Object.numar_telefon_pacient,
+                profesie_pacient = item.Object.profesie_pacient,
+                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+
+            var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<ConsultatieModel> listaConsultatii2 = new List<ConsultatieModel>();
+
+            listaConsultatii2 = query_consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                data_consultatie = item.Object.data_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie
+            }).ToList();
+            ViewBag.listaConsultatii = listaConsultatii2;
+            return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
         }
     }
 

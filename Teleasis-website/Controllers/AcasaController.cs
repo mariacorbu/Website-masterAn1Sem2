@@ -352,7 +352,7 @@ namespace Teleasis_website.Controllers
         {
             await firebase.Child("Conturi/Administrator/Cereri/" + pacient.CNP).PutAsync<AdaugarePacientModel>(pacient);
 
-            return View();
+            return RedirectToAction("AcasaMedic", "Acasa", new { medic_id = pacient.id_medic });
         }
 
         public async Task<IActionResult> AcasaMedic(string medic_id)
