@@ -279,13 +279,14 @@ namespace Teleasis_website.Controllers
 
         }
 
-        [HttpPost("~/Pacient/ArhiveazaConsultatie/{id_consultatie}")]
-        public async Task<IActionResult> ArhiveazaConsultatie(string id_consultatie)
+        [HttpPost("~/Pacient/ArhiveazaConsultatie/{id_uri}")]
+        public async Task<IActionResult> ArhiveazaConsultatie(string id_uri)
         {
-            var splitul1 = id_consultatie.Split("!");
-            var splitul2 = splitul1[1].Split("#");
-            string id_cons = splitul2[0];
-            string id_pacient = splitul2[1];
+            var splitul = id_uri.Split("#");
+            string id_cons = splitul[0];
+            string id_pacient = splitul[1];
+            Random rnd = new Random();
+
 
             ConsultatieModel c = new ConsultatieModel();
 
@@ -308,7 +309,7 @@ namespace Teleasis_website.Controllers
                 if (consultatie.id_consultatie.Equals(id_cons))
                 {
                     c = consultatie;
-                    await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ConsultatiiArhivate/" + id_cons + "/").PutAsync<ConsultatieModel>(c);
+                    await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ConsultatiiArhivate/" + rnd.Next(99999999) + "/").PutAsync<ConsultatieModel>(c);
 
                 }
             }
@@ -362,6 +363,31 @@ namespace Teleasis_website.Controllers
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii2;
             return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
+        }
+
+        public async Task<IActionResult> ArhivaConsultatii(string id_pacient, string nume_pacient, string prenume_pacient, string id_medic)
+        {
+            var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ConsultatiiArhivate").OrderByKey().OnceAsync<dynamic>();
+
+            List<ConsultatieModel> listaConsultatii = new List<ConsultatieModel>();
+
+            listaConsultatii = query_consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                data_consultatie = item.Object.data_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie
+            }).ToList();
+            ViewBag.listaConsultatii = listaConsultatii;
+            ViewBag.prenume_pacient = prenume_pacient;
+            ViewBag.nume_pacient = nume_pacient;
+            ViewBag.id_medic = id_medic;
+
+
+            return View();
         }
     }
 

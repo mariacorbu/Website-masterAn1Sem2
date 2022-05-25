@@ -193,7 +193,7 @@
                                 <td>@(consultatie.data_consultatie)</td>
                                 <td>@(consultatie.diagnostic_consultatie)</td>
                                 <td class="text-end">
-                                    <a role="button" id="accesare_consultatie" class="btn  btn-circle" data-toggle="tooltip" data-placement="bottom" title="Accesare Consultatie"><i class="fa-solid fa-eye"></i></a>
+                                    <a role="button" id="accesare_consultatie" class="btn  btn-circle" data-toggle="tooltip" data-bs-toggle="modal" onclick=sendIdConsultatie("@(consultatie.id_consultatie)#@(consultatie.motiv_prezentare_consultatie)#@(consultatie.data_consultatie)#@(consultatie.simptome_consultatie)#@(consultatie.diagnostic_consultatie)#@(consultatie.trimitere_consultatie)#@(consultatie.retete_generate_consultatie)") data-bs-target="#AccesareConsultatieModal" data-placement="bottom" title="Accesare Consultatie"><i class="fa-solid fa-eye"></i></a>
                                     <a role="button" id="arhivare_consultatie" class="btn  btn-circle" data-bs-toggle="modal" onclick=sendId("@(consultatie.id_consultatie)#@(ViewBag.pacient.id_pacient)")  data-bs-target="#deleteModal" data-bs-id="@(consultatie.id_consultatie)" data-toggle="tooltip" data-placement="bottom" title="Arhivare Consultatie"><i class="fa-solid fa-box-archive"></i></a>
 
                                    
@@ -220,7 +220,7 @@
                                 {
                             <p>Sunteți sigur că doriți să arhivați această consultație?</p>
                                   <div class="modal-footer">
-                                    <input hidden id="hiddenIdPacient" value="@(ViewBag.pacient.id_pacient)"/>
+                                    <input class="form-control" type="text" hidden name="id_uri" id="id_uri"/>
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
                                     <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
                                   </div>
@@ -255,6 +255,54 @@
                     <button class="btn btn-primary" type="submit">Adaugă</button>
                     </div>
                     }
+     </div>
+        </div>
+      </div>
+</div>
+
+
+ <div class="modal fade " id="AccesareConsultatieModal" tabindex="-1" aria-labelledby="AccesareConsultatieModal" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Accesare consultatie</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+                  <div id="adaugare-medic">
+                     <input class="form-control" type="text" hidden name="idCons" id="idCons"/>
+                       <div class="mb-3">
+                            <label class="col-form-label">Motivul Prezentării:</label>
+                            <textarea type="text" disabled class="form-control" id="input-motiv-prezentare1" name="motiv_prezentare_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Simptome:</label>
+                            <textarea type="text" disabled class="form-control" id="input-simptome1" name="simptome_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Diagnostic:</label>
+                            <textarea type="text" disabled class="form-control" id="input-diagnostic1" name="diagnostic_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label  class="col-form-label">Trimiteri:</label>
+                            <textarea type="text" disabled class="form-control" id="input-trimitere1" name="trimitere_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label  class="col-form-label">Rețete generate:</label>
+                            <textarea class="form-control" disabled type="text" id="input-retete-generate1" name="retete_generate_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label  class="col-form-label">Data consultație:</label>
+                            <input class="form-control" disabled type="date" id="input-data-consultatie1" name="data_consultatie"/>
+                        </div>
+                  </div>
+
+             
+                   <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+                  
+                    </div>
      </div>
         </div>
       </div>
@@ -442,12 +490,21 @@
 
 
     function sendId(id){
-        var id_pacient ="";
-        var detrimis = id_pacient.concat("");
-        var detrimis2 = detrimis.concat(id);
-        document.getElementById("formArhivare_consultatie").setAttribute("id_consultatie", detrimis2);
-        document.getElementById("formArhivare_consultatie").setAttribute("action", "ArhiveazaConsultatie" + "/" + detrimis2);
+        document.getElementById("formArhivare_consultatie").setAttribute("id_consultatie", id);
+        document.getElementById("formArhivare_consultatie").setAttribute("action", "ArhiveazaConsultatie" + "/" + id);
+        document.getElementById("id_uri").value = id;
 
+    }
+
+    function sendIdConsultatie(id){
+        var date =  id.split("#");
+        console.log(date[1]);
+        document.getElementById("input-motiv-prezentare1").innerText = date[1];
+        document.getElementById("input-data-consultatie1").value = date[2];
+        document.getElementById("input-simptome1").innerText = date[3];
+        document.getElementById("input-diagnostic1").innerText = date[4];
+        document.getElementById("input-trimitere1").innerText = date[5];
+        document.getElementById("input-retete-generate1").innerText = date[6];
     }
 
 </script>
