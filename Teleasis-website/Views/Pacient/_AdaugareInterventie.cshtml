@@ -1,0 +1,18 @@
+﻿@model Teleasis_website.Models.InterventieModel
+<div class="mb-3">
+    <label for="message-text" class="col-form-label">Alegeți tipul intervenției:</label>
+    <select name="tip" id="tipuri_interventii">
+        <option value="manopera">Manopera</option>
+        <option value="interventie">Intervenție</option>
+        <option value="tratament">Tratament</option>
+    </select>
+</div>
+
+<div class="mb-3">
+    <label for="message-text" class="col-form-label">Descriere:</label>
+    <input type="text" class="form-control" id="input-descriere" name="descriere"/>
+</div>
+<div class="mb-3">
+    <label for="message-text" class="col-form-label">Stadiu:</label>
+    <input type="text" disabled class="form-control" id="input-stadiu" name="stadiu" value="Necompletat"/>
+</div>

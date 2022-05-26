@@ -1,0 +1,196 @@
+﻿@{
+    ViewData["Title"] = "Recomandări și intervenții";
+}
+<div class="container-acasa">
+    <div class="row">
+        <h1 class="text-center titlu-acasa col-10 col-md-10 col-sm-10 col-lg-11">Recomandări și intervenții</h1>
+        <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
+             <a role="button" data-bs-toggle="modal"  data-bs-target="#AdaugareRecomandareInterventieModal" class="btn btn-adauga-verde btn-circle "><i class="fa-solid fa-plus"></i></a>
+            <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+        </div>
+</div>
+@*
+    @if (TempData["Mesaj"] != null)  
+        {  
+            <script type="text/javascript">  
+                window.onload = function () {  
+                    alert("@TempData["Mesaj"]");  
+                };  
+            </script>  
+        }  *@
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="recomadari-pacient-tab" data-bs-toggle="tab" data-bs-target="#recomandari-pacient" type="button" role="tab" aria-controls="recomandari-pacienti" aria-selected="true">Recomandări pacient</button>
+      <li class="nav-item" role="presentation">
+         <button class="nav-link" id="interventii-ingrijitor-tab" data-bs-toggle="tab" data-bs-target="#interventii-ingrijitor" type="button" role="tab" aria-controls="interventii-ingrijitor" aria-selected="false">Intervenții îngrijitor</button>
+    </ul>
+
+    <div class="tab-content">
+      <div id="recomandari-pacient" class="tab-pane fade show active" role="tabpanel" aria-labelledby="recomandari-pacient-tab">
+        @*<h3 class="titlu-tab">Pacienți</h3>*@
+        <table class="table table-striped" id="tabel-recomandari">
+            <thead>
+                <tr>
+                    <th>Tipul recomandării</th>
+                    <th>Durata</th>
+                    <th>Alte indicații</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+              @* @foreach(var recomandare in ViewBag.recomandariLista)
+                    {
+                        <tr>
+                        <td>@(recomandare.tipul_recomandarii)</td>
+                        <td>@(recomandare.durata)</td>
+                        <td>@(recomandare.alte_indicatii)</td>
+                        <td>
+                            <a id="delete_recomandare" role="button" data-bs-toggle="modal"  data-bs-target="#deleteRecomandareModal" onclick=sendId("@(recomandare.id_recomandare)") data-bs-id="@(recomandare.id_recomandare)" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                        </td>
+                        </tr>
+
+                    }                   
+                *@
+            </tbody>
+        </table>
+      </div>
+      <div id="interventii-ingrijitor" class="tab-pane fade" role="tabpanel" aria-labelledby="interventii-ingrijitor-tab">
+        <table class="table table-striped" id="tabel-interventii">
+            <thead>
+                <tr>
+                    <th>Tip</th> @* interventie/manopera/tratament *@
+                    <th>Descriere</th>
+                    <th>Stadiu</th> @* complet/incomplet *@
+                    
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+             @*  @foreach(var interventie in ViewBag.interventiiLista)
+                    {
+                        <tr>
+                        <td>@(interventie.tip)</td>
+                        <td>@(interventie.descriere)</td>
+                        <td>@(interventie.stadiu)</td>
+                        
+                        <td>
+                            <a  id="delete_interventie" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal" onclick=sendId("@(interventie.id_interventie)")  data-bs-target="#deleteInterventieModal" data-bs-id="@(interventie.id_interventie)" ><i class="fas fa-trash"></i></a>
+                        </td>
+                        </tr>
+
+                    }   *@   
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+      <div class="modal fade " id="deleteRecomandariModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ștergere recomandare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("StergereRecomandare", "Pacient", new{id_recomandare=""}, FormMethod.Post, true, new{id = "formDelete_recomandare"}))
+                                {
+                            <p>Sunteți sigur că doriți să ștergeți această recomandare?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaRecomandare">Da</button>
+                                  </div>
+                        }
+                        
+@*                        <form asp-controller="Acasa" asp-action="Delete" method="delete" id="formDelete_pacient">                     
+                        </form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deconectare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("Deconectare", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDeconectare"}))
+                                {
+                            <p>Sunteți sigur că doriți să vă deconectați?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                        
+@*                        <form asp-controller="Acasa" asp-action="Delete" method="delete" id="formDelete_pacient">                     
+                        </form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<div class="modal fade " id="AdaugareRecomandareInterventieModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="exampleModalLabel">Adăugare</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          
+         <form id="formular_adaugare" method="post" autocomplete="off">
+             <input type="text" hidden class="form-control" id="input-id-pacient" name="id_pacient" value="@(ViewBag.id_pacient)"/>
+             <input type="text" hidden class="form-control" id="input-id-ingrijitor" name="id_ingrijitor" value="@(ViewBag.id_ingrijitor)"/>
+           <div class="mb-3">
+            <label for="message-text" class="col-form-label">Alegeți tipul:</label>
+                <select name="tipuri" id="tipuri" onchange="selectareTip()">
+                  <option value="recomandare">Recomandare</option>
+                  <option value="interventie">Intervenție</option>
+                </select>
+          </div>
+          <div id="adaugare-recomandare">
+               <partial name="_AdaugareRecomandare" /> 
+          </div>
+          <div id="adaugare-interventie">
+               <partial name="_AdaugareInterventie" /> 
+          </div>
+           <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+            <button class="btn btn-primary" type="submit">Adaugă</button>
+         </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<script>
+
+     function selectareTip(){
+        var valoare = document.getElementById("tipuri").value;
+        document.getElementById("formular_adaugare").reset();
+        document.getElementById("tipuri").value = valoare;
+        var adaugare_recomandare = document.getElementById("adaugare-recomandare");
+        var adaugare_interventie = document.getElementById("adaugare-interventie");
+        if(valoare=="recomandare")
+        {
+            adaugare_recomandare.style.display="block";
+            adaugare_interventie.style.display= "none";
+        }
+        else if(valoare=="interventie")
+        {
+            adaugare_interventie.style.display= "block";
+            adaugare_recomandare.style.display="none";
+        }
+    }
+
+</script>

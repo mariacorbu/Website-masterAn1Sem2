@@ -171,6 +171,10 @@ input[type=number] {
     outline: 0;
     box-shadow: none;
 }
+
+#buton_sortare_za{
+    display:none;
+}
 /*-----------------------*/
 
 /*
@@ -296,3 +300,11 @@ fieldset {
     color: white;
 }
 /*----------------------*/
+
+/*---------Recomandari si interventii-------------*/
+
+#adaugare-interventie{
+    display:none;
+}
+
+/*---------END Recomandari si interventii-------------*/

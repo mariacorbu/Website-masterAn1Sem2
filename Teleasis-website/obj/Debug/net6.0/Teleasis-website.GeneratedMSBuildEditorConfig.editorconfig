@@ -27,6 +27,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQWRhdWdhcmVQYWNpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Maria/source/repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/ArhivaPacienti.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQXJoaXZhUGFjaWVudGkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Maria/source/repos/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareIngrijitor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcX0FkYXVnYXJlSW5ncmlqaXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -55,8 +59,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxGaXNhUGFjaWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Maria/source/repos/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/RecomandariSiInterventii.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxSZWNvbWFuZGFyaVNpSW50ZXJ2ZW50aWkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Maria/source/repos/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_AdaugareConsultatie.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfQWRhdWdhcmVDb25zdWx0YXRpZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Maria/source/repos/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_AdaugareInterventie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfQWRhdWdhcmVJbnRlcnZlbnRpZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Maria/source/repos/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_AdaugareRecomandare.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfQWRhdWdhcmVSZWNvbWFuZGFyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Maria/source/repos/Website-masterAn1Sem2/Teleasis-website/Views/Shared/Error.cshtml]

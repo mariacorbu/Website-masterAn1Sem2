@@ -166,6 +166,16 @@
        </form>
       
     </div>
+
+        @if (TempData["Mesaj"] != null)  
+        {  
+            <script type="text/javascript">  
+                window.onload = function () {  
+                    alert("@TempData["Mesaj"]");  
+                };  
+            </script>  
+        }  
+
        </br> 
     <div class="formular">
         <fieldset>
@@ -212,7 +222,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Ștergere cont</h5>
+                        <h5 class="modal-title">Arhivare consultație</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">   

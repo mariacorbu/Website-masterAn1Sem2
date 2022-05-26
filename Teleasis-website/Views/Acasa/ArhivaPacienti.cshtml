@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Arhivă pacienți";
+}
+
+<div class="container-acasa" id="container-adaugare-pacienti">
+    <div class="formular formular-accesare">
+        <div class="row">           
+            <div class="col-1 col-md-1 col-sm-1 col-lg-1 div-logo">
+                <a href="@Url.Action("AcasaMedic", "Acasa", new{medic_id = @ViewBag.id_medic})"><img src="~/images/logo.svg"/></a>
+            </div>
+            <h1 class="text-center titlu-acasa col-10 titlu-accesare">Arhivă Pacienți</h1>        
+            <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
+                <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>        
+        </div>
+
+
+          <div class="formular">
+        <fieldset>
+            <div class="tab-content">
+              <div id="consultatii">
+                <table class="table table-striped" id="tabel-consultatii">
+                    <thead>
+                        <tr>
+                            <th>CNP</th>
+                            <th>Nume</th> 
+                            <th>Prenume</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @foreach(var pacient in ViewBag.pacientiLista)
+                            {
+                                <tr>
+                                <td>@(pacient.CNP)</td>
+                                <td>@(pacient.nume_pacient)</td>
+                                <td>@(pacient.prenume_pacient)</td>
+                               </tr>
+
+                            }                   
+                
+                    </tbody>
+                </table>
+              </div>
+            </div>
+    </fieldset>
+    </div>
+    </div>
+
+
+    <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deconectare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("Deconectare", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDeconectare"}))
+                                {
+                            <p>Sunteți sigur că doriți să vă deconectați?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>

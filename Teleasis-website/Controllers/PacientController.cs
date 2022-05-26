@@ -190,6 +190,9 @@ namespace Teleasis_website.Controllers
                 retete_generate_consultatie = item.Object.retete_generate_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii;
+
+            TempData["Mesaj"] = "Modificari salvate.";
+
             return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
 
         }
@@ -199,8 +202,6 @@ namespace Teleasis_website.Controllers
             string cale = "Conturi/Pacienti/" + id_pacient + "/Consultatii";
 
             var consultatii = await firebase.Child(cale).OrderByKey().StartAt("1").OnceAsync<dynamic>();
-
-           
 
             if (!consultatii.Any())
             {
@@ -274,8 +275,10 @@ namespace Teleasis_website.Controllers
                 retete_generate_consultatie = item.Object.retete_generate_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii2;
-            return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
 
+            TempData["Mesaj"] = "Consultatie adaugata.";
+
+            return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
 
         }
 
@@ -362,6 +365,9 @@ namespace Teleasis_website.Controllers
                 retete_generate_consultatie = item.Object.retete_generate_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii2;
+
+            TempData["Mesaj"] = "Consultatie arhivata.";
+
             return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
         }
 
@@ -389,6 +395,74 @@ namespace Teleasis_website.Controllers
 
             return View();
         }
+
+        [HttpPost("~/Pacient/ArhivarePacient/{id_uri}")]
+        public async Task<IActionResult> ArhivarePacient(string id_uri)
+        {
+            var splitul = id_uri.Split("#");
+            string id_pacient = splitul[0];
+            string id_medic = splitul[1];
+
+            List<AdaugarePacientModel> pacient = new List<AdaugarePacientModel>();
+
+            var pacienti = await firebase.Child("Conturi/Pacienti/").OrderByKey().OnceAsync<dynamic>();
+
+            pacient = pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
+                id_medic = item.Object.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.judet_pacient,
+                oras_pacient = item.Object.oras_pacient,
+                strada_pacient = item.Object.strada_pacient,
+                numar_telefon_pacient = item.Object.numar_telefon_pacient,
+                profesie_pacient = item.Object.profesie_pacient,
+                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel p in pacient)
+            {
+                if (p.id_pacient.Equals(id_pacient))
+                {
+                    await firebase.Child("Conturi/Medici/" + id_medic + "/PacientiArhivati/" + id_pacient + "/").PutAsync<AdaugarePacientModel>(p);
+                }
+            }
+
+
+            await firebase.Child("Conturi/Pacienti/" + id_pacient).DeleteAsync();
+
+            TempData["Mesaj"] = "Pacient arhivat.";
+
+            return RedirectToAction("AcasaMedic", "Acasa", new { medic_id = id_medic });
+        }
+
+        public async Task<IActionResult> RecomandariSiInterventii(string id_pacient, string id_ingrijitor)
+        {
+            ViewBag.id_pacient=id_pacient;
+            ViewBag.id_ingrijitor = id_ingrijitor;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RecomandariSiInterventii(string tipuri, InterventieModel interventie, RecomandareModel recomandare)
+        {
+            switch (tipuri)
+            {
+                case "recomandare":
+                    await firebase.Child("Conturi/Pacienti/"+recomandare.id_pacient + "/Recomandari/"+recomandare.id_recomandare).PutAsync<RecomandareModel>(recomandare);
+                    break;
+                case "interventie":
+                    await firebase.Child("Conturi/Ingrijitori/" + interventie.id_ingrijitor + "/Interventii/"+interventie.id_interventie).PutAsync<InterventieModel>(interventie);
+                    break;
+            }
+
+            return View();
+        }
+
+
     }
 
 }

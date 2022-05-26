@@ -213,6 +213,8 @@ namespace Teleasis_website.Controllers
 
             ViewBag.cereriLista = cereriLista;
 
+            TempData["Mesaj"] = "Cont creat.";
+
             return View();
 
         }
@@ -302,6 +304,8 @@ namespace Teleasis_website.Controllers
 
             ViewBag.ingrijitoriLista = ingrijitoriLista;
 
+            TempData["Mesaj"] = "Cont sters.";
+
             return Redirect("Acasa/AcasaAdministrator");
 
 
@@ -330,6 +334,8 @@ namespace Teleasis_website.Controllers
 
             await firebase.Child("Conturi/Administrator/Cereri/" + pacient.CNP).DeleteAsync();
 
+            TempData["Mesaj"] = "Cont creat.";
+
             return Redirect("AcasaAdministrator");
         }
 
@@ -344,6 +350,32 @@ namespace Teleasis_website.Controllers
 		{
             
             ViewBag.IdMedic = id_medic;
+
+            var query_ingrijitori = await firebase.Child("Conturi/Ingrijitori").OrderByKey().OnceAsync<dynamic>();
+            var query_supraveghetori = await firebase.Child("Conturi/Supraveghetori").OrderByKey().OnceAsync<dynamic>();
+
+            List<IngrijitorModel> ingrijitoriLista = new List<IngrijitorModel>();
+            List<SupraveghetorModel> supraveghetoriLista= new List<SupraveghetorModel>();
+
+            ingrijitoriLista = query_ingrijitori.Select(item => new IngrijitorModel
+            {
+                nume_ingrijitor = item.Object.nume_ingrijitor,
+                prenume_ingrijitor = item.Object.prenume_ingrijitor,
+                email_ingrijitor = item.Object.email_ingrijitor,
+                id_ingrijitor = item.Key
+            }).ToList();
+
+            supraveghetoriLista = query_supraveghetori.Select(item => new SupraveghetorModel
+            {
+                nume_supraveghetor = item.Object.nume_supraveghetor,
+                prenume_supraveghetor = item.Object.prenume_supraveghetor,
+                email_supraveghetor = item.Object.email_supraveghetor,
+                id_supraveghetor = item.Key
+            }).ToList();
+
+            ViewBag.ingrijitoriLista=ingrijitoriLista;
+            ViewBag.supraveghetoriLista = supraveghetoriLista;
+            
             return View();
 		}
 
@@ -351,6 +383,8 @@ namespace Teleasis_website.Controllers
         public async Task<IActionResult> AdaugarePacient(AdaugarePacientModel pacient)
         {
             await firebase.Child("Conturi/Administrator/Cereri/" + pacient.CNP).PutAsync<AdaugarePacientModel>(pacient);
+
+            TempData["Mesaj"] = "Cerere inregistrata.";
 
             return RedirectToAction("AcasaMedic", "Acasa", new { medic_id = pacient.id_medic });
         }
@@ -384,7 +418,27 @@ namespace Teleasis_website.Controllers
             return View();
         }
 
+        public async Task<IActionResult> ArhivaPacienti(string id_medic)
+        {
+            ViewBag.id_medic = id_medic;
+            var query_pacienti = await firebase.Child("Conturi/Medici/"+id_medic+"/PacientiArhivati/").OrderByKey().OnceAsync<dynamic>();
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+            
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
+                id_medic = item.Object.id_medic,
+                id_pacient = item.Key
+            }).ToList();
 
+            ViewBag.pacientiLista = pacientiLista;
+
+            return View();
+
+        }
 
     }
 }

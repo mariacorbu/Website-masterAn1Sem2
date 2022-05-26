@@ -192,10 +192,10 @@
         <div class="modal-footer butoane_adauga_pacient butoane_accesare_pacient">
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("FisaPacient","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient })'">Vizualizare fișă</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button">Vizualizare grafice/rapoarte</button>
-             <button class="btn btn-primary buton-adauga buton-accesare" type="button">Recomandări și intervenții</button>
+             <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("RecomandariSiInterventii","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient, id_ingrijitor = @ViewBag.pacient.id_ingrijitor })'">Recomandări și intervenții</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("ArhivaConsultatii","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient, nume_pacient = @ViewBag.pacient.nume_pacient, prenume_pacient = @ViewBag.pacient.prenume_pacient, id_medic=@ViewBag.pacient.id_medic })'">Arhivă consultații</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button">Alarme</button>
-             <button class="btn btn-primary buton-adauga buton-accesare" type="button">Arhivare pacient</button>
+             <button class="btn btn-primary buton-adauga buton-accesare" type="button" data-bs-target="#ArhivarePacientModal" data-bs-toggle="modal" onclick=sendId("@(ViewBag.pacient.id_pacient)#@(ViewBag.pacient.id_medic)")>Arhivare pacient</button>
         </div>
 
 
@@ -224,4 +224,38 @@
             </div>
         </div>
 
+         <div class="modal fade " id="ArhivarePacientModal" tabindex="-1" aria-labelledby="ArhivarePacientModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Arhivare pacient</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("ArhivarePacient", "Pacient", new{id_pacient=""}, FormMethod.Post, true, new{id = "formArhivare_pacient"}))
+                                {
+                            <p>Sunteți sigur că doriți să arhivați acest pacient?</p>
+                                  <div class="modal-footer">
+                                    <input class="form-control" type="text" hidden name="id_uri" id="id_uri"/>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 </div>
+
+<script>
+
+    function sendId(id){
+        document.getElementById("formArhivare_pacient").setAttribute("id_pacient", id);
+        document.getElementById("formArhivare_pacient").setAttribute("action", "ArhivarePacient" + "/" + id);
+        document.getElementById("id_uri").value = id;
+    }
+
+</script>

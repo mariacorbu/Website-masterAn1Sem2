@@ -12,5 +12,7 @@
         public string profesie_pacient { get; set; }
         public string loc_de_munca_pacient { get; set; }
         public string id_medic { get; set; }
+        public string id_supraveghetor { get; set; }
+        public string id_ingrijitor { get; set; }
     }
 }

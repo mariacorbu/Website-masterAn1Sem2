@@ -149,6 +149,25 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Alegeți îngrijitorul:</label>
+                            <select name="id_ingrijitor" id="ingrijitori">
+                            @foreach(var ingrijitor in ViewBag.ingrijitoriLista){
+                              <option value="@(ingrijitor.id_ingrijitor)">@(ingrijitor.nume_ingrijitor) @(ingrijitor.prenume_ingrijitor)</option>
+                            }
+                            </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Alegeți supraveghetorul:</label>
+                            <select name="id_supraveghetor" id="supraveghetori">
+                              @foreach(var supraveghetor in ViewBag.supraveghetoriLista){
+                              <option value="@(supraveghetor.id_supraveghetor)">@(supraveghetor.nume_supraveghetor) @(supraveghetor.prenume_supraveghetor)</option>
+                            }
+                            </select>
+                    </div>
+                </div>
+
             </fieldset>
 
             <br />

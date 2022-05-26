@@ -10,6 +10,15 @@
         </div>
 </div>
 
+    @if (TempData["Mesaj"] != null)  
+        {  
+            <script type="text/javascript">  
+                window.onload = function () {  
+                    alert("@TempData["Mesaj"]");  
+                };  
+            </script>  
+        }  
+
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item" role="presentation">
           <button class="nav-link active" id="pacienti-tab" data-bs-toggle="tab" data-bs-target="#pacienti" type="button" role="tab" aria-controls="pacienti" aria-selected="true">Pacienți</button>
