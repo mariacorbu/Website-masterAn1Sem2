@@ -58,6 +58,7 @@ namespace Teleasis_website.Controllers
                 judet_pacient = item.Object.judet_pacient,
                 oras_pacient = item.Object.oras_pacient,
                 strada_pacient = item.Object.strada_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
                 numar_telefon_pacient = item.Object.numar_telefon_pacient,
                 profesie_pacient = item.Object.profesie_pacient,
                 loc_de_munca_pacient = item.Object.loc_de_munca_pacient
@@ -92,6 +93,7 @@ namespace Teleasis_website.Controllers
                 judet_pacient = item.Object.judet_pacient,
                 oras_pacient = item.Object.oras_pacient,
                 strada_pacient = item.Object.strada_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
                 numar_telefon_pacient = item.Object.numar_telefon_pacient,
                 profesie_pacient = item.Object.profesie_pacient,
                 loc_de_munca_pacient = item.Object.loc_de_munca_pacient
@@ -161,6 +163,7 @@ namespace Teleasis_website.Controllers
                 id_pacient = item.Key,
                 judet_pacient = item.Object.judet_pacient,
                 oras_pacient = item.Object.oras_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
                 strada_pacient = item.Object.strada_pacient,
                 numar_telefon_pacient = item.Object.numar_telefon_pacient,
                 profesie_pacient = item.Object.profesie_pacient,
@@ -198,7 +201,8 @@ namespace Teleasis_website.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdaugareConsultatie(ConsultatieModel consultatie, string id_pacient) {
+        public async Task<IActionResult> AdaugareConsultatie(ConsultatieModel consultatie, string id_pacient)
+        {
             string cale = "Conturi/Pacienti/" + id_pacient + "/Consultatii";
 
             var consultatii = await firebase.Child(cale).OrderByKey().StartAt("1").OnceAsync<dynamic>();
@@ -247,6 +251,7 @@ namespace Teleasis_website.Controllers
                 judet_pacient = item.Object.judet_pacient,
                 oras_pacient = item.Object.oras_pacient,
                 strada_pacient = item.Object.strada_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
                 numar_telefon_pacient = item.Object.numar_telefon_pacient,
                 profesie_pacient = item.Object.profesie_pacient,
                 loc_de_munca_pacient = item.Object.loc_de_munca_pacient
@@ -337,6 +342,7 @@ namespace Teleasis_website.Controllers
                 judet_pacient = item.Object.judet_pacient,
                 oras_pacient = item.Object.oras_pacient,
                 strada_pacient = item.Object.strada_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
                 numar_telefon_pacient = item.Object.numar_telefon_pacient,
                 profesie_pacient = item.Object.profesie_pacient,
                 loc_de_munca_pacient = item.Object.loc_de_munca_pacient
@@ -418,6 +424,7 @@ namespace Teleasis_website.Controllers
                 judet_pacient = item.Object.judet_pacient,
                 oras_pacient = item.Object.oras_pacient,
                 strada_pacient = item.Object.strada_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
                 numar_telefon_pacient = item.Object.numar_telefon_pacient,
                 profesie_pacient = item.Object.profesie_pacient,
                 loc_de_munca_pacient = item.Object.loc_de_munca_pacient
@@ -441,7 +448,36 @@ namespace Teleasis_website.Controllers
 
         public async Task<IActionResult> RecomandariSiInterventii(string id_pacient, string id_ingrijitor)
         {
-            ViewBag.id_pacient=id_pacient;
+            List<RecomandareModel> lista_recomandari = new List<RecomandareModel>();
+            List<InterventieModel> lista_interventii = new List<InterventieModel>();
+
+            var recomandare = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Recomandari").OrderByKey().OnceAsync<dynamic>();
+            var interventie = await firebase.Child("Conturi/Ingrijitori/" + id_ingrijitor + "/Interventii").OrderByKey().OnceAsync<dynamic>();
+
+            lista_recomandari = recomandare.Select(item => new RecomandareModel
+            {
+                alte_indicatii = item.Object.alte_indicatii,
+                durata = item.Object.durata,
+                id_recomandare = item.Key,
+                id_pacient = item.Object.id_pacient,
+                tipul_recomandarii = item.Object.tipul_recomandarii
+            }).ToList();
+
+            lista_interventii = interventie.Select(item => new InterventieModel
+            {
+                descriere = item.Object.descriere,
+                id_interventie = item.Key,
+                id_ingrijitor = item.Object.id_ingrijitor,
+                id_pacient = item.Object.id_pacient,
+                tip = item.Object.tip,
+                stadiu = item.Object.stadiu
+            }).ToList();
+
+            ViewBag.recomandariLista = lista_recomandari;
+            ViewBag.interventiiLista = lista_interventii;
+
+
+            ViewBag.id_pacient = id_pacient;
             ViewBag.id_ingrijitor = id_ingrijitor;
             return View();
         }
@@ -449,20 +485,234 @@ namespace Teleasis_website.Controllers
         [HttpPost]
         public async Task<IActionResult> RecomandariSiInterventii(string tipuri, InterventieModel interventie, RecomandareModel recomandare)
         {
+            Random rnd = new Random();
+            recomandare.id_recomandare = rnd.Next(99999).ToString();
+            interventie.id_interventie = rnd.Next(99999).ToString();
+            interventie.stadiu = "Necompletat";
             switch (tipuri)
             {
                 case "recomandare":
-                    await firebase.Child("Conturi/Pacienti/"+recomandare.id_pacient + "/Recomandari/"+recomandare.id_recomandare).PutAsync<RecomandareModel>(recomandare);
+                    await firebase.Child("Conturi/Pacienti/" + recomandare.id_pacient + "/Recomandari/" + recomandare.id_recomandare).PutAsync<RecomandareModel>(recomandare);
+                    TempData["Mesaj"] = "Recomandarea s-a adaugat cu succes!";
+
                     break;
                 case "interventie":
-                    await firebase.Child("Conturi/Ingrijitori/" + interventie.id_ingrijitor + "/Interventii/"+interventie.id_interventie).PutAsync<InterventieModel>(interventie);
+                    await firebase.Child("Conturi/Ingrijitori/" + interventie.id_ingrijitor + "/Interventii/" + interventie.id_interventie).PutAsync<InterventieModel>(interventie);
+                    TempData["Mesaj"] = "Interventia s-a adaugat cu succes!";
+
                     break;
             }
+
+            List<RecomandareModel> lista_recomandari = new List<RecomandareModel>();
+            List<InterventieModel> lista_interventii = new List<InterventieModel>();
+
+            var query_recomandare = await firebase.Child("Conturi/Pacienti/" + recomandare.id_pacient + "/Recomandari").OrderByKey().OnceAsync<dynamic>();
+            var query_interventie = await firebase.Child("Conturi/Ingrijitori/" + interventie.id_ingrijitor + "/Interventii").OrderByKey().OnceAsync<dynamic>();
+
+            lista_recomandari = query_recomandare.Select(item => new RecomandareModel
+            {
+                alte_indicatii = item.Object.alte_indicatii,
+                durata = item.Object.durata,
+                id_recomandare = item.Key,
+                id_pacient = item.Object.id_pacient,
+                tipul_recomandarii = item.Object.tipul_recomandarii
+            }).ToList();
+
+            lista_interventii = query_interventie.Select(item => new InterventieModel
+            {
+                descriere = item.Object.descriere,
+                id_interventie = item.Key,
+                id_ingrijitor = item.Object.id_ingrijitor,
+                id_pacient = item.Object.id_pacient,
+                tip = item.Object.tip,
+                stadiu = item.Object.stadiu
+            }).ToList();
+
+            ViewBag.recomandariLista = lista_recomandari;
+            ViewBag.interventiiLista = lista_interventii;
+            ViewBag.id_pacient = recomandare.id_pacient;
+            ViewBag.id_ingrijitor = interventie.id_ingrijitor;
 
             return View();
         }
 
+        [HttpPost("~/Pacient/StergereRecomandare/{id_uriRecomandari}")]
+        public async Task<IActionResult> StergereRecomandare(string id_uriRecomandari)
+        {
+            var splitul = id_uriRecomandari.Split("#");
+            string id_recomandare = splitul[0];
+            string id_pacient = splitul[1];
+            string id_ingrijitor = "";
+            await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Recomandari/" + id_recomandare).DeleteAsync();
 
+
+            List<RecomandareModel> lista_recomandari = new List<RecomandareModel>();
+            var recomandari = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Recomandari").OrderByKey().OnceAsync<dynamic>();
+
+            lista_recomandari = recomandari.Select(item => new RecomandareModel
+            {
+                alte_indicatii = item.Object.alte_indicatii,
+                durata = item.Object.durata,
+                id_recomandare = item.Key,
+                id_pacient = item.Object.id_pacient,
+                tipul_recomandarii = item.Object.tipul_recomandarii
+            }).ToList();
+
+
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
+                id_medic = item.Object.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.judet_pacient,
+                oras_pacient = item.Object.oras_pacient,
+                strada_pacient = item.Object.strada_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
+                numar_telefon_pacient = item.Object.numar_telefon_pacient,
+                profesie_pacient = item.Object.profesie_pacient,
+                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    id_ingrijitor = pacient.id_ingrijitor;
+                }
+            }
+
+            List<InterventieModel> lista_interventii = new List<InterventieModel>();
+            var query_interventie = await firebase.Child("Conturi/Ingrijitori/" + id_ingrijitor + "/Interventii").OrderByKey().OnceAsync<dynamic>();
+
+            lista_interventii = query_interventie.Select(item => new InterventieModel
+            {
+                descriere = item.Object.descriere,
+                id_interventie = item.Key,
+                id_ingrijitor = item.Object.id_ingrijitor,
+                id_pacient = item.Object.id_pacient,
+                tip = item.Object.tip,
+                stadiu = item.Object.stadiu
+            }).ToList();
+
+            ViewBag.recomandariLista = lista_recomandari;
+            ViewBag.interventiiLista = lista_interventii;
+
+            ViewBag.id_pacient = id_pacient;
+            ViewBag.id_ingrijitor = id_ingrijitor;
+            TempData["Mesaj"] = "Recomandarea a fost stearsa.";
+
+            return RedirectToAction("RecomandariSiInterventii", "Pacient", new { id_pacient = id_pacient, id_ingrijitor = id_ingrijitor });
+        }
+
+        [HttpPost("~/Pacient/StergereInterventie/{id_uriInterventii}")]
+        public async Task<IActionResult> StergereInterventie(string id_uriInterventii)
+        {
+            var splitul = id_uriInterventii.Split("#");
+            string id_interventie = splitul[0];
+            string id_ingrijitor = splitul[1];
+            string id_pacient = splitul[2];
+
+            await firebase.Child("Conturi/Ingrijitori/" + id_ingrijitor + "/Interventii/" + id_interventie).DeleteAsync();
+
+
+            List<RecomandareModel> lista_recomandari = new List<RecomandareModel>();
+            var recomandari = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Recomandari").OrderByKey().OnceAsync<dynamic>();
+
+            lista_recomandari = recomandari.Select(item => new RecomandareModel
+            {
+                alte_indicatii = item.Object.alte_indicatii,
+                durata = item.Object.durata,
+                id_recomandare = item.Key,
+                id_pacient = item.Object.id_pacient,
+                tipul_recomandarii = item.Object.tipul_recomandarii
+            }).ToList();
+
+            List<InterventieModel> lista_interventii = new List<InterventieModel>();
+            var query_interventie = await firebase.Child("Conturi/Ingrijitori/" + id_ingrijitor + "/Interventii").OrderByKey().OnceAsync<dynamic>();
+
+            lista_interventii = query_interventie.Select(item => new InterventieModel
+            {
+                descriere = item.Object.descriere,
+                id_interventie = item.Key,
+                id_ingrijitor = item.Object.id_ingrijitor,
+                id_pacient = item.Object.id_pacient,
+                tip = item.Object.tip,
+                stadiu = item.Object.stadiu
+            }).ToList();
+
+            ViewBag.recomandariLista = lista_recomandari;
+            ViewBag.interventiiLista = lista_interventii;
+
+            ViewBag.id_pacient = id_pacient;
+            ViewBag.id_ingrijitor = id_ingrijitor;
+
+            TempData["Mesaj"] = "Interventia a fost stearsa.";
+
+            return RedirectToAction("RecomandariSiInterventii", "Pacient", new { id_pacient = id_pacient, id_ingrijitor = id_ingrijitor });
+        }
+
+        public async Task<IActionResult> GraficeRapoarte(string id_pacient)
+        {
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.nume_pacient,
+                prenume_pacient = item.Object.prenume_pacient,
+                CNP = item.Object.CNP,
+                email_pacient = item.Object.email_pacient,
+                id_medic = item.Object.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.judet_pacient,
+                oras_pacient = item.Object.oras_pacient,
+                strada_pacient = item.Object.strada_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
+                numar_telefon_pacient = item.Object.numar_telefon_pacient,
+                profesie_pacient = item.Object.profesie_pacient,
+                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+
+
+
+            var valori_puls = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ValoriPuls").OrderByKey().OnceAsync<dynamic>();
+
+            List<ValoriPuls> valoriPuls = new List<ValoriPuls>();
+            List<string> listaValoriPuls = new List<string>();
+            List<string> listaDatePuls = new List<string>();
+
+            valoriPuls = valori_puls.Select(item => new ValoriPuls
+            { 
+                data = item.Object.data,
+                value = item.Object.value
+            }).ToList();
+
+            foreach(ValoriPuls val in valoriPuls)
+            {
+                listaValoriPuls.Add(val.value);
+                listaDatePuls.Add(val.data);
+            }
+
+            ViewBag.datePuls = listaDatePuls;
+            ViewBag.valoriPuls = listaValoriPuls;
+
+            return View();
+        }
     }
-
 }

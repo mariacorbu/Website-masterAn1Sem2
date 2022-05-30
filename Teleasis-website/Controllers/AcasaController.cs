@@ -100,6 +100,7 @@ namespace Teleasis_website.Controllers
                 judet_pacient = item.Object.judet_pacient,
                 oras_pacient = item.Object.oras_pacient,
                 strada_pacient = item.Object.strada_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
                 numar_telefon_pacient = item.Object.numar_telefon_pacient,
                 profesie_pacient = item.Object.profesie_pacient,
                 loc_de_munca_pacient = item.Object.loc_de_munca_pacient,
@@ -204,6 +205,7 @@ namespace Teleasis_website.Controllers
                 CNP = item.Object.CNP,
                 judet_pacient = item.Object.judet_pacient,
                 oras_pacient = item.Object.oras_pacient,
+                id_ingrijitor = item.Object.id_ingrijitor,
                 strada_pacient = item.Object.strada_pacient,
                 numar_telefon_pacient = item.Object.numar_telefon_pacient,
                 profesie_pacient = item.Object.profesie_pacient,
@@ -323,11 +325,12 @@ namespace Teleasis_website.Controllers
             pacient.nume_pacient = date[3];
             pacient.email_pacient = date[4];
             pacient.judet_pacient = date[5];
-            pacient.oras_pacient = date[6];
-            pacient.strada_pacient = date[7];
+            pacient.oras_pacient = date[6].Replace("&", " ");
+            pacient.strada_pacient = date[7].Replace("&", " ");
             pacient.numar_telefon_pacient = date[8];
-            pacient.profesie_pacient = date[9];
-            pacient.loc_de_munca_pacient = date[10];
+            pacient.profesie_pacient = date[9].Replace("&", " ");
+            pacient.loc_de_munca_pacient = date[10].Replace("&", " ");
+            pacient.id_ingrijitor = date[11];
             var result = await auth.CreateUserWithEmailAndPasswordAsync(pacient.email_pacient, parola_cerere_pacient);
 
             await firebase.Child("Conturi/Pacienti/" + result.User.LocalId).PutAsync<AdaugarePacientModel>(pacient);
@@ -382,6 +385,11 @@ namespace Teleasis_website.Controllers
         [HttpPost]
         public async Task<IActionResult> AdaugarePacient(AdaugarePacientModel pacient)
         {
+            pacient.strada_pacient = pacient.strada_pacient.Replace(" ", "&");
+            pacient.oras_pacient = pacient.oras_pacient.Replace(" ", "&");
+            pacient.profesie_pacient = pacient.profesie_pacient.Replace(" ", "&");
+            pacient.loc_de_munca_pacient = pacient.loc_de_munca_pacient.Replace(" ", "&");
+
             await firebase.Child("Conturi/Administrator/Cereri/" + pacient.CNP).PutAsync<AdaugarePacientModel>(pacient);
 
             TempData["Mesaj"] = "Cerere inregistrata.";

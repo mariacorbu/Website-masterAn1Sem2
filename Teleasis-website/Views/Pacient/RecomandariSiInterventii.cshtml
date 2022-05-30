@@ -9,7 +9,7 @@
             <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
         </div>
 </div>
-@*
+
     @if (TempData["Mesaj"] != null)  
         {  
             <script type="text/javascript">  
@@ -17,7 +17,7 @@
                     alert("@TempData["Mesaj"]");  
                 };  
             </script>  
-        }  *@
+        }  
 
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item" role="presentation">
@@ -39,19 +39,19 @@
                 </tr>
             </thead>
             <tbody>
-              @* @foreach(var recomandare in ViewBag.recomandariLista)
+               @foreach(var recomandare in ViewBag.recomandariLista)
                     {
                         <tr>
                         <td>@(recomandare.tipul_recomandarii)</td>
                         <td>@(recomandare.durata)</td>
                         <td>@(recomandare.alte_indicatii)</td>
                         <td>
-                            <a id="delete_recomandare" role="button" data-bs-toggle="modal"  data-bs-target="#deleteRecomandareModal" onclick=sendId("@(recomandare.id_recomandare)") data-bs-id="@(recomandare.id_recomandare)" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                            <a id="delete_recomandare" role="button" data-bs-toggle="modal"  data-bs-target="#deleteRecomandariModal" onclick=sendIdRecomandare("@(recomandare.id_recomandare)#@(recomandare.id_pacient)") data-bs-id="@(recomandare.id_recomandare)" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
                     }                   
-                *@
+                
             </tbody>
         </table>
       </div>
@@ -67,7 +67,7 @@
                 </tr>
             </thead>
             <tbody>
-             @*  @foreach(var interventie in ViewBag.interventiiLista)
+               @foreach(var interventie in ViewBag.interventiiLista)
                     {
                         <tr>
                         <td>@(interventie.tip)</td>
@@ -75,11 +75,11 @@
                         <td>@(interventie.stadiu)</td>
                         
                         <td>
-                            <a  id="delete_interventie" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal" onclick=sendId("@(interventie.id_interventie)")  data-bs-target="#deleteInterventieModal" data-bs-id="@(interventie.id_interventie)" ><i class="fas fa-trash"></i></a>
+                            <a  id="delete_interventie" class="btn btn-danger btn-circle" role="button" data-bs-toggle="modal" onclick=sendIdInterventie("@(interventie.id_interventie)#@(interventie.id_ingrijitor)#@(interventie.id_pacient)")  data-bs-target="#deleteInterventieModal" data-bs-id="@(interventie.id_interventie)" ><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>
 
-                    }   *@   
+                    }      
             </tbody>
         </table>
       </div>
@@ -97,6 +97,7 @@
                                 {
                             <p>Sunteți sigur că doriți să ștergeți această recomandare?</p>
                                   <div class="modal-footer">
+                                    <input type="text" hidden class="form-control" id="id_uriRecomandari" name="id_uriRecomandari"/>
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
                                     <button class="btn btn-primary" type="submit" id="buttonDaRecomandare">Da</button>
                                   </div>
@@ -109,6 +110,30 @@
             </div>
         </div>
 
+        <div class="modal fade " id="deleteInterventieModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ștergere interventie</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("StergereInterventie", "Pacient", new{id_interventie=""}, FormMethod.Post, true, new{id = "formDelete_interventie"}))
+                                {
+                            <p>Sunteți sigur că doriți să ștergeți această interventie?</p>
+                                  <div class="modal-footer">
+                                    <input type="text" hidden class="form-control" id="id_uriInterventii" name="id_uriInterventii"/>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaInterventie">Da</button>
+                                  </div>
+                        }
+                        
+@*                        <form asp-controller="Acasa" asp-action="Delete" method="delete" id="formDelete_pacient">                     
+                        </form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -191,6 +216,20 @@
             adaugare_interventie.style.display= "block";
             adaugare_recomandare.style.display="none";
         }
-    }
+     }
+
+     function sendIdRecomandare(id_uriRecomandari)
+     {
+        document.getElementById("formDelete_recomandare").setAttribute("id_uriRecomandari", id_uriRecomandari);
+        document.getElementById("formDelete_recomandare").setAttribute("action", "StergereRecomandare/" + id_uriRecomandari);
+        document.getElementById("id_uriRecomandari").value = id_uriRecomandari;
+     } 
+     
+     function sendIdInterventie(id_uriInterventii)
+     {
+        document.getElementById("formDelete_interventie").setAttribute("id_uriInterventii", id_uriInterventii);
+        document.getElementById("formDelete_interventie").setAttribute("action", "StergereInterventie/" + id_uriInterventii);
+        document.getElementById("id_uriInterventii").value = id_uriInterventii;
+     }
 
 </script>

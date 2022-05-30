@@ -191,7 +191,7 @@
 
         <div class="modal-footer butoane_adauga_pacient butoane_accesare_pacient">
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("FisaPacient","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient })'">Vizualizare fișă</button>
-             <button class="btn btn-primary buton-adauga buton-accesare" type="button">Vizualizare grafice/rapoarte</button>
+             <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("GraficeRapoarte","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient })'">Vizualizare grafice/rapoarte</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("RecomandariSiInterventii","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient, id_ingrijitor = @ViewBag.pacient.id_ingrijitor })'">Recomandări și intervenții</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("ArhivaConsultatii","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient, nume_pacient = @ViewBag.pacient.nume_pacient, prenume_pacient = @ViewBag.pacient.prenume_pacient, id_medic=@ViewBag.pacient.id_medic })'">Arhivă consultații</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button">Alarme</button>

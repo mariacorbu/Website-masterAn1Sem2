@@ -130,3 +130,47 @@ C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Tele
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\System.Reactive.dll
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\System.Runtime.InteropServices.WindowsRuntime.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\appsettings.Development.json
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\appsettings.json
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\FirebaseApp\teleasisfirebase-firebase-adminsdk-dgw38-2c95afeecc.json
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Teleasis-website.staticwebassets.runtime.json
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Teleasis-website.exe
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Teleasis-website.deps.json
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Teleasis-website.runtimeconfig.json
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Teleasis-website.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\ref\Teleasis-website.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Teleasis-website.pdb
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Firebase.Auth.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\FirebaseAdmin.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Firebase.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Api.Gax.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Api.Gax.Rest.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Apis.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Apis.Auth.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Google.Apis.Core.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\LiteDB.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.ServiceModel.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.Reactive.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.Runtime.InteropServices.WindowsRuntime.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.AssemblyReference.cache
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.GeneratedMSBuildEditorConfig.editorconfig
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.AssemblyInfoInputs.cache
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.AssemblyInfo.cs
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.CoreCompileInputs.cache
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.MvcApplicationPartsAssemblyInfo.cache
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.RazorAssemblyInfo.cache
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.RazorAssemblyInfo.cs
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\staticwebassets.build.json
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\staticwebassets.development.json
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\scopedcss\bundle\Teleasis-website.styles.css
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\scopedcss\projectbundle\Teleasis-website.bundle.scp.css
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.csproj.CopyComplete
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\ref\Teleasis-website.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.pdb
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\obj\Debug\net6.0\Teleasis-website.genruntimeconfig.cache

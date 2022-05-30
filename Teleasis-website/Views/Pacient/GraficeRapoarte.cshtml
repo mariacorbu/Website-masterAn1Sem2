@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "Grafice si Rapoarte";
+}
+
+<div class="container-acasa" id="container-adaugare-pacienti">
+    <div class="formular formular-accesare">
+        <div class="row">           
+            <div class="col-1 col-md-1 col-sm-1 col-lg-1 div-logo">
+                <a href="@Url.Action("AcasaMedic", "Acasa", new{medic_id = @ViewBag.pacient.id_medic})"><img src="~/images/logo.svg"/></a>
+            </div>
+            <h1 class="text-center titlu-acasa col-10 titlu-accesare">Grafice si Rapoarte - @(ViewBag.pacient.nume_pacient) @(ViewBag.pacient.prenume_pacient)</h1>        
+            <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
+                <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>        
+        </div>
+
+            
+            @*<fieldset>
+                <legend >Grafice:</legend>
+                <div class="row">
+                </div>
+            </fieldset>
+      
+   
+
+       </br> 
+        <fieldset>
+            <legend>Rapoarte:</legend>  
+            <div class="row">                                      
+            </div>
+    </fieldset>*@
+
+     <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="grafice-tab" data-bs-toggle="tab" data-bs-target="#grafice" type="button" role="tab" aria-controls="grafice" aria-selected="true">Grafice</button>
+      <li class="nav-item" role="presentation">
+         <button class="nav-link" id="rapoarte-tab" data-bs-toggle="tab" data-bs-target="#rapoarte" type="button" role="tab" aria-controls="rapoarte" aria-selected="false">Rapoarte</button>
+    </ul>
+
+    <div class="tab-content">
+      <div id="grafice" class="tab-pane fade show active" role="tabpanel" aria-labelledby="grafice-tab">
+
+          <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="graficPuls-tab" data-bs-toggle="tab" data-bs-target="#graficPuls" type="button" role="tab" aria-controls="graficPuls" aria-selected="true">Puls</button>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="graficGaz-tab" data-bs-toggle="tab" data-bs-target="#graficGaz" type="button" role="tab" aria-controls="graficGaz" aria-selected="false">Gaz</button>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="graficUmdiditate-tab" data-bs-toggle="tab" data-bs-target="#graficUmdiditate" type="button" role="tab" aria-controls="graficUmdiditate" aria-selected="false">Umiditate</button>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="graficLumina-tab" data-bs-toggle="tab" data-bs-target="#graficLumina" type="button" role="tab" aria-controls="graficLumina" aria-selected="false">Lumină</button>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="graficPrezenta-tab" data-bs-toggle="tab" data-bs-target="#graficPrezenta" type="button" role="tab" aria-controls="graficPrezenta" aria-selected="false">Prezență</button>
+         </ul>
+
+        <div class="tab-content">
+            <div id="graficPuls" class="tab-pane fade show active" role="tabpanel" aria-labelledby="graficPuls-tab"> 
+                  <canvas id="chartPuls" ></canvas>
+            </div>
+            <div id="graficGaz" class="tab-pane fade show active" role="tabpanel" aria-labelledby="graficGaz-tab">        
+            </div>
+            <div id="graficUmdiditate" class="tab-pane fade show active" role="tabpanel" aria-labelledby="graficUmiditate-tab">        
+            </div>
+            <div id="graficLumina" class="tab-pane fade show active" role="tabpanel" aria-labelledby="graficLumina-tab">        
+            </div>
+            <div id="graficPrezenta" class="tab-pane fade show active" role="tabpanel" aria-labelledby="graficPrezenta-tab">        
+            </div>
+        </div>
+      </div>
+      <div id="rapoarte" class="tab-pane fade" role="tabpanel" aria-labelledby="rapoarte-tab">
+
+          <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="RaportX-tab" data-bs-toggle="tab" data-bs-target="#RaportX" type="button" role="tab" aria-controls="RaportX" aria-selected="true">RaportX</button>
+@*          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="graficGaz-tab" data-bs-toggle="tab" data-bs-target="#graficGaz" type="button" role="tab" aria-controls="graficGaz" aria-selected="false">Gaz</button>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="graficUmdiditate-tab" data-bs-toggle="tab" data-bs-target="#graficUmdiditate" type="button" role="tab" aria-controls="graficUmdiditate" aria-selected="false">Umiditate</button>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="graficLumina-tab" data-bs-toggle="tab" data-bs-target="#graficLumina" type="button" role="tab" aria-controls="graficLumina" aria-selected="false">Lumină</button>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="graficPrezenta-tab" data-bs-toggle="tab" data-bs-target="#graficPrezenta" type="button" role="tab" aria-controls="graficPrezenta" aria-selected="false">Prezență</button>
+         </ul>*@
+
+        <div class="tab-content">
+            <div id="RaportX" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportX-tab">        
+            </div>
+            <div id="RaportY" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportY-tab">        
+            </div>
+            <div id="RaportZ" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportZ-tab">        
+            </div>
+            <div id="RaportW" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportW-tab">        
+            </div>
+            <div id="RaportA" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportA-tab">        
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+
+     </div>
+
+    <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deconectare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("Deconectare", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDeconectare"}))
+                                {
+                            <p>Sunteți sigur că doriți să vă deconectați?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+<script>
+    function valoriPuls() {
+ 
+    var ctxL = document.getElementById("chartPuls").getContext('2d');
+                                            var myLineChart = new Chart(ctxL, {
+                                                type: 'line',
+                                                data: {
+                                                    labels: @(ViewBag.datePuls),
+                                                    datasets: [{
+                                                        label: "Evolutie ultimile 7 valori",
+                                                        data: @(ViewBag.valoriPuls),
+                                                        backgroundColor: [
+                                                            'rgba(105, 0, 132, .7)',
+                                                        ],
+                                                        borderColor: [
+                                                            'rgba(200, 99, 132, .7)',
+                                                        ],
+                                                        borderWidth: 2
+                                                    }
+                                                    ]
+                                                },
+                                                options: {
+                                                    responsive: true
+                                                }
+                                            });
+    }
+    valoriPuls();
+</script>
