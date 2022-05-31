@@ -1,0 +1,135 @@
+﻿@{
+    ViewData["Title"] = "Vizualizare Alarme";
+}
+
+<div class="container-acasa" id="container-adaugare-pacienti">
+    <div class="formular formular-accesare">
+        <div class="row">           
+            <div class="col-1 col-md-1 col-sm-1 col-lg-1 div-logo">
+                <a href="@Url.Action("AcasaMedic", "Acasa", new{medic_id = @ViewBag.pacient.id_medic})"><img src="~/images/logo.svg"/></a>
+            </div>
+            <h1 class="text-center titlu-acasa col-10 titlu-accesare">Vizualizare Alarme - @(ViewBag.pacient.nume_pacient) @(ViewBag.pacient.prenume_pacient)</h1>        
+            <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
+                <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>        
+        </div>
+
+        <fieldset>
+            <div class="row">
+                    <div class="buton-adaugare-valoare-normala">
+                        <a role="button" data-bs-toggle="modal"  data-bs-target="#AdaugareAlarmaModal" class="btn btn-adauga-verde btn-circle "><i class="fa-solid fa-plus"></i></a>
+                    </div>  
+                </div>
+            <div class="tab-content">
+              <div id="date_normale">
+                <table class="table table-striped" id="tabel-date-normale">
+                    <thead>
+                        <tr>
+                            <th>Tip</th>
+                            <th>Valoare Declanșare</th> 
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @foreach(var alarma in ViewBag.listaAlarme)
+                            {
+                                <tr>
+                                <td>@(alarma.tip)</td>
+                                <td>@(alarma.valoare)</td>
+                                <td class="text-end">
+                                    <a role="button" id="stergere_alarma" class="btn  btn-circle" data-toggle="tooltip" data-bs-toggle="modal" onclick=sendIdAlarma("@(alarma.tip)#@(alarma.valoare)#@(ViewBag.pacient.id_pacient)#@(ViewBag.pacient.id_supraveghetor)") data-bs-target="#StergereAlarma" data-placement="bottom" title="Stergere Alarma"><i class="fas fa-trash"></i></a>
+                                   
+                           </td>
+                                </tr>
+
+                            }                   
+                
+                    </tbody>
+                </table>
+              </div>
+            </div>
+    </fieldset>
+
+    <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deconectare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("Deconectare", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDeconectare"}))
+                                {
+                            <p>Sunteți sigur că doriți să vă deconectați?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="modal fade " id="StergereAlarma" tabindex="-1" aria-labelledby="StergereAlarma" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ștergere Alarmă</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("StergereAlarma", "Pacient", new{id_pacient=""}, FormMethod.Post, true, new{id = "formStergere_Alarma"}))
+                                {
+                            <p>Sunteți sigur că doriți să ștergeți această alarmă?</p>
+                                  <div class="modal-footer">
+                                    <input class="form-control" type="text" hidden name="id_uri" id="id_uri"/>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="modal fade " id="AdaugareAlarmaModal" tabindex="-1" aria-labelledby="AdaugareAlarmaModal" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Adaugă alarmă</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          
+              @using (Html.BeginForm("AdaugareAlarma", "Pacient", new{id_pacient=@ViewBag.pacient.id_pacient}, FormMethod.Post, true, new{id = "formAdaugareAlarma"}))
+                 {
+
+                  <div id="adaugare-medic">
+                      <input hidden name="id_pacient" value="@ViewBag.pacient.id_pacient" />
+                      <input hidden name="id_supraveghetor" value="@ViewBag.pacient.id_supraveghetor" />
+
+                       <partial name="_AdaugareAlarma" /> 
+                  </div>
+                   <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+                    <button class="btn btn-primary" type="submit">Adaugă</button>
+                    </div>
+                  }
+     </div>
+    </div>
+
+
+ </div>
+
+ <script>
+  function sendIdAlarma(id){
+        document.getElementById("formStergere_Alarma").setAttribute("id_pacient", id);
+        document.getElementById("formStergere_Alarma").setAttribute("action", "StergereAlarma" + "/" + id);
+        document.getElementById("id_uri").value = id;
+    }
+ 
+ </script>

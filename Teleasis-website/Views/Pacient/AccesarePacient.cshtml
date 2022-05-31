@@ -194,7 +194,7 @@
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("GraficeRapoarte","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient })'">Vizualizare grafice/rapoarte</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("RecomandariSiInterventii","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient, id_ingrijitor = @ViewBag.pacient.id_ingrijitor })'">Recomandări și intervenții</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" onclick="location.href='@Url.Action("ArhivaConsultatii","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient, nume_pacient = @ViewBag.pacient.nume_pacient, prenume_pacient = @ViewBag.pacient.prenume_pacient, id_medic=@ViewBag.pacient.id_medic })'">Arhivă consultații</button>
-             <button class="btn btn-primary buton-adauga buton-accesare" type="button">Alarme</button>
+             <button class="btn btn-primary buton-adauga buton-accesare" type="button" data-bs-target="#AlarmePacientModal" data-bs-toggle="modal" onclick=sendId("@(ViewBag.pacient.id_pacient)#@(ViewBag.pacient.id_supraveghetor)">Alarme</button>
              <button class="btn btn-primary buton-adauga buton-accesare" type="button" data-bs-target="#ArhivarePacientModal" data-bs-toggle="modal" onclick=sendId("@(ViewBag.pacient.id_pacient)#@(ViewBag.pacient.id_medic)")>Arhivare pacient</button>
         </div>
 
@@ -243,6 +243,22 @@
                         }
                         
 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <div class="modal fade " id="AlarmePacientModal" tabindex="-1" aria-labelledby="AlarmePacientModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-alarme">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Alarme Pacient</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body modal-body-alarme">
+                        <button type="button" id="vizualizare_date_normale" class="btn btn-primary" onclick="location.href='@Url.Action("VizualizareDateNormale","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient, id_supraveghetor = @ViewBag.pacient.id_supraveghetor })'">Vizualizare date normale</button>
+                       </br> 
+                       <button type="button" id="vizualizare_alarme" class="btn btn-primary" onclick="location.href='@Url.Action("VizualizareAlarme","Pacient",new { id_pacient = @ViewBag.pacient.id_pacient , id_supraveghetor = @ViewBag.pacient.id_supraveghetor})'">Vizualizare Alarme</button>              
                     </div>
                 </div>
             </div>

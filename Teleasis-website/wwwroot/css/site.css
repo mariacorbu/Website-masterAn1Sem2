@@ -308,3 +308,54 @@ fieldset {
 }
 
 /*---------END Recomandari si interventii-------------*/
+
+/*---------GRAFICE SI RAPOARTE-----------------------*/
+
+.tabs-grafic-raport button{
+   width: 100%;
+}
+.tabs-grafic-raport li {
+    padding:0;
+}
+
+.tabs-puls-mediu .nav-link.active, .tabs-grafic-raport .nav-link.active {
+    color: white;
+    background-color: #3f7bff;
+    border: 1px solid blue !important;
+}
+.tabs-puls-mediu .nav-link {
+    border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+}
+
+#grafice, #rapoarte {
+    margin-left: -12px;
+}
+
+
+/*--------------ALARME----------------------------*/
+
+#vizualizare_date_normale {
+    margin-bottom: 20px;
+    width:50%;
+}
+#vizualizare_alarme {
+    width: 50%;
+}
+.modal-body-alarme {
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+
+    .modal-dialog-alarme {
+        max-width: 500px;
+        margin: 7.75rem auto;
+    }
+}
+
+.buton-adaugare-valoare-normala {
+    text-align:end;
+}
+
+/*-------END ALARME--------------------------------*/

@@ -78,7 +78,7 @@ namespace Teleasis_website.Controllers
                     {
                         if (supraveghetor.Key.Equals(authLink.User.LocalId))
                         {
-                            return RedirectToAction("AcasaSupraveghetori", "Acasa");
+                            return RedirectToAction("AcasaSupraveghetor", "Acasa", new { id_supraveghetor = authLink.User.LocalId });
 
                         }
                     }
