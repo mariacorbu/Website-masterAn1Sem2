@@ -49,20 +49,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -85,20 +85,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -131,7 +131,7 @@ namespace Teleasis_website.Controllers
         [HttpPost]
         public async Task<IActionResult> FisaPacient(string CNP, string email_pacient, string id_medic, string judet_pacient,
             string loc_de_munca_pacient, string numar_telefon_pacient, string nume_pacient, string oras_pacient, string prenume_pacient,
-            string profesie_pacient, string strada_pacient, string id_pacient)
+            string profesie_pacient, string strada_pacient, string id_pacient, string id_ingrijitor, string id_supraveghetor)
         {
             AdaugarePacientModel pacient = new AdaugarePacientModel()
             {
@@ -146,9 +146,11 @@ namespace Teleasis_website.Controllers
                 prenume_pacient = prenume_pacient,
                 profesie_pacient = profesie_pacient,
                 strada_pacient = strada_pacient,
-                id_pacient = id_pacient
+                id_pacient = id_pacient,
+                id_ingrijitor = id_ingrijitor,
+                id_supraveghetor= id_supraveghetor
             };
-            await firebase.Child("Conturi/Pacienti/" + pacient.id_pacient).PutAsync<AdaugarePacientModel>(pacient);
+            await firebase.Child("Conturi/Pacienti/" + pacient.id_pacient+"/DateDemografice").PutAsync<AdaugarePacientModel>(pacient);
 
 
             var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
@@ -157,20 +159,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                strada_pacient = item.Object.strada_pacient,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel p in pacientiLista)
@@ -245,20 +247,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -337,20 +339,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -420,20 +422,20 @@ namespace Teleasis_website.Controllers
 
             pacient = pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel p in pacient)
@@ -571,20 +573,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -673,20 +675,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -704,6 +706,7 @@ namespace Teleasis_website.Controllers
             List<ValoriPuls> valoriPuls = new List<ValoriPuls>();
             List<string> listaValoriPuls = new List<string>();
             List<string> listaDatePuls = new List<string>();
+            List<string> listaLipitePuls = new List<string>();
 
             valoriPuls = valori_puls.Select(item => new ValoriPuls
             { 
@@ -715,6 +718,7 @@ namespace Teleasis_website.Controllers
             {
                 listaValoriPuls.Add(val.value);
                 listaDatePuls.Add(val.data);
+                listaLipitePuls.Add(val.data + "#" + val.value);
             }
 
             var valori_mediu = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ValoriMediu").OrderByKey().OnceAsync<dynamic>();
@@ -725,6 +729,8 @@ namespace Teleasis_website.Controllers
             List<string> listaValoriPrezenta = new List<string>();
             List<string> listaValoriUmiditate = new List<string>();
             List<string> listaDateMediu = new List<string>();
+            List<string> listaLipiteMediu = new List<string>();
+           
 
             valoriMediu = valori_mediu.Select(item => new ValoriMediu
             {
@@ -745,17 +751,20 @@ namespace Teleasis_website.Controllers
                     listaValoriPrezenta.Add("0");
                 listaValoriUmiditate.Add(val.value_umiditate);
                 listaDateMediu.Add(val.data);
+                listaLipiteMediu.Add(val.data + "#" + val.value_gaz + "#" + val.value_temperatura + "#" + val.value_prezenta + "#" + val.value_umiditate);
             }
 
 
             ViewBag.datePuls = JsonConvert.SerializeObject(listaDatePuls);
             ViewBag.valoriPuls = JsonConvert.SerializeObject(listaValoriPuls);
+            ViewBag.listaLipitePuls = JsonConvert.SerializeObject(listaLipitePuls);
 
             ViewBag.dateMediu = JsonConvert.SerializeObject(listaDateMediu);
             ViewBag.valoriGaz = JsonConvert.SerializeObject(listaValoriGaz);
             ViewBag.valoriUmiditate = JsonConvert.SerializeObject(listaValoriUmiditate);
             ViewBag.valoriPrezenta = JsonConvert.SerializeObject(listaValoriPrezenta);
             ViewBag.valoriTemperatura = JsonConvert.SerializeObject(listaValoriTemperatura);
+            ViewBag.listaLipiteMediu = JsonConvert.SerializeObject(listaLipiteMediu);
 
             return View();
         }
@@ -769,20 +778,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -820,20 +829,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -875,20 +884,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -923,20 +932,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -1097,20 +1106,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -1154,20 +1163,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -1204,20 +1213,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -1241,20 +1250,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -1292,20 +1301,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)
@@ -1389,20 +1398,20 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key,
-                judet_pacient = item.Object.judet_pacient,
-                oras_pacient = item.Object.oras_pacient,
-                strada_pacient = item.Object.strada_pacient,
-                id_ingrijitor = item.Object.id_ingrijitor,
-                id_supraveghetor = item.Object.id_supraveghetor,
-                numar_telefon_pacient = item.Object.numar_telefon_pacient,
-                profesie_pacient = item.Object.profesie_pacient,
-                loc_de_munca_pacient = item.Object.loc_de_munca_pacient
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
             }).ToList();
 
             foreach (AdaugarePacientModel pacient in pacientiLista)

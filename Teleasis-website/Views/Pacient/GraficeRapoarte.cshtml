@@ -58,29 +58,15 @@
       </div>
       <div id="rapoarte" class="tab-pane fade" role="tabpanel" aria-labelledby="rapoarte-tab">
 
-          <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="RaportX-tab" data-bs-toggle="tab" data-bs-target="#RaportX" type="button" role="tab" aria-controls="RaportX" aria-selected="true">RaportX</button>
-@*          <li class="nav-item" role="presentation">
-             <button class="nav-link" id="graficGaz-tab" data-bs-toggle="tab" data-bs-target="#graficGaz" type="button" role="tab" aria-controls="graficGaz" aria-selected="false">Gaz</button>
-          <li class="nav-item" role="presentation">
-             <button class="nav-link" id="graficUmdiditate-tab" data-bs-toggle="tab" data-bs-target="#graficUmdiditate" type="button" role="tab" aria-controls="graficUmdiditate" aria-selected="false">Umiditate</button>
-          <li class="nav-item" role="presentation">
-             <button class="nav-link" id="graficLumina-tab" data-bs-toggle="tab" data-bs-target="#graficLumina" type="button" role="tab" aria-controls="graficLumina" aria-selected="false">Lumină</button>
-          <li class="nav-item" role="presentation">
-             <button class="nav-link" id="graficPrezenta-tab" data-bs-toggle="tab" data-bs-target="#graficPrezenta" type="button" role="tab" aria-controls="graficPrezenta" aria-selected="false">Prezență</button>
-         </ul>*@
-
         <div class="tab-content">
-            <div id="RaportX" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportX-tab">        
-            </div>
-            <div id="RaportY" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportY-tab">        
-            </div>
-            <div id="RaportZ" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportZ-tab">        
-            </div>
-            <div id="RaportW" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportW-tab">        
-            </div>
-            <div id="RaportA" class="tab-pane fade show active" role="tabpanel" aria-labelledby="RaportA-tab">        
+            <div class="row">
+                <div class="col-6">
+                    <div id="myCalendarWrapper"></div>
+                </div>
+                <div class="col-6">
+                    <div id="dateCards"></div>
+                    <div id="faraDate"></div>
+                </div>
             </div>
         </div>
       </div>
@@ -203,4 +189,238 @@
     }
     valoriMediu();
 
+    const nextYear = new Date().getFullYear() + 1;
+
+    const myCalender = new CalendarPicker('#myCalendarWrapper', {
+
+        max: new Date(nextYear, 10)
+    });
+
+    var dateCards = document.getElementById("dateCards");
+    var faraDate = document.getElementById("faraDate");
+
+myCalender.onValueChange((currentValue) => {
+    dateCards.innerHTML="";
+    faraDate.innerHTML = "";
+    var listaValoriPuls = [];
+    var listaValoriMediu = [];
+    var datePuls = @Html.Raw(ViewBag.listaLipitePuls);
+    var dateMediu = @Html.Raw(ViewBag.listaLipiteMediu);
+    var an = currentValue.getFullYear();
+    var luna = currentValue.getMonth();
+    luna = parseInt(luna) + 1;
+    var zi = currentValue.getDate();
+    if(parseInt(luna) < 10){
+        luna = "0" + parseInt(luna);
+    }
+    if(parseInt(zi) < 10){
+        zi = "0" + parseInt(zi);
+    }
+    var dataSelectata = an + "-" + luna + "-" + zi;
+        if ((datePuls == null) && (dateMediu == null)) {
+            faraDate.style.display = "block";
+            var divCard = document.createElement("div");
+            divCard.classList.add("card");
+            divCard.classList.add("card-puls");
+
+            var divCardBody = document.createElement("div");
+            divCardBody.classList.add("card-body");
+            divCardBody.classList.add("row");
+
+            var divCardCol1 = document.createElement("div");
+            divCardCol1.classList.add("text-center");
+            divCardCol1.classList.add("align-self-center");
+
+            var h5Data = document.createElement("h5");
+            h5Data.classList.add("card-title");
+
+            var textDataText = document.createTextNode("Încă nu s-au înregistrat date!");
+            h5Data.appendChild(textDataText);
+
+            divCard.appendChild(divCardBody);
+            divCardBody.appendChild(divCardCol1);
+            divCardCol1.appendChild(h5Data);
+
+            faraDate.appendChild(divCard);
+
+        } else {
+            faraDate.style.display = "none";
+
+            datePuls.forEach(dp => {
+                var dataPuls = dp.split("#")[0];
+                var valoarePuls = dp.split("#")[1];
+                if (dataPuls === dataSelectata) {
+                    console.log(dataPuls + "**********")
+                    var element = dataPuls + "+" + valoarePuls;
+                    listaValoriPuls.push(element);
+                }
+            });
+
+            dateMediu.forEach(dm => {
+                var dataMediu = dm.split("#")[0];
+                var valoareGaz = dm.split("#")[1];
+                var valoareTemperatura = dm.split("#")[2];
+                var valoarePrezenta = dm.split("#")[3];
+                var valoareUmiditate = dm.split("#")[4];
+                if (dataMediu === dataSelectata) {
+                    var elementM = dataMediu + "+" + valoareGaz+ "+"+valoareTemperatura + "+" + valoarePrezenta + "+" + valoareUmiditate;
+                    listaValoriMediu.push(elementM);
+                }
+            });
+
+            if (listaValoriPuls.length === 0 && listaValoriMediu.length === 0) {
+                faraDate.style.display = "block";
+                var divCard = document.createElement("div");
+                divCard.classList.add("card");
+                divCard.classList.add("card-puls");
+
+                var divCardBody = document.createElement("div");
+                divCardBody.classList.add("card-body");
+                divCardBody.classList.add("row");
+
+                var divCardCol1 = document.createElement("div");
+                divCardCol1.classList.add("text-center");
+                divCardCol1.classList.add("align-self-center");
+
+                var h5Data = document.createElement("h5");
+                h5Data.classList.add("card-title");
+
+                var textDataText = document.createTextNode("Încă nu s-au înregistrat date!");
+                h5Data.appendChild(textDataText);
+
+                divCard.appendChild(divCardBody);
+                divCardBody.appendChild(divCardCol1);
+                divCardCol1.appendChild(h5Data);
+
+                faraDate.appendChild(divCard);
+
+            } else {
+                faraDate.style.display = "none";
+            }
+            listaValoriPuls.sort();
+            listaValoriMediu.sort();
+            listaValoriPuls.forEach(function callbackFn(element) {
+                var listaSplit = element.split("+");
+                var data = listaSplit[0];
+                var valoare = listaSplit[1];
+                
+                var divCard = document.createElement("div");
+                divCard.classList.add("card");
+                divCard.classList.add("card-puls");
+
+                var divCardBody = document.createElement("div");
+                divCardBody.classList.add("card-body");
+                divCardBody.classList.add("row");
+
+                var divCardCol1 = document.createElement("div");
+                divCardCol1.classList.add("text-center");
+                divCardCol1.classList.add("align-self-center");
+
+                var h5Data = document.createElement("h5");
+                h5Data.classList.add("card-title");
+
+                var h5Valoare = document.createElement("h5");
+                h5Valoare.classList.add("card-title");
+
+                var textDataText = document.createTextNode("Data: ");
+                h5Data.appendChild(textDataText);
+
+                var textData = document.createTextNode(data);
+                h5Data.appendChild(textData);
+
+                var textValoareText = document.createTextNode("Valoare puls: ");
+                h5Valoare.appendChild(textValoareText);
+
+                var textValoare = document.createTextNode(valoare);
+                h5Valoare.appendChild(textValoare);
+
+
+                divCard.appendChild(divCardBody);
+                divCardBody.appendChild(divCardCol1);
+                divCardCol1.appendChild(h5Data);
+                divCardCol1.appendChild(h5Valoare);
+                
+                dateCards.appendChild(divCard);
+
+            });
+
+            listaValoriMediu.forEach(function callbackFn(elementM) {
+                var listaSplit = elementM.split("+");
+                var data = listaSplit[0];
+                var valoareGaz = listaSplit[1];
+                var valoareTemperatura = listaSplit[2];
+                var valoarePrezenta = listaSplit[3];
+                var valoareUmiditate = listaSplit[4];
+                
+                var divCard = document.createElement("div");
+                divCard.classList.add("card");
+                divCard.classList.add("card-puls");
+
+                var divCardBody = document.createElement("div");
+                divCardBody.classList.add("card-body");
+                divCardBody.classList.add("row");
+
+                var divCardCol1 = document.createElement("div");
+                divCardCol1.classList.add("text-center");
+                divCardCol1.classList.add("align-self-center");
+
+                var h5Data = document.createElement("h5");
+                h5Data.classList.add("card-title");
+
+                var h5ValoareGaz = document.createElement("h5");
+                h5ValoareGaz.classList.add("card-title");
+
+                var h5ValoareTemperatura = document.createElement("h5");
+                h5ValoareTemperatura.classList.add("card-title");
+
+                var h5ValoarePrezenta = document.createElement("h5");
+                h5ValoarePrezenta.classList.add("card-title");
+
+                var h5ValoareUmiditate = document.createElement("h5");
+                h5ValoareUmiditate.classList.add("card-title");
+
+                var textDataText = document.createTextNode("Data: ");
+                h5Data.appendChild(textDataText);
+
+                var textData = document.createTextNode(data);
+                h5Data.appendChild(textData);
+
+                var textValoareGaz = document.createTextNode("Valoare gaz: ");
+                h5ValoareGaz.appendChild(textValoareGaz);
+
+                var textGaz = document.createTextNode(valoareGaz);
+                h5ValoareGaz.appendChild(textGaz);
+
+                var textValoareTemperatura = document.createTextNode("Valoare temperatura: ");
+                h5ValoareTemperatura.appendChild(textValoareTemperatura);
+
+                var textTemperatura = document.createTextNode(valoareTemperatura);
+                h5ValoareTemperatura.appendChild(textTemperatura);
+
+                var textValoarePrezenta = document.createTextNode("Prezenta: ");
+                h5ValoarePrezenta.appendChild(textValoarePrezenta);
+
+                var textPrezenta = document.createTextNode(valoarePrezenta);
+                h5ValoarePrezenta.appendChild(textPrezenta);
+
+                var textValoareUmiditate = document.createTextNode("Valoare umiditate: ");
+                h5ValoareUmiditate.appendChild(textValoareUmiditate);
+
+                var textUmiditate = document.createTextNode(valoareUmiditate);
+                h5ValoareUmiditate.appendChild(textUmiditate);
+
+
+                divCard.appendChild(divCardBody);
+                divCardBody.appendChild(divCardCol1);
+                divCardCol1.appendChild(h5Data);
+                divCardCol1.appendChild(h5ValoareGaz);
+                divCardCol1.appendChild(h5ValoareTemperatura);
+                divCardCol1.appendChild(h5ValoarePrezenta);
+                divCardCol1.appendChild(h5ValoareUmiditate);
+                
+                dateCards.appendChild(divCard);
+
+            });
+        }
+});
 </script>

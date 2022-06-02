@@ -332,6 +332,43 @@ fieldset {
     margin-left: -12px;
 }
 
+#myCalendarWrapper {
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    border: 2px solid #3f7bff;
+}
+
+.card-puls {
+    height: auto;
+    margin-top: auto;
+    margin-bottom: 10px;
+    width: 100%;
+
+}
+#faraDate .card-puls {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+#faraDate {
+    display: none;
+    border: 2px solid #3f7bff;
+    border-radius: 15px;
+}
+
+#dateCards{
+    margin-top: 10px;
+}
+    #dateCards .card {
+        border: 2px solid #3f7bff;
+        border-radius: 15px;
+
+    }
+
+
+
 
 /*--------------ALARME----------------------------*/
 

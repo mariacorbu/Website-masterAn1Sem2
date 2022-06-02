@@ -47,10 +47,10 @@ namespace Teleasis_website.Controllers
             var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
             var pacientiLista = query_pacienti.Select(item => new PacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
                 id_pacient = item.Key
             }).ToList();
 
@@ -154,10 +154,10 @@ namespace Teleasis_website.Controllers
             var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
             var pacientiLista = query_pacienti.Select(item => new PacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
                 id_pacient = item.Key
             }).ToList();
 
@@ -268,7 +268,7 @@ namespace Teleasis_website.Controllers
                 nume_pacient = "",
                 prenume_pacient = "",
                 CNP = "",
-                email_pacient = item.Object.email,
+                email_pacient = item.Object.DateDemografice.email,
                 id_pacient = item.Key
             }).ToList();
 
@@ -336,7 +336,7 @@ namespace Teleasis_website.Controllers
             pacient.id_supraveghetor = date[12];
             var result = await auth.CreateUserWithEmailAndPasswordAsync(pacient.email_pacient, parola_cerere_pacient);
 
-            await firebase.Child("Conturi/Pacienti/" + result.User.LocalId).PutAsync<AdaugarePacientModel>(pacient);
+            await firebase.Child("Conturi/Pacienti/" + result.User.LocalId+"/DateDemografice").PutAsync<AdaugarePacientModel>(pacient);
 
             await firebase.Child("Conturi/Administrator/Cereri/" + pacient.CNP).DeleteAsync();
 
@@ -409,11 +409,11 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic=item.Object.id_medic,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic=item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key
             }).ToList();
 
@@ -438,12 +438,12 @@ namespace Teleasis_website.Controllers
 
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
-                nume_pacient = item.Object.nume_pacient,
-                prenume_pacient = item.Object.prenume_pacient,
-                CNP = item.Object.CNP,
-                email_pacient = item.Object.email_pacient,
-                id_medic = item.Object.id_medic,
-                id_supraveghetor = item.Object.id_supraveghetor,
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
                 id_pacient = item.Key
             }).ToList();
 
