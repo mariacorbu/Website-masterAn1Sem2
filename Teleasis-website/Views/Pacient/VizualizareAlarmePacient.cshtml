@@ -6,7 +6,7 @@
     <div class="formular formular-accesare">
         <div class="row">           
             <div class="col-1 col-md-1 col-sm-1 col-lg-1 div-logo">
-                <a href="@Url.Action("AcasaSupraveghetor", "Acasa", new{id_supraveghetor = @ViewBag.pacient.id_supraveghetor})"><img src="~/images/logo.svg"/></a>
+                <a href="@Url.Action("AcasaPacient", "Acasa", new{id_pacient = @ViewBag.pacient.id_pacient})"><img src="~/images/logo.svg"/></a>
             </div>
             <h1 class="text-center titlu-acasa col-10 titlu-accesare">Vizualizare Alarme - @(ViewBag.pacient.nume_pacient) @(ViewBag.pacient.prenume_pacient)</h1>        
             <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
@@ -39,7 +39,7 @@
                                     <div class="completat-necompletat">
                                         @if(alarma.status.Equals("Necompletat")){
                                         
-                                            <a role="button" id="rezolvare_alarma" class="btn  btn-danger" data-toggle="tooltip" data-bs-toggle="modal" onclick=sendIdAlarma("@(ViewBag.pacient.id_pacient)#@(ViewBag.pacient.id_supraveghetor)#@(alarma.id)") data-bs-target="#RezolvareAlarma" data-placement="bottom" title="Rezolvare Alarma">Rezolvare Alarmă</a>
+                                            <p class="necompletat">@(alarma.status)</p> 
                                         }
                                         else
                                         {
@@ -83,39 +83,5 @@
             </div>
         </div>
 
-    <div class="modal fade " id="RezolvareAlarma" tabindex="-1" aria-labelledby="StergereAlarma" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Rezolvare Alarmă</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">   
-                        @using (Html.BeginForm("RezolvareAlarma", "Pacient", new{id_pacient=""}, FormMethod.Post, true, new{id = "formRezolvare_Alarma"}))
-                                {
-                                    <label>Observații: </label>
-                                    <br />
-                                    <textarea name="observatii"></textarea>
-                                      <div class="modal-footer">
-                                        <input class="form-control" type="text" hidden name="id_uri" id="id_uri"/>
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anulare</button>
-                                        <button class="btn btn-primary" type="submit" id="buttonDaPacient">Rezolvare</button>
-                                      </div>
-                        }
-                        
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
 </div>
-
- <script>
-  function sendIdAlarma(id){
-        document.getElementById("formRezolvare_Alarma").setAttribute("id_pacient", id);
-        document.getElementById("formRezolvare_Alarma").setAttribute("action", "RezolvareAlarma" + "/" + id);
-        document.getElementById("id_uri").value = id;
-    }
- 
- </script>
+</div>

@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Recomandări";
+}
+<div class="container-acasa" id="container-adaugare-pacienti">
+        <div class="formular formular-accesare">
+
+        <div class="row">           
+            <div class="col-1 col-md-1 col-sm-1 col-lg-1 div-logo">
+                <a href="@Url.Action("AcasaPacient", "Acasa", new{id_pacient = @ViewBag.id_pacient})"><img src="~/images/logo.svg"/></a>
+            </div>
+            <h1 class="text-center titlu-acasa col-10 titlu-accesare">Recomandări Pacient</h1>        
+            <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
+                <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>        
+        </div>
+
+ 
+
+
+            <fieldset>
+
+     <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="recomadari-pacient-tab" data-bs-toggle="tab" data-bs-target="#recomandari-pacient" type="button" role="tab" aria-controls="recomandari-pacienti" aria-selected="true">Recomandări pacient</button>
+      <li class="nav-item" role="presentation">
+         <button class="nav-link" id="interventii-ingrijitor-tab" data-bs-toggle="tab" data-bs-target="#interventii-ingrijitor" type="button" role="tab" aria-controls="interventii-ingrijitor" aria-selected="false">Intervenții îngrijitor</button>
+    </ul>
+
+    <div class="tab-content">
+      <div id="recomandari-pacient" class="tab-pane fade show active" role="tabpanel" aria-labelledby="recomandari-pacient-tab">
+        <table class="table table-striped" id="tabel-recomandari">
+            <thead>
+                <tr>
+                    <th>Tipul recomandării</th>
+                    <th>Durata</th>
+                    <th>Alte indicații</th>
+                </tr>
+            </thead>
+            <tbody>
+               @foreach(var recomandare in ViewBag.recomandariLista)
+                    {
+                        <tr>
+                        <td>@(recomandare.tipul_recomandarii)</td>
+                        <td>@(recomandare.durata)</td>
+                        <td>@(recomandare.alte_indicatii)</td>
+
+                        </tr>
+
+                    }                   
+                
+            </tbody>
+        </table>
+      </div>      
+    </div>
+                </fieldset>
+
+
+        <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deconectare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("Deconectare", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDeconectare"}))
+                                {
+                            <p>Sunteți sigur că doriți să vă deconectați?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                        
+@*                        <form asp-controller="Acasa" asp-action="Delete" method="delete" id="formDelete_pacient">                     
+                        </form>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

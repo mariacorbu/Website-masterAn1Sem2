@@ -52,7 +52,7 @@ namespace Teleasis_website.Controllers
                     {
                         if (pacient.Key.Equals(authLink.User.LocalId))
                         {
-                            return RedirectToAction("AcasaPacient", "Acasa");
+                            return RedirectToAction("AcasaPacient", "Acasa", new { id_pacient = authLink.User.LocalId });
                         }
                     }
                     var noduriMedici = await firebase.Child("Conturi/Medici").OrderByKey().OnceAsync<dynamic>();

@@ -6,7 +6,7 @@
     <div class="formular formular-accesare">
         <div class="row">           
             <div class="col-1 col-md-1 col-sm-1 col-lg-1 div-logo">
-                <a href="@Url.Action("AcasaSupraveghetor", "Acasa", new{id_supraveghetor = @ViewBag.pacient.id_supraveghetor})"><img src="~/images/logo.svg"/></a>
+                <a href="@Url.Action("AcasaPacient", "Acasa", new{id_pacient = @ViewBag.pacient.id_pacient})"><img src="~/images/logo.svg"/></a>
             </div>
             <h1 class="text-center titlu-acasa col-10 titlu-accesare">Grafice si Rapoarte - @(ViewBag.pacient.nume_pacient) @(ViewBag.pacient.prenume_pacient)</h1>        
             <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">

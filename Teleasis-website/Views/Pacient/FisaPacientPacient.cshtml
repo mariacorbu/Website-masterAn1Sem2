@@ -1,0 +1,386 @@
+﻿@{
+    ViewData["Title"] = "Fisa Pacient";
+}
+
+<div class="container-acasa" id="container-adaugare-pacienti">
+    @{
+        var str = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+    }
+    <div class="formular formular-accesare">
+        <div class="row">           
+            <div class="col-1 col-md-1 col-sm-1 col-lg-1 div-logo">
+                <a href="@Url.Action("AcasaPacient", "Acasa", new{id_pacient = @ViewBag.pacient.id_pacient})"><img src="~/images/logo.svg"/></a>
+            </div>
+            <h1 class="text-center titlu-acasa col-10 titlu-accesare">Fișă Pacient - @(ViewBag.pacient.nume_pacient) @(ViewBag.pacient.prenume_pacient)</h1>        
+            <div class="div-buton col-1 col-md-1 col-sm-1 col-lg-1">
+                <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+            </div>        
+        </div>
+
+            
+            <fieldset>
+                <div class="row">
+                    <legend class="col-11">Date demografice:</legend> 
+                </div>
+                <div class="row">
+                    <input hidden id="input-id-medic-pacient" name="id_medic" value="@ViewBag.pacient.id_medic" />
+                    <input hidden id="input-id-pacient" name="id_pacient" value="@ViewBag.pacient.id_pacient" />
+                    <input hidden id="input-id-pacient" name="id_supraveghetor" value="@ViewBag.pacient.id_supraveghetor" />
+                    <input hidden id="input-id-pacient" name="id_ingrijitor" value="@ViewBag.pacient.id_ingrijitor" />
+                    
+                       <div class="mb-3 col-5">
+                        <label for="recipient-name" class="col-form-label">Nume:</label>
+                        <input disabled type="text" class="form-control" id="input-nume-pacient" name="nume_pacient" value="@ViewBag.pacient.nume_pacient"  onfocusout='validareText(event, "text")'/> 
+                        <span id="eroare-input-nume-pacient" class="text-danger"></span>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="mb-3 col-5">
+                        <label for="message-text" class="col-form-label">Prenume:</label>
+                        <input disabled  type="text" class="form-control" id="input-prenume-pacient" value="@ViewBag.pacient.prenume_pacient" name="prenume_pacient" onfocusout='validareText(event, "text")'/>
+                        <span id="eroare-input-prenume-pacient" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3 col-1">
+                        <label for="message-text" class="col-form-label">Sex:</label>
+                        <input  disabled type="text" disabled class="form-control" id="input-sex-pacient" name="sex_pacient"/>
+                    </div>
+                </div>
+
+                <div class="row">    
+                    <div class="mb-3 col-5">
+                        <label for="message-text" class="col-form-label">CNP:</label>
+                        <input disabled  required  type="number" class="form-control" value="@ViewBag.pacient.CNP" id="input-cnp" name="CNP" onfocusout="calculareVarstaSiDataNasterii()"/>
+                        <span id="eroare-cnp" class="text-danger"></span>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="mb-3 col-2">
+                        <label for="message-text" class="col-form-label">Vârstă:</label>
+                        <input disabled  type="number" disabled class="form-control" id="input-varsta-pacient" name="varsta_pacient"/>
+                    </div>
+                    <div class="mb-3 col-2">
+                        <label for="message-text" class="col-form-label">Data nașterii:</label>
+                        <input disabled  type="text" disabled class="form-control" id="input-nastere-pacient" name="data_nasterii_pacient"/>
+                    </div>
+                </div>
+           
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label for="message-text" class="col-form-label">Județ:</label>
+                        <br />
+                        <div class="select_box">
+                            <select disabled required value="@ViewBag.pacient.judet_pacient" name="judet_pacient" id="judet">
+    	                        <option value="Alba">Alba</option>
+    	                        <option value="Arges">Arges</option>
+    	                        <option value="Arad">Arad</option>
+    	                        <option value="Bucuresti" >Bucuresti</option>
+    	                        <option value="Bacau">Bacau</option>
+    	                        <option value="Bihor">Bihor</option>
+    	                        <option value="Bistrita">Bistrita</option>
+    	                        <option value="Braila">Braila</option>
+    	                        <option value="Botosani">Botosani</option>
+    	                        <option value="Brasov">Brasov</option>
+    	                        <option value="Buzau">Buzau</option>
+    	                        <option value="Cluj">Cluj</option>
+    	                        <option value="Calarasi">Calarasi</option>
+    	                        <option value="Caras-Severin">Caras-Severin</option>
+    	                        <option value="Constanta">Constanta</option>
+    	                        <option value="Covasna">Covasna</option>
+    	                        <option value="Dambovita">Dambovita</option>
+    	                        <option value="Dolj">Dolj</option>
+    	                        <option value="Gorj">Gorj</option>
+    	                        <option value="Galati">Galati</option>
+    	                        <option value="Giurgiu">Giurgiu</option>
+    	                        <option value="Hunedoara">Hunedoara</option>
+    	                        <option value="Harghita">Harghita</option>
+    	                        <option value="Ilfov">Ilfov</option>
+    	                        <option value="Ialomita">Ialomita</option>
+    	                        <option value="Iasi">Iasi</option>
+    	                        <option value="Mehedinti">Mehedinti</option>
+    	                        <option value="Maramures">Maramures</option>
+    	                        <option value="Mures">Mures</option>
+    	                        <option value="Neamt">Neamt</option>
+    	                        <option value="Olt">Olt</option>
+    	                        <option value="Prahova">Prahova</option>
+    	                        <option value="Sibiu">Sibiu</option>
+    	                        <option value="Salaj">Salaj</option>
+    	                        <option value="Satu-Mare">Satu-Mare</option>
+    	                        <option value="Suceava">Suceava</option>
+    	                        <option value="Tulcea">Tulcea</option>
+    	                        <option value="Timis">Timis</option>
+    	                        <option value="Teleorman">Teleorman</option>
+    	                        <option value="Valcea">Valcea</option>
+    	                        <option value="Vrancea">Vrancea</option>
+    	                        <option value="Vaslui">Vaslui</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="mb-3 col-3">
+                        <label for="message-text" class="col-form-label">Oraș:</label>
+                        <input disabled value="@ViewBag.pacient.oras_pacient" type="text" class="form-control" id="input-oras-pacient" name="oras_pacient" onfocusout='validareText(event, "text")'/>
+                        <span id="eroare-input-oras-pacient" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 col-6">
+                        <label for="message-text" class="col-form-label">Strada:</label>
+                        <input disabled  required  type="text" value="@ViewBag.pacient.strada_pacient"  class="form-control" id="input-strada-pacient" name="strada_pacient" onfocusout='validareText(event, "")'/>
+                        <span id="eroare-input-strada-pacient" class="text-danger"></span>
+
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="mb-3 col-3">
+                        <label for="message-text" class="col-form-label">Nr. telefon:</label>
+                        <input  disabled type="text" class="form-control" value="@ViewBag.pacient.numar_telefon_pacient"  id="input-telefon-pacient" name="numar_telefon_pacient" onfocusout='validareText(event, "numar")'/>
+                        <span id="eroare-input-telefon-pacient" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 col-3">
+                        <label for="message-text" class="col-form-label">Email:</label>
+                        <input  disabled  type="email" class="form-control" value="@ViewBag.pacient.email_pacient" rgx=@str id="input-email-pacient" name="email_pacient" onfocusout='validareText(event, "email")'/>
+                        <span id="eroare-input-email-pacient" class="text-danger"></span>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="mb-3 col-5">
+                        <label for="message-text" class="col-form-label">Profesie:</label>
+                        <input  disabled class="form-control" type="text" value="@ViewBag.pacient.profesie_pacient" id="input-profesie-pacient" name="profesie_pacient" onfocusout='validareText(event, "text")' />
+                        <span id="eroare-input-profesie-pacient" class="text-danger"></span>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="mb-3 col-5">
+                        <label for="message-text" class="col-form-label">Loc de muncă:</label>
+                        <input disabled  required  class="form-control" type="text" value="@ViewBag.pacient.loc_de_munca_pacient" id="input-locmunca-pacient" name="loc_de_munca_pacient" onfocusout='validareText(event, "")' />
+                        <span id="eroare-input-locmunca-pacient" class="text-danger"></span>
+
+                    </div>
+                </div>
+
+            </fieldset>
+      
+    </div>
+
+       </br> 
+    <div class="formular">
+        <fieldset>
+            <div class="row">
+                    <legend class="col-11">Istoric Medical:</legend>
+
+                </div>
+            <div class="tab-content">
+              <div id="consultatii">
+                <table class="table table-striped" id="tabel-consultatii">
+                    <thead>
+                        <tr>
+                            <th>Data Consultatiei</th>
+                            <th>Diagnostic</th> 
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @foreach(var consultatie in ViewBag.listaConsultatii)
+                            {
+                                <tr>
+                                <td>@(consultatie.data_consultatie)</td>
+                                <td>@(consultatie.diagnostic_consultatie)</td>
+                                <td class="text-end">
+                                    <a role="button" id="accesare_consultatie" class="btn  btn-circle" data-toggle="tooltip" data-bs-toggle="modal" onclick=sendIdConsultatie("@(consultatie.id_consultatie)#@(consultatie.motiv_prezentare_consultatie)#@(consultatie.data_consultatie)#@(consultatie.simptome_consultatie)#@(consultatie.diagnostic_consultatie)#@(consultatie.trimitere_consultatie)#@(consultatie.retete_generate_consultatie)") data-bs-target="#AccesareConsultatieModal" data-placement="bottom" title="Accesare Consultatie"><i class="fa-solid fa-eye"></i></a>
+                                   
+                           </td>
+                                </tr>
+
+                            }                   
+                
+                    </tbody>
+                </table>
+              </div>
+            </div>
+    </fieldset>
+
+
+
+ <div class="modal fade " id="AccesareConsultatieModal" tabindex="-1" aria-labelledby="AccesareConsultatieModal" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLabel">Accesare consultatie</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+                  <div id="adaugare-medic">
+                     <input class="form-control" type="text" hidden name="idCons" id="idCons"/>
+                       <div class="mb-3">
+                            <label class="col-form-label">Motivul Prezentării:</label>
+                            <textarea type="text" disabled class="form-control" id="input-motiv-prezentare1" name="motiv_prezentare_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Simptome:</label>
+                            <textarea type="text" disabled class="form-control" id="input-simptome1" name="simptome_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Diagnostic:</label>
+                            <textarea type="text" disabled class="form-control" id="input-diagnostic1" name="diagnostic_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label  class="col-form-label">Trimiteri:</label>
+                            <textarea type="text" disabled class="form-control" id="input-trimitere1" name="trimitere_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label  class="col-form-label">Rețete generate:</label>
+                            <textarea class="form-control" disabled type="text" id="input-retete-generate1" name="retete_generate_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label  class="col-form-label">Data consultație:</label>
+                            <input class="form-control" disabled type="date" id="input-data-consultatie1" name="data_consultatie"/>
+                        </div>
+                  </div>
+
+             
+                   <div class="modal-footer">
+                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+                  
+                    </div>
+     </div>
+        </div>
+      </div>
+</div>
+
+
+    </div>
+
+
+
+    <div class="modal fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Deconectare</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">   
+                        @using (Html.BeginForm("Deconectare", "Acasa", new{id_cont=""}, FormMethod.Post, true, new{id = "formDeconectare"}))
+                                {
+                            <p>Sunteți sigur că doriți să vă deconectați?</p>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nu</button>
+                                    <button class="btn btn-primary" type="submit" id="buttonDaPacient">Da</button>
+                                  </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+<script>
+
+    document.getElementById("judet").value = "@(ViewBag.pacient.judet_pacient)";
+
+    calculareVarstaSiDataNasterii();
+    function is_valid_cnp(value) {
+    var m;
+    if (m = /^([1-8])(0[1-9]|[1-9][0-9])(0[1-9]|1[0-2])(\d{2})(\d{2})(\d{3})(\d)$/.exec(value)) {
+        var ll = parseInt(m[3])
+        var zz = parseInt(m[4])
+        switch (ll) {
+            case 2:
+                if (zz > 29) {
+                    return false
+                }
+            case 3:
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                if (zz > 30) {
+                    return false
+                }
+            default:
+                if (zz > 31) {
+                    return false
+                }
+        }
+        var jj = parseInt(m[5])
+        if (jj < 0 || (jj > 46 && jj < 51) || jj > 52) {
+            return false
+        }
+        var nnn = parseInt(m[6])
+        if (nnn < 0) {
+            return false
+        }
+        var c = parseInt(m[7])
+        var constanta = "279146358279"
+        var suma = 0
+        for(var i = 0; i < constanta.length; i++) {
+            suma = suma + parseInt(m[0].charAt(i)) * constanta.charAt(i)
+        }
+        var rest = suma % 11
+        return (((rest < 10) && (rest == m[0].charAt(12))) || ((rest == 10) && (m[0].charAt(12) == 1))) ? true : false
+        }
+     return false
+    }
+
+    function calculareVarstaSiDataNasterii(){
+        var CNPElement = document.getElementById("input-cnp");
+        var valoareCNP = CNPElement.value;
+        var textEroare = document.getElementById("eroare-cnp");
+
+        CNPElement.style.borderColor = "#3f7bff";
+        textEroare.innerText = "";
+
+        if(is_valid_cnp(valoareCNP)){
+            var an = valoareCNP[1]+valoareCNP[2];
+            var sex = valoareCNP[0];
+            if(sex == "1" || sex == "2"){
+               an = "19" + an;
+            }else if(sex == "5" || sex == "6"){
+               an = "20" + an;
+            }
+            if(sex == "1" || sex == "5") {
+               document.getElementById("input-sex-pacient").value = "M";
+            }else if(sex=="2" || sex=="6"){
+               document.getElementById("input-sex-pacient").value = "F";
+            }
+            var luna = valoareCNP[3] + valoareCNP[4];
+            var ziua = valoareCNP[5] + valoareCNP[6];
+            var dataNasterii = ziua + "/" + luna + "/" + an;
+            document.getElementById("input-nastere-pacient").value = dataNasterii;
+
+            var today = new Date();
+            var birthDate = new Date(an + "/" + luna + "/" + ziua);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            document.getElementById("input-varsta-pacient").value = age;
+        } 
+        else 
+        {
+            CNPElement.style.borderColor = "#c53629";
+            CNPElement.value = "";
+            textEroare.innerText = "CNP Invalid!";
+        }
+
+
+         
+        
+    }
+
+    function sendIdConsultatie(id){
+        var date =  id.split("#");
+        console.log(date[1]);
+        document.getElementById("input-motiv-prezentare1").innerText = date[1];
+        document.getElementById("input-data-consultatie1").value = date[2];
+        document.getElementById("input-simptome1").innerText = date[3];
+        document.getElementById("input-diagnostic1").innerText = date[4];
+        document.getElementById("input-trimitere1").innerText = date[5];
+        document.getElementById("input-retete-generate1").innerText = date[6];
+    }
+
+</script>

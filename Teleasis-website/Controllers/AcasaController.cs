@@ -233,7 +233,7 @@ namespace Teleasis_website.Controllers
                 {
                     await firebase.Child("Conturi/Pacienti/" + id_cont).DeleteAsync();
                 }
-            }     
+            }
 
             var noduriMedici = await firebase.Child("Conturi/Medici").OrderByKey().OnceAsync<dynamic>();
             foreach (var medic in noduriMedici)
@@ -336,7 +336,7 @@ namespace Teleasis_website.Controllers
             pacient.id_supraveghetor = date[12];
             var result = await auth.CreateUserWithEmailAndPasswordAsync(pacient.email_pacient, parola_cerere_pacient);
 
-            await firebase.Child("Conturi/Pacienti/" + result.User.LocalId+"/DateDemografice").PutAsync<AdaugarePacientModel>(pacient);
+            await firebase.Child("Conturi/Pacienti/" + result.User.LocalId + "/DateDemografice").PutAsync<AdaugarePacientModel>(pacient);
 
             await firebase.Child("Conturi/Administrator/Cereri/" + pacient.CNP).DeleteAsync();
 
@@ -352,16 +352,16 @@ namespace Teleasis_website.Controllers
             return RedirectToAction("Autentificare", "Autentificare");
         }
 
-        public async Task<IActionResult> AdaugarePacient( string id_medic)
-		{
-            
+        public async Task<IActionResult> AdaugarePacient(string id_medic)
+        {
+
             ViewBag.IdMedic = id_medic;
 
             var query_ingrijitori = await firebase.Child("Conturi/Ingrijitori").OrderByKey().OnceAsync<dynamic>();
             var query_supraveghetori = await firebase.Child("Conturi/Supraveghetori").OrderByKey().OnceAsync<dynamic>();
 
             List<IngrijitorModel> ingrijitoriLista = new List<IngrijitorModel>();
-            List<SupraveghetorModel> supraveghetoriLista= new List<SupraveghetorModel>();
+            List<SupraveghetorModel> supraveghetoriLista = new List<SupraveghetorModel>();
 
             ingrijitoriLista = query_ingrijitori.Select(item => new IngrijitorModel
             {
@@ -379,11 +379,11 @@ namespace Teleasis_website.Controllers
                 id_supraveghetor = item.Key
             }).ToList();
 
-            ViewBag.ingrijitoriLista=ingrijitoriLista;
+            ViewBag.ingrijitoriLista = ingrijitoriLista;
             ViewBag.supraveghetoriLista = supraveghetoriLista;
-            
+
             return View();
-		}
+        }
 
         [HttpPost]
         public async Task<IActionResult> AdaugarePacient(AdaugarePacientModel pacient)
@@ -413,7 +413,7 @@ namespace Teleasis_website.Controllers
                 prenume_pacient = item.Object.DateDemografice.prenume_pacient,
                 CNP = item.Object.DateDemografice.CNP,
                 email_pacient = item.Object.DateDemografice.email_pacient,
-                id_medic=item.Object.DateDemografice.id_medic,
+                id_medic = item.Object.DateDemografice.id_medic,
                 id_pacient = item.Key
             }).ToList();
 
@@ -462,9 +462,9 @@ namespace Teleasis_website.Controllers
         public async Task<IActionResult> ArhivaPacienti(string id_medic)
         {
             ViewBag.id_medic = id_medic;
-            var query_pacienti = await firebase.Child("Conturi/Medici/"+id_medic+"/PacientiArhivati/").OrderByKey().OnceAsync<dynamic>();
+            var query_pacienti = await firebase.Child("Conturi/Medici/" + id_medic + "/PacientiArhivati/").OrderByKey().OnceAsync<dynamic>();
             List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
-            
+
             pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
             {
                 nume_pacient = item.Object.nume_pacient,
@@ -481,5 +481,40 @@ namespace Teleasis_website.Controllers
 
         }
 
+
+        public async Task<IActionResult> AcasaPacient(string id_pacient)
+        {
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+           
+            return View();
+        }
     }
 }

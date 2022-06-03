@@ -128,6 +128,58 @@ namespace Teleasis_website.Controllers
             return View();
         }
 
+        public async Task<IActionResult> FisaPacientPacient(string id_pacient)
+        {
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+
+            var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<ConsultatieModel> listaConsultatii = new List<ConsultatieModel>();
+
+            listaConsultatii = query_consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                data_consultatie = item.Object.data_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie
+            }).ToList();
+            ViewBag.listaConsultatii = listaConsultatii;
+
+            return View();
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> FisaPacient(string CNP, string email_pacient, string id_medic, string judet_pacient,
             string loc_de_munca_pacient, string numar_telefon_pacient, string nume_pacient, string oras_pacient, string prenume_pacient,
@@ -148,9 +200,9 @@ namespace Teleasis_website.Controllers
                 strada_pacient = strada_pacient,
                 id_pacient = id_pacient,
                 id_ingrijitor = id_ingrijitor,
-                id_supraveghetor= id_supraveghetor
+                id_supraveghetor = id_supraveghetor
             };
-            await firebase.Child("Conturi/Pacienti/" + pacient.id_pacient+"/DateDemografice").PutAsync<AdaugarePacientModel>(pacient);
+            await firebase.Child("Conturi/Pacienti/" + pacient.id_pacient + "/DateDemografice").PutAsync<AdaugarePacientModel>(pacient);
 
 
             var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
@@ -490,6 +542,31 @@ namespace Teleasis_website.Controllers
             return View();
         }
 
+
+        public async Task<IActionResult> RecomandariPacient(string id_pacient)
+        {
+            List<RecomandareModel> lista_recomandari = new List<RecomandareModel>();
+
+            var recomandare = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Recomandari").OrderByKey().OnceAsync<dynamic>();
+
+            lista_recomandari = recomandare.Select(item => new RecomandareModel
+            {
+                alte_indicatii = item.Object.alte_indicatii,
+                durata = item.Object.durata,
+                id_recomandare = item.Key,
+                id_pacient = item.Object.id_pacient,
+                tipul_recomandarii = item.Object.tipul_recomandarii
+            }).ToList();
+
+
+
+            ViewBag.recomandariLista = lista_recomandari;
+
+
+            ViewBag.id_pacient = id_pacient;
+            return View();
+        }
+
         [HttpPost]
         public async Task<IActionResult> RecomandariSiInterventii(string tipuri, InterventieModel interventie, RecomandareModel recomandare)
         {
@@ -709,12 +786,12 @@ namespace Teleasis_website.Controllers
             List<string> listaLipitePuls = new List<string>();
 
             valoriPuls = valori_puls.Select(item => new ValoriPuls
-            { 
+            {
                 data = item.Object.data,
                 value = item.Object.value
             }).ToList();
 
-            foreach(ValoriPuls val in valoriPuls)
+            foreach (ValoriPuls val in valoriPuls)
             {
                 listaValoriPuls.Add(val.value);
                 listaDatePuls.Add(val.data);
@@ -730,7 +807,7 @@ namespace Teleasis_website.Controllers
             List<string> listaValoriUmiditate = new List<string>();
             List<string> listaDateMediu = new List<string>();
             List<string> listaLipiteMediu = new List<string>();
-           
+
 
             valoriMediu = valori_mediu.Select(item => new ValoriMediu
             {
@@ -769,6 +846,107 @@ namespace Teleasis_website.Controllers
             return View();
         }
 
+        public async Task<IActionResult> GraficeRapoartePacient(string id_pacient)
+        {
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+
+
+
+            var valori_puls = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ValoriPuls").OrderByKey().OnceAsync<dynamic>();
+
+            List<ValoriPuls> valoriPuls = new List<ValoriPuls>();
+            List<string> listaValoriPuls = new List<string>();
+            List<string> listaDatePuls = new List<string>();
+            List<string> listaLipitePuls = new List<string>();
+
+            valoriPuls = valori_puls.Select(item => new ValoriPuls
+            {
+                data = item.Object.data,
+                value = item.Object.value
+            }).ToList();
+
+            foreach (ValoriPuls val in valoriPuls)
+            {
+                listaValoriPuls.Add(val.value);
+                listaDatePuls.Add(val.data);
+                listaLipitePuls.Add(val.data + "#" + val.value);
+            }
+
+            var valori_mediu = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ValoriMediu").OrderByKey().OnceAsync<dynamic>();
+
+            List<ValoriMediu> valoriMediu = new List<ValoriMediu>();
+            List<string> listaValoriGaz = new List<string>();
+            List<string> listaValoriTemperatura = new List<string>();
+            List<string> listaValoriPrezenta = new List<string>();
+            List<string> listaValoriUmiditate = new List<string>();
+            List<string> listaDateMediu = new List<string>();
+            List<string> listaLipiteMediu = new List<string>();
+
+
+            valoriMediu = valori_mediu.Select(item => new ValoriMediu
+            {
+                data = item.Object.data,
+                value_gaz = item.Object.value_gaz,
+                value_prezenta = item.Object.value_prezenta,
+                value_temperatura = item.Object.value_temperatura,
+                value_umiditate = item.Object.value_umiditate,
+            }).ToList();
+
+            foreach (ValoriMediu val in valoriMediu)
+            {
+                listaValoriGaz.Add(val.value_gaz);
+                listaValoriTemperatura.Add(val.value_temperatura);
+                if (val.value_prezenta == "Detectata")
+                    listaValoriPrezenta.Add("1");
+                else
+                    listaValoriPrezenta.Add("0");
+                listaValoriUmiditate.Add(val.value_umiditate);
+                listaDateMediu.Add(val.data);
+                listaLipiteMediu.Add(val.data + "#" + val.value_gaz + "#" + val.value_temperatura + "#" + val.value_prezenta + "#" + val.value_umiditate);
+            }
+
+
+            ViewBag.datePuls = JsonConvert.SerializeObject(listaDatePuls);
+            ViewBag.valoriPuls = JsonConvert.SerializeObject(listaValoriPuls);
+            ViewBag.listaLipitePuls = JsonConvert.SerializeObject(listaLipitePuls);
+
+            ViewBag.dateMediu = JsonConvert.SerializeObject(listaDateMediu);
+            ViewBag.valoriGaz = JsonConvert.SerializeObject(listaValoriGaz);
+            ViewBag.valoriUmiditate = JsonConvert.SerializeObject(listaValoriUmiditate);
+            ViewBag.valoriPrezenta = JsonConvert.SerializeObject(listaValoriPrezenta);
+            ViewBag.valoriTemperatura = JsonConvert.SerializeObject(listaValoriTemperatura);
+            ViewBag.listaLipiteMediu = JsonConvert.SerializeObject(listaLipiteMediu);
+
+            return View();
+        }
         public async Task<IActionResult> VizualizareDateNormale(string id_pacient, string id_supraveghetor)
         {
 
@@ -864,7 +1042,7 @@ namespace Teleasis_website.Controllers
             }).ToList();
 
             ViewBag.listaValoriNormale = listaValoriNormale;
-            return RedirectToAction("VizualizareDateNormale", "Pacient", new { id_pacient = id_pacient, id_supraveghetor = id_supraveghetor }) ;
+            return RedirectToAction("VizualizareDateNormale", "Pacient", new { id_pacient = id_pacient, id_supraveghetor = id_supraveghetor });
 
         }
 
@@ -1026,13 +1204,15 @@ namespace Teleasis_website.Controllers
                         ValoareNormala obiect = new ValoareNormala
                         {
                             valoare = puls.value,
-                            tip = alarma.tip
+                            tip = alarma.tip,
+                            observatii = alarma.observatii,
+                            id = rnd.Next(9999999).ToString()
                         };
-                        
+
                         obiect.status = "Necompletat";
-                        await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + rnd.Next(9999999)).PutAsync<ValoareNormala>(obiect);
+                        await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + obiect.id).PutAsync<ValoareNormala>(obiect);
                         listaAlarmeSupraveghetor.Add(obiect);
-                 
+
                     }
                 }
             }
@@ -1045,11 +1225,13 @@ namespace Teleasis_website.Controllers
                         ValoareNormala obiect = new ValoareNormala
                         {
                             valoare = vm.value_temperatura,
-                            tip = alarma.tip
+                            tip = alarma.tip,
+                            observatii = alarma.observatii,
+                            id = rnd.Next(9999999).ToString()
                         };
-                        
+
                         obiect.status = "Necompletat";
-                        await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + rnd.Next(9999999)).PutAsync<ValoareNormala>(obiect);
+                        await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + obiect.id).PutAsync<ValoareNormala>(obiect);
                         listaAlarmeSupraveghetor.Add(obiect);
 
                     }
@@ -1065,13 +1247,15 @@ namespace Teleasis_website.Controllers
                         ValoareNormala obiect = new ValoareNormala
                         {
                             valoare = vm.value_gaz,
-                            tip = alarma.tip
+                            tip = alarma.tip,
+                            observatii = alarma.observatii,
+                            id = rnd.Next(9999999).ToString()
                         };
-                      
+
                         obiect.status = "Necompletat";
-                        await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + rnd.Next(9999999)).PutAsync<ValoareNormala>(obiect);
+                        await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + obiect.id).PutAsync<ValoareNormala>(obiect);
                         listaAlarmeSupraveghetor.Add(obiect);
-                               
+
                     }
                 }
 
@@ -1085,18 +1269,20 @@ namespace Teleasis_website.Controllers
                         ValoareNormala obiect = new ValoareNormala
                         {
                             valoare = vm.value_umiditate,
-                            tip = alarma.tip
+                            tip = alarma.tip,
+                            observatii = alarma.observatii,
+                            id = rnd.Next(9999999).ToString()
                         };
-                        
+
                         obiect.status = "Necompletat";
-                        await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + rnd.Next(9999999)).PutAsync<ValoareNormala>(obiect);
+                        await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + obiect.id).PutAsync<ValoareNormala>(obiect);
                         listaAlarmeSupraveghetor.Add(obiect);
-                                
+
                     }
                 }
 
-                
-        }
+
+            }
 
 
 
@@ -1332,6 +1518,7 @@ namespace Teleasis_website.Controllers
             List<ValoriPuls> valoriPuls = new List<ValoriPuls>();
             List<string> listaValoriPuls = new List<string>();
             List<string> listaDatePuls = new List<string>();
+            List<string> listaLipitePuls = new List<string>();
 
             valoriPuls = valori_puls.Select(item => new ValoriPuls
             {
@@ -1343,6 +1530,7 @@ namespace Teleasis_website.Controllers
             {
                 listaValoriPuls.Add(val.value);
                 listaDatePuls.Add(val.data);
+                listaLipitePuls.Add(val.data + "#" + val.value);
             }
 
             var valori_mediu = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ValoriMediu").OrderByKey().OnceAsync<dynamic>();
@@ -1353,6 +1541,8 @@ namespace Teleasis_website.Controllers
             List<string> listaValoriPrezenta = new List<string>();
             List<string> listaValoriUmiditate = new List<string>();
             List<string> listaDateMediu = new List<string>();
+            List<string> listaLipiteMediu = new List<string>();
+
 
             valoriMediu = valori_mediu.Select(item => new ValoriMediu
             {
@@ -1373,17 +1563,20 @@ namespace Teleasis_website.Controllers
                     listaValoriPrezenta.Add("0");
                 listaValoriUmiditate.Add(val.value_umiditate);
                 listaDateMediu.Add(val.data);
+                listaLipiteMediu.Add(val.data + "#" + val.value_gaz + "#" + val.value_temperatura + "#" + val.value_prezenta + "#" + val.value_umiditate);
             }
 
 
             ViewBag.datePuls = JsonConvert.SerializeObject(listaDatePuls);
             ViewBag.valoriPuls = JsonConvert.SerializeObject(listaValoriPuls);
+            ViewBag.listaLipitePuls = JsonConvert.SerializeObject(listaLipitePuls);
 
             ViewBag.dateMediu = JsonConvert.SerializeObject(listaDateMediu);
             ViewBag.valoriGaz = JsonConvert.SerializeObject(listaValoriGaz);
             ViewBag.valoriUmiditate = JsonConvert.SerializeObject(listaValoriUmiditate);
             ViewBag.valoriPrezenta = JsonConvert.SerializeObject(listaValoriPrezenta);
             ViewBag.valoriTemperatura = JsonConvert.SerializeObject(listaValoriTemperatura);
+            ViewBag.listaLipiteMediu = JsonConvert.SerializeObject(listaLipiteMediu);
 
             return View();
         }
@@ -1431,15 +1624,119 @@ namespace Teleasis_website.Controllers
                 valoare = item.Object.valoare,
                 tip = item.Object.tip,
                 status = item.Object.status,
+                observatii = item.Object.observatii,
                 id = item.Key
             }).ToList();
 
-           
 
-            ViewBag.listaAlarmeSupraveghetor = listaAlarmeSupraveghetor;
+
+            ViewBag.listaAlarmeSupraveghetor = listaAlarmeSupraveghetor.OrderByDescending(o => o.status).ToList();
             return View();
 
         }
 
+        public async Task<IActionResult> VizualizareAlarmePacient(string id_pacient, string id_supraveghetor)
+        {
+
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+
+            var query_alarmeSupraveghetor = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor").OrderByKey().OnceAsync<dynamic>();
+
+            List<ValoareNormala> listaAlarmeSupraveghetor = new List<ValoareNormala>();
+
+            listaAlarmeSupraveghetor = query_alarmeSupraveghetor.Select(item => new ValoareNormala
+            {
+                valoare = item.Object.valoare,
+                tip = item.Object.tip,
+                status = item.Object.status,
+                observatii = item.Object.observatii,
+                id = item.Key
+            }).ToList();
+
+
+
+            ViewBag.listaAlarmeSupraveghetor = listaAlarmeSupraveghetor.OrderByDescending(o => o.status).ToList();
+            return View();
+
+        }
+
+
+        [HttpPost("~/Pacient/RezolvareAlarma/{id_uri}")]
+        public async Task<IActionResult> RezolvareAlarma(string id_uri, string observatii)
+        {
+            var splitul = id_uri.Split("#");
+            string id_pacient = splitul[0];
+            string id_supraveghetor = splitul[1];
+            string id_alarma = splitul[2];
+
+            DateTime dateTime = DateTime.UtcNow.Date;
+            string dataCurenta = dateTime.ToString("dd/MM/yyyy").ToString();
+
+            await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + id_alarma + "/status").PutAsync<string>("Completat în data de " + dataCurenta);
+            await firebase.Child("Conturi/Pacienti/" + id_pacient + "/AlarmeSupraveghetor/" + id_alarma + "/observatii").PutAsync<string>(observatii);
+
+            return RedirectToAction("VizualizareAlarmeSupraveghetor", new { id_pacient = id_pacient, id_supraveghetor = id_supraveghetor });
+        }
+
+
+        public async Task<IActionResult> IstoricValoriPacient(string id_pacient)
+        {
+            var valori_puls = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ValoriPuls").OrderByKey().OnceAsync<dynamic>();
+
+            List<ValoriPuls> valoriPuls = new List<ValoriPuls>();
+
+            valoriPuls = valori_puls.Select(item => new ValoriPuls
+            {
+                data = item.Object.data,
+                value = item.Object.value
+            }).ToList();
+
+
+            var valori_mediu = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/ValoriMediu").OrderByKey().OnceAsync<dynamic>();
+
+            List<ValoriMediu> valoriMediu = new List<ValoriMediu>();
+
+
+            valoriMediu = valori_mediu.Select(item => new ValoriMediu
+            {
+                data = item.Object.data,
+                value_gaz = item.Object.value_gaz,
+                value_prezenta = item.Object.value_prezenta,
+                value_temperatura = item.Object.value_temperatura,
+                value_umiditate = item.Object.value_umiditate,
+            }).ToList();
+
+            ViewBag.mediuLista = valoriMediu;
+            ViewBag.pulsLista = valoriPuls;
+            return View();
+        }
     }
 }

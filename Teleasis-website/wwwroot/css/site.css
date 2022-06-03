@@ -395,4 +395,19 @@ fieldset {
     text-align:end;
 }
 
+.completat {
+    color: green;
+    display: table;
+    margin: 0 auto;
+}
+.completat-necompletat {
+    display: table;
+    margin: 0 auto;
+}
+.necompletat {
+    color: red;
+    display: table;
+    margin: 0 auto;
+}
+
 /*-------END ALARME--------------------------------*/
