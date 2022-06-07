@@ -1,17 +1,24 @@
 ﻿@model Teleasis_website.Models.SupraveghetorModel
+@{
+    var str = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+}
 <div class="mb-3">
     <label for="recipient-name" class="col-form-label">Nume:</label>
-    <input type="text" class="form-control" id="input-nume-supraveghetor" name="nume_supraveghetor"/>
+    <input type="text" class="form-control" id="input-nume-supraveghetor" name="nume_supraveghetor" onfocusout='validareText(event, "text")'/>
+    <span id="eroare-input-nume-supraveghetor" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Prenume:</label>
-    <input type="text" class="form-control" id="input-prenume-supraveghetor" name="prenume_supraveghetor"/>
+    <input type="text" class="form-control" id="input-prenume-supraveghetor" name="prenume_supraveghetor" onfocusout='validareText(event, "text")'/>
+    <span id="eroare-input-prenume-supraveghetor" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Email:</label>
-    <input type="email" class="form-control" id="input-email-supraveghetor" name="email_supraveghetor" />
+    <input type="email" class="form-control" id="input-email-supraveghetor" rgx=@str name="email_supraveghetor" onfocusout='validareText(event, "email")'/>
+    <span id="eroare-input-email-supraveghetor" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Parola:</label>
-    <input class="form-control" type="password" id="input-parola-supraveghetor" name="parola_supraveghetor"/>
+    <input class="form-control" type="password" id="input-parola-supraveghetor" name="parola_supraveghetor" onfocusout='validareText(event, "parola")'/>
+    <span id="eroare-input-parola-supraveghetor" class="text-danger"></span>
 </div>

@@ -14,6 +14,14 @@
             </div>        
         </div>
 
+        @if (TempData["Mesaj"] != null)  
+        {  
+            <script type="text/javascript">  
+                window.onload = function () {  
+                    alert("@TempData["Mesaj"]");  
+                };  
+            </script>  
+        }  
         <fieldset>
             <div class="row">
                     <div class="buton-adaugare-valoare-normala">
@@ -130,6 +138,27 @@
         document.getElementById("formStergere_ValoareNormala").setAttribute("id_pacient", id);
         document.getElementById("formStergere_ValoareNormala").setAttribute("action", "StergereValoareNormala" + "/" + id);
         document.getElementById("id_uri").value = id;
+    }
+
+    
+   function validareText(event) {
+        var element = document.getElementById(event.target.id);
+        element.style.borderColor = "#3f7bff";
+        document.getElementById("eroare-" + event.target.id).innerText = ""
+
+         if(event.target.value == ""){
+            element.style.borderColor = "#c53629";
+            document.getElementById("eroare-" + event.target.id).innerText = "Câmp obligatoriu!"
+        }
+
+        else 
+        {
+            if(!(/^[0-9]*(?:\.[0-9]*)?$/.test(element.value)))
+            {
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Sunt permise doar cifre!"
+            }
+        }
     }
  
  </script>

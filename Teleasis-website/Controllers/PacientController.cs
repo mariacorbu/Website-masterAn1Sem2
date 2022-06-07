@@ -1041,6 +1041,8 @@ namespace Teleasis_website.Controllers
                 tip = item.Key
             }).ToList();
 
+            TempData["Mesaj"] = "Adaugare s-a realizat cu succes.";
+
             ViewBag.listaValoriNormale = listaValoriNormale;
             return RedirectToAction("VizualizareDateNormale", "Pacient", new { id_pacient = id_pacient, id_supraveghetor = id_supraveghetor });
 
@@ -1095,6 +1097,8 @@ namespace Teleasis_website.Controllers
                 valoare = item.Object.valoare,
                 tip = item.Key
             }).ToList();
+
+            TempData["Mesaj"] = "Valoarea s-a sters cu succes.";
 
             ViewBag.listaValoriNormale = listaValoriNormale;
             return RedirectToAction("VizualizareDateNormale", "Pacient", new { id_pacient = id_pacient, id_supraveghetor = id_supraveghetor });
@@ -1327,6 +1331,7 @@ namespace Teleasis_website.Controllers
             }).ToList();
 
             ViewBag.listaAlarme = listaAlarme;
+            TempData["Mesaj"] = "Valoarea s-a adaugat cu succes.";
 
             return RedirectToAction("VizualizareAlarme", "Pacient", new { id_pacient = id_pacient, id_supraveghetor = id_supraveghetor });
 
@@ -1384,6 +1389,8 @@ namespace Teleasis_website.Controllers
             }).ToList();
 
             ViewBag.listaAlarme = listaAlarme;
+            TempData["Mesaj"] = "Valoarea s-a sters cu succes.";
+
 
             return RedirectToAction("VizualizareAlarme", "Pacient", new { id_pacient = id_pacient, id_supraveghetor = id_supraveghetor });
 

@@ -13,6 +13,14 @@
                 <a role="button" data-bs-toggle="modal"  data-bs-target="#logoutModal" class="btn btn-danger btn-circle "><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>        
         </div>
+         @if (TempData["Mesaj"] != null)  
+        {  
+            <script type="text/javascript">  
+                window.onload = function () {  
+                    alert("@TempData["Mesaj"]");  
+                };  
+            </script>  
+        }  
 
         <fieldset>
             <div class="row">
@@ -132,4 +140,23 @@
         document.getElementById("id_uri").value = id;
     }
  
+     function validareText(event) {
+        var element = document.getElementById(event.target.id);
+        element.style.borderColor = "#3f7bff";
+        document.getElementById("eroare-" + event.target.id).innerText = ""
+
+         if(event.target.value == ""){
+            element.style.borderColor = "#c53629";
+            document.getElementById("eroare-" + event.target.id).innerText = "Câmp obligatoriu!"
+        }
+
+        else 
+        {
+            if(!(/^[0-9]*(?:\.[0-9]*)?$/.test(element.value)))
+            {
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Sunt permise doar cifre!"
+            }
+        }
+    }
  </script>

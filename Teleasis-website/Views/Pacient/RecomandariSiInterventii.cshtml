@@ -232,4 +232,17 @@
         document.getElementById("id_uriInterventii").value = id_uriInterventii;
      }
 
+
+      function validareText(event) {
+        var element = document.getElementById(event.target.id);
+        element.style.borderColor = "#3f7bff";
+        document.getElementById("eroare-" + event.target.id).innerText = ""
+
+         if(event.target.value == ""){
+            element.style.borderColor = "#c53629";
+            document.getElementById("eroare-" + event.target.id).innerText = "Câmp obligatoriu!"
+         }
+        
+    
+    }
 </script>

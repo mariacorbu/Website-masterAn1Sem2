@@ -10,5 +10,6 @@
 </div>
 <div class="mb-3">
     <label class="col-form-label">Valoare Normală:</label>
-    <input type="text" class="form-control" id="input-valoare-normala" name="valoare"></textarea>
+    <input type="text" class="form-control" id="input-valoare-normala" name="valoare" onfocusout='validareText(event)'></textarea>
+    <span id="eroare-input-valoare-normala" class="text-danger"></span>
 </div>

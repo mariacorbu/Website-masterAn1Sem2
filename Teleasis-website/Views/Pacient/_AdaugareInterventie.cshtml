@@ -10,7 +10,8 @@
 
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Descriere:</label>
-    <input type="text" class="form-control" id="input-descriere" name="descriere"/>
+    <input type="text" class="form-control" id="input-descriere" name="descriere" onfocusout='validareText(event)'/>
+    <span id="eroare-input-descriere" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Stadiu:</label>

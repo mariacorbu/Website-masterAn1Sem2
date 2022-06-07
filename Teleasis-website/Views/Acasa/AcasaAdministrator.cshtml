@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Pagina Acasa - Administrator";
 }
+
 <div class="container-acasa">
     <div class="row">
         <h1 class="text-center titlu-acasa col-10 col-md-10 col-sm-10 col-lg-11">Administrare Conturi</h1>
@@ -209,7 +210,8 @@
                         @using (Html.BeginForm("CreatePacientAccount", "Acasa", new{string_date=""}, FormMethod.Post, true, new{id = "formCreate_pacient"}))
                                 {
                             <p>Introduceți o parolă: </p>
-                            <input class="form-control" type="password" name="parola_cerere_pacient" id="parola_cerere_pacient"/>
+                            <input class="form-control" type="password" name="parola_cerere_pacient" id="parola_cerere_pacient" onfocusout='validareText(event, "parola")'/>
+                            <span id="eroare-parola_cerere_pacient" class="text-danger"></span>
                             <input class="form-control" type="text" hidden name="date_pacient" id="date_pacient"/>
 
                                   <div class="modal-footer">
@@ -293,6 +295,7 @@
 
 
 <script>
+
     function selectareTip(){
         var valoare = document.getElementById("tipuri").value;
         document.getElementById("formular_adaugare").reset();
@@ -331,6 +334,53 @@
     function sendData(data) {
         document.getElementById("formCreate_pacient").setAttribute("string_date", data);
         document.getElementById("date_pacient").value=data;
+    }
+
+
+   function validareText(event, tip) {
+        var element = document.getElementById(event.target.id);
+        element.style.borderColor = "#3f7bff";
+        document.getElementById("eroare-" + event.target.id).innerText = ""
+
+         if(event.target.value == ""){
+            element.style.borderColor = "#c53629";
+            document.getElementById("eroare-" + event.target.id).innerText = "Câmp obligatoriu!"
+        }
+
+        else if(tip == "text"){
+           
+            if(!(/^[a-zA-Z ]{2,30}$/.test(element.value)))
+            {
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Text invalid!"
+            }
+        } 
+        else if(tip == "numar")
+        {
+            if(!(/^\d*$/.test(element.value)))
+            {
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Sunt permise doar cifre!"
+            }
+        }
+        else if(tip == "email")
+        {
+            var reg = new RegExp(element.getAttribute("rgx"));
+            if(!(reg.test(element.value))){
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Email invalid!";
+            }
+        }
+        else if(tip == "parola"){
+            if(event.target.value.length < 8){
+                element.style.borderColor = "#c53629";
+                document.getElementById("eroare-" + event.target.id).innerText = "Parola trebuie să aibă minim 8 caractere!";
+            }
+        }
+
+        
+        
+    
     }
 
 

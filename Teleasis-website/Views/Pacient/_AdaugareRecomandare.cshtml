@@ -1,13 +1,16 @@
 ﻿@model Teleasis_website.Models.RecomandareModel
 <div class="mb-3">
     <label for="recipient-name" class="col-form-label">Tip recomandare:</label>
-    <input type="text" class="form-control" id="input-tip-recomandare" name="tipul_recomandarii"/>
+    <input type="text" class="form-control" id="input-tip-recomandare" name="tipul_recomandarii" onfocusout='validareText(event)'/>
+    <span id="eroare-input-tip-recomandare" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Durată:</label>
-    <input type="text" class="form-control" id="input-durata" name="durata"/>
+    <input type="text" class="form-control" id="input-durata" name="durata" onfocusout='validareText(event)'/>
+    <span id="eroare-input-durata" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Alte indicații:</label>
-    <input type="text" class="form-control" id="input-alte-indicatii" name="alte_indicatii"/>
+    <input type="text" class="form-control" id="input-alte-indicatii" name="alte_indicatii" onfocusout='validareText(event)'/>
+    <span id="eroare-input-alte-indicatii" class="text-danger"></span>
 </div>

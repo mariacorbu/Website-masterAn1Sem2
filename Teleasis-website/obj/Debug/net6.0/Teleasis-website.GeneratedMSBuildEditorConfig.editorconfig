@@ -8,157 +8,157 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Teleasis_website
 build_property.RootNamespace = Teleasis_website
-build_property.ProjectDir = D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\
+build_property.ProjectDir = C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website
+build_property.MSBuildProjectDirectory = C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/AcasaAdministrator.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/AcasaAdministrator.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQWNhc2FBZG1pbmlzdHJhdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/AcasaMedic.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/AcasaMedic.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQWNhc2FNZWRpYy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/AcasaPacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/AcasaPacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQWNhc2FQYWNpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/AcasaSupraveghetor.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/AcasaSupraveghetor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQWNhc2FTdXByYXZlZ2hldG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/AdaugarePacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/AdaugarePacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQWRhdWdhcmVQYWNpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/ArhivaPacienti.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/ArhivaPacienti.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcQXJoaXZhUGFjaWVudGkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareIngrijitor.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/_AdaugareIngrijitor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcX0FkYXVnYXJlSW5ncmlqaXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareMedic.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/_AdaugareMedic.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcX0FkYXVnYXJlTWVkaWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Acasa/_AdaugareSupraveghetor.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Acasa/_AdaugareSupraveghetor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNhc2FcX0FkYXVnYXJlU3VwcmF2ZWdoZXRvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Autentificare/Autentificare.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Autentificare/Autentificare.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0ZW50aWZpY2FyZVxBdXRlbnRpZmljYXJlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/AccesarePacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/AccesarePacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxBY2Nlc2FyZVBhY2llbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/AccesarePacientSupraveghetor.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/AccesarePacientSupraveghetor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxBY2Nlc2FyZVBhY2llbnRTdXByYXZlZ2hldG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/ArhivaConsultatii.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/ArhivaConsultatii.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxBcmhpdmFDb25zdWx0YXRpaS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/FisaPacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/FisaPacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxGaXNhUGFjaWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/FisaPacientPacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/FisaPacientPacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxGaXNhUGFjaWVudFBhY2llbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/FisaPacientSupraveghetor.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/FisaPacientSupraveghetor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxGaXNhUGFjaWVudFN1cHJhdmVnaGV0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/GraficeRapoarte.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/GraficeRapoarte.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxHcmFmaWNlUmFwb2FydGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/GraficeRapoartePacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/GraficeRapoartePacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxHcmFmaWNlUmFwb2FydGVQYWNpZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/GraficeRapoarteSupraveghetor.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/GraficeRapoarteSupraveghetor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxHcmFmaWNlUmFwb2FydGVTdXByYXZlZ2hldG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/IstoricValoriPacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/IstoricValoriPacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxJc3RvcmljVmFsb3JpUGFjaWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/RecomandariPacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/RecomandariPacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxSZWNvbWFuZGFyaVBhY2llbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/RecomandariSiInterventii.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/RecomandariSiInterventii.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxSZWNvbWFuZGFyaVNpSW50ZXJ2ZW50aWkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/VizualizareAlarme.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/VizualizareAlarme.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxWaXp1YWxpemFyZUFsYXJtZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/VizualizareAlarmePacient.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/VizualizareAlarmePacient.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxWaXp1YWxpemFyZUFsYXJtZVBhY2llbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/VizualizareAlarmeSupraveghetor.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/VizualizareAlarmeSupraveghetor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxWaXp1YWxpemFyZUFsYXJtZVN1cHJhdmVnaGV0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/VizualizareDateNormale.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/VizualizareDateNormale.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxWaXp1YWxpemFyZURhdGVOb3JtYWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_AdaugareAlarma.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/_AdaugareAlarma.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfQWRhdWdhcmVBbGFybWEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_AdaugareConsultatie.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/_AdaugareConsultatie.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfQWRhdWdhcmVDb25zdWx0YXRpZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_AdaugareInterventie.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/_AdaugareInterventie.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfQWRhdWdhcmVJbnRlcnZlbnRpZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_AdaugareRecomandare.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/_AdaugareRecomandare.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfQWRhdWdhcmVSZWNvbWFuZGFyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_AdaugareValoareNormala.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/_AdaugareValoareNormala.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfQWRhdWdhcmVWYWxvYXJlTm9ybWFsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Pacient/_GraficeRapoarte.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Pacient/_GraficeRapoarte.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudFxfR3JhZmljZVJhcG9hcnRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Shared/Error.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/_ViewImports.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/_ViewStart.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Google Drive/M A S T E R/AN I/SEM II/Proiect echipa/Website-masterAn1Sem2/Teleasis-website/Views/Shared/_Layout.cshtml]
+[C:/Users/iroxa/OneDrive/Rocksana poli stuff/MASTER/AN 1/SEMESTRUL 2/proiect/Teleasis-website/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mq8l6qrr9t

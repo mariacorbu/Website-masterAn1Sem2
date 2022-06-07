@@ -1,15 +1,19 @@
 ﻿@model Teleasis_website.Models.ConsultatieModel
 <div class="mb-3">
     <label class="col-form-label">Motivul Prezentării:</label>
-    <textarea type="text" class="form-control" id="input-motiv-prezentare" name="motiv_prezentare_consultatie"></textarea>
+    <textarea type="text" class="form-control" id="input-motiv-prezentare" name="motiv_prezentare_consultatie" onfocusout='validareText(event)'></textarea>
+    <span id="eroare-input-motiv-prezentare" class="text-danger"></span>
+
 </div>
 <div class="mb-3">
     <label class="col-form-label">Simptome:</label>
-    <textarea type="text" class="form-control" id="input-simptome" name="simptome_consultatie"></textarea>
+    <textarea type="text" class="form-control" id="input-simptome" name="simptome_consultatie" onfocusout='validareText(event)'></textarea>
+    <span id="eroare-input-simptome" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label class="col-form-label">Diagnostic:</label>
-    <textarea type="text" class="form-control" id="input-diagnostic" name="diagnostic_consultatie"></textarea>
+    <textarea type="text" class="form-control" id="input-diagnostic" name="diagnostic_consultatie" onfocusout='validareText(event)'></textarea>
+    <span id="eroare-input-diagnostic" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label  class="col-form-label">Trimiteri:</label>

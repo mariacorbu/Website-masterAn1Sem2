@@ -1,21 +1,29 @@
 ﻿@model Teleasis_website.Models.MedicModel
+@{
+    var str = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+}
 <div class="mb-3">
     <label for="recipient-name" class="col-form-label">Nume:</label>
-    <input type="text" class="form-control" id="input-nume-medic" name="nume_medic"/>
+    <input type="text" class="form-control" id="input-nume-medic" name="nume_medic" onfocusout='validareText(event, "text")'/>
+    <span id="eroare-input-nume-medic" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Prenume:</label>
-    <input type="text" class="form-control" id="input-prenume-medic" name="prenume_medic"/>
+    <input type="text" class="form-control" id="input-prenume-medic" name="prenume_medic" onfocusout='validareText(event, "text")'/>
+    <span id="eroare-input-prenume-medic" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Cod Parafă:</label>
-    <input type="text" class="form-control" id="input-cod-parafa" name="cod_parafa"/>
+    <input type="text" class="form-control" id="input-cod-parafa" name="cod_parafa" onfocusout='validareText(event)'/>
+    <span id="eroare-input-cod-parafa" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Email:</label>
-    <input type="email" class="form-control" id="input-email-medic" name="email_medic"/>
+    <input type="email" class="form-control" id="input-email-medic" rgx=@str name="email_medic" onfocusout='validareText(event, "email")'/>
+    <span id="eroare-input-email-medic" class="text-danger"></span>
 </div>
 <div class="mb-3">
     <label for="message-text" class="col-form-label">Parola:</label>
-    <input class="form-control" type="password" id="input-parola-medic" name="parola_medic"/>
+    <input class="form-control" type="password" id="input-parola-medic" name="parola_medic" onfocusout='validareText(event, "parola")'/>
+    <span id="eroare-input-parola-medic" class="text-danger"></span>
 </div>
