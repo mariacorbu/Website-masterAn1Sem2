@@ -186,7 +186,7 @@
                                 <td>@(consultatie.data_consultatie)</td>
                                 <td>@(consultatie.diagnostic_consultatie)</td>
                                 <td class="text-end">
-                                    <a role="button" id="accesare_consultatie" class="btn  btn-circle" data-toggle="tooltip" data-bs-toggle="modal" onclick=sendIdConsultatie("@(consultatie.id_consultatie)#@(consultatie.motiv_prezentare_consultatie)#@(consultatie.data_consultatie)#@(consultatie.simptome_consultatie)#@(consultatie.diagnostic_consultatie)#@(consultatie.trimitere_consultatie)#@(consultatie.retete_generate_consultatie)") data-bs-target="#AccesareConsultatieModal" data-placement="bottom" title="Accesare Consultatie"><i class="fa-solid fa-eye"></i></a>
+                                    <a role="button" id="accesare_consultatie" class="btn  btn-circle" data-toggle="tooltip" data-bs-toggle="modal" onclick=sendIdConsultatie("@(consultatie.id_consultatie)#@(consultatie.motiv_prezentare_consultatie)#@(consultatie.data_consultatie)#@(consultatie.simptome_consultatie)#@(consultatie.diagnostic_consultatie)#@(consultatie.trimitere_consultatie)#@(consultatie.retete_generate_consultatie)#@(consultatie.tratament_consultatie)#@(consultatie.schema_consultatie)") data-bs-target="#AccesareConsultatieModal" data-placement="bottom" title="Accesare Consultatie"><i class="fa-solid fa-eye"></i></a>
                                    
                            </td>
                                 </tr>
@@ -198,8 +198,42 @@
               </div>
             </div>
     </fieldset>
+    <br/>
+    <fieldset>
+            <div class="row">
+                    <legend class="col-11">Alergii:</legend>
+                </div>
+            <div class="tab-content">
+              <div id="alergii">
+                <table class="table table-striped" id="tabel-alergii">
+                    <thead>
+                        <tr>
+                            <th>Alergie</th>
+                            <th>Observatii</th> 
+                            <th>Tip</th>
+                            <th></th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @foreach(var alergie in ViewBag.listaAlergii)
+                            {
+                                <tr>
+                                <td>@(alergie.alergie)</td>
+                                <td>@(alergie.observatii)</td>
+                                <td>@(alergie.tip)</td>
+                                <td class="text-end">
+                                   
+                           </td>
+                                </tr>
 
-
+                            }                   
+                
+                    </tbody>
+                </table>
+              </div>
+            </div>
+    </fieldset>
 
  <div class="modal fade " id="AccesareConsultatieModal" tabindex="-1" aria-labelledby="AccesareConsultatieModal" aria-hidden="true">
       <div class="modal-dialog modal-xl">
@@ -223,6 +257,14 @@
                         <div class="mb-3">
                             <label class="col-form-label">Diagnostic:</label>
                             <textarea type="text" disabled class="form-control" id="input-diagnostic1" name="diagnostic_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Tratament:</label>
+                            <textarea type="text" disabled class="form-control" id="input-tratament1" name="tratament_consultatie"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Schema de medicatie:</label>
+                            <textarea type="text" disabled class="form-control" id="input-schema1" name="schema_consultatie"></textarea>
                         </div>
                         <div class="mb-3">
                             <label  class="col-form-label">Trimiteri:</label>
@@ -381,6 +423,8 @@
         document.getElementById("input-diagnostic1").innerText = date[4];
         document.getElementById("input-trimitere1").innerText = date[5];
         document.getElementById("input-retete-generate1").innerText = date[6];
+        document.getElementById("input-tratament1").innerText = date[7];
+        document.getElementById("input-schema1").innerText = date[8];
     }
 
 </script>

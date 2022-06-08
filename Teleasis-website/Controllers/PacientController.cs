@@ -121,9 +121,26 @@ namespace Teleasis_website.Controllers
                 diagnostic_consultatie = item.Object.diagnostic_consultatie,
                 data_consultatie = item.Object.data_consultatie,
                 trimitere_consultatie = item.Object.trimitere_consultatie,
-                retete_generate_consultatie = item.Object.retete_generate_consultatie
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii;
+
+
+
+            var query_alergii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<AlergieModel> listaAlergii = new List<AlergieModel>();
+
+            listaAlergii = query_alergii.Select(item => new AlergieModel
+            {
+                id_alergie = item.Key,
+                alergie = item.Object.alergie,
+                observatii = item.Object.observatii,
+                tip = item.Object.tip
+            }).ToList();
+            ViewBag.listaAlergii = listaAlergii;
 
             return View();
         }
@@ -172,9 +189,24 @@ namespace Teleasis_website.Controllers
                 diagnostic_consultatie = item.Object.diagnostic_consultatie,
                 data_consultatie = item.Object.data_consultatie,
                 trimitere_consultatie = item.Object.trimitere_consultatie,
-                retete_generate_consultatie = item.Object.retete_generate_consultatie
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii;
+
+            var query_alergii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<AlergieModel> listaAlergii = new List<AlergieModel>();
+
+            listaAlergii = query_alergii.Select(item => new AlergieModel
+            {
+                id_alergie = item.Key,
+                alergie = item.Object.alergie,
+                observatii = item.Object.observatii,
+                tip = item.Object.tip
+            }).ToList();
+            ViewBag.listaAlergii = listaAlergii;
 
             return View();
         }
@@ -247,11 +279,27 @@ namespace Teleasis_website.Controllers
                 diagnostic_consultatie = item.Object.diagnostic_consultatie,
                 data_consultatie = item.Object.data_consultatie,
                 trimitere_consultatie = item.Object.trimitere_consultatie,
-                retete_generate_consultatie = item.Object.retete_generate_consultatie
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii;
 
             TempData["Mesaj"] = "Modificari salvate.";
+
+
+            var query_alergii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<AlergieModel> listaAlergii = new List<AlergieModel>();
+
+            listaAlergii = query_alergii.Select(item => new AlergieModel
+            {
+                id_alergie = item.Key,
+                alergie = item.Object.alergie,
+                observatii = item.Object.observatii,
+                tip = item.Object.tip
+            }).ToList();
+            ViewBag.listaAlergii = listaAlergii;
 
             return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
 
@@ -284,7 +332,9 @@ namespace Teleasis_website.Controllers
                     diagnostic_consultatie = item.Object.diagnostic_consultatie,
                     trimitere_consultatie = item.Object.trimitere_consultatie,
                     retete_generate_consultatie = item.Object.retete_generate_consultatie,
-                    data_consultatie = item.Object.data_consultatie
+                    data_consultatie = item.Object.data_consultatie,
+                    tratament_consultatie = item.Object.tratament_consultatie,
+                    schema_consultatie = item.Object.schema_consultatie
                 }).ToList();
 
                 int id = int.Parse(listaConsultatii[listaConsultatii.Count - 1].id_consultatie) + 1;
@@ -335,15 +385,133 @@ namespace Teleasis_website.Controllers
                 diagnostic_consultatie = item.Object.diagnostic_consultatie,
                 data_consultatie = item.Object.data_consultatie,
                 trimitere_consultatie = item.Object.trimitere_consultatie,
-                retete_generate_consultatie = item.Object.retete_generate_consultatie
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii2;
+
+            var query_alergii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<AlergieModel> listaAlergii = new List<AlergieModel>();
+
+            listaAlergii = query_alergii.Select(item => new AlergieModel
+            {
+                id_alergie = item.Key,
+                alergie = item.Object.alergie,
+                observatii = item.Object.observatii,
+                tip = item.Object.tip
+            }).ToList();
+            ViewBag.listaAlergii = listaAlergii;
+
+           
 
             TempData["Mesaj"] = "Consultatie adaugata.";
 
             return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
 
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> AdaugareAlergie(AlergieModel alergieModel, string id_pacient)
+        {
+            string cale = "Conturi/Pacienti/" + id_pacient + "/Alergii";
+
+            var alergii = await firebase.Child(cale).OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            if (!alergii.Any())
+            {
+                //daca ii gol
+                alergieModel.id_alergie = "1";
+
+                await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii/1").PutAsync<AlergieModel>(alergieModel);
+
+            }
+            else
+            {
+                List<AlergieModel> listaAlergii = new List<AlergieModel>();
+
+                listaAlergii = alergii.Select(item => new AlergieModel
+                {
+                    id_alergie = item.Key,
+                    alergie = item.Object.alergie,
+                    observatii = item.Object.observatii,
+                    tip = item.Object.tip
+                }).ToList();
+
+                int id = int.Parse(listaAlergii[listaAlergii.Count - 1].id_alergie) + 1;
+                alergieModel.id_alergie = id.ToString();
+                await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii/" + id + "/").PutAsync<AlergieModel>(alergieModel);
+
+            }
+
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+
+            var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<ConsultatieModel> listaConsultatii2 = new List<ConsultatieModel>();
+
+            listaConsultatii2 = query_consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                data_consultatie = item.Object.data_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
+            }).ToList();
+            ViewBag.listaConsultatii = listaConsultatii2;
+
+            var query_alergii2 = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<AlergieModel> listaAlergii2 = new List<AlergieModel>();
+
+            listaAlergii2 = query_alergii2.Select(item => new AlergieModel
+            {
+                id_alergie = item.Key,
+                alergie = item.Object.alergie,
+                observatii = item.Object.observatii,
+                tip = item.Object.tip
+            }).ToList();
+            ViewBag.listaAlergii = listaAlergii2;
+            TempData["Mesaj"] = "Alergie adaugata.";
+
+            return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
+
+        }
+
 
         [HttpPost("~/Pacient/ArhiveazaConsultatie/{id_uri}")]
         public async Task<IActionResult> ArhiveazaConsultatie(string id_uri)
@@ -367,7 +535,10 @@ namespace Teleasis_website.Controllers
                 diagnostic_consultatie = item.Object.diagnostic_consultatie,
                 trimitere_consultatie = item.Object.trimitere_consultatie,
                 retete_generate_consultatie = item.Object.retete_generate_consultatie,
-                data_consultatie = item.Object.data_consultatie
+                data_consultatie = item.Object.data_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
+
             }).ToList();
 
             foreach (ConsultatieModel consultatie in listaConsultatii)
@@ -427,14 +598,108 @@ namespace Teleasis_website.Controllers
                 diagnostic_consultatie = item.Object.diagnostic_consultatie,
                 data_consultatie = item.Object.data_consultatie,
                 trimitere_consultatie = item.Object.trimitere_consultatie,
-                retete_generate_consultatie = item.Object.retete_generate_consultatie
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii2;
+
+            var query_alergii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<AlergieModel> listaAlergii = new List<AlergieModel>();
+
+            listaAlergii = query_alergii.Select(item => new AlergieModel
+            {
+                id_alergie = item.Key,
+                alergie = item.Object.alergie,
+                observatii = item.Object.observatii,
+                tip = item.Object.tip
+            }).ToList();
+            ViewBag.listaAlergii = listaAlergii;
 
             TempData["Mesaj"] = "Consultatie arhivata.";
 
             return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
         }
+
+        [HttpPost("~/Pacient/StergereAlergie/{id_uriAlergie}")]
+        public async Task<IActionResult> StergereAlergie(string id_uriAlergie)
+        {
+            var splitul = id_uriAlergie.Split("#");
+            string id_alergie = splitul[0];
+            string id_pacient = splitul[1];          
+
+
+            await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii/" + id_alergie).DeleteAsync();
+
+
+
+            var query_pacienti = await firebase.Child("Conturi/Pacienti").OrderByKey().OnceAsync<dynamic>();
+
+            List<AdaugarePacientModel> pacientiLista = new List<AdaugarePacientModel>();
+
+            pacientiLista = query_pacienti.Select(item => new AdaugarePacientModel
+            {
+                nume_pacient = item.Object.DateDemografice.nume_pacient,
+                prenume_pacient = item.Object.DateDemografice.prenume_pacient,
+                CNP = item.Object.DateDemografice.CNP,
+                email_pacient = item.Object.DateDemografice.email_pacient,
+                id_medic = item.Object.DateDemografice.id_medic,
+                id_pacient = item.Key,
+                judet_pacient = item.Object.DateDemografice.judet_pacient,
+                oras_pacient = item.Object.DateDemografice.oras_pacient,
+                strada_pacient = item.Object.DateDemografice.strada_pacient,
+                id_ingrijitor = item.Object.DateDemografice.id_ingrijitor,
+                id_supraveghetor = item.Object.DateDemografice.id_supraveghetor,
+                numar_telefon_pacient = item.Object.DateDemografice.numar_telefon_pacient,
+                profesie_pacient = item.Object.DateDemografice.profesie_pacient,
+                loc_de_munca_pacient = item.Object.DateDemografice.loc_de_munca_pacient
+            }).ToList();
+
+            foreach (AdaugarePacientModel pacient in pacientiLista)
+            {
+                if (pacient.id_pacient.Equals(id_pacient))
+                {
+                    ViewBag.pacient = pacient;
+                }
+            }
+
+            var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<ConsultatieModel> listaConsultatii2 = new List<ConsultatieModel>();
+
+            listaConsultatii2 = query_consultatii.Select(item => new ConsultatieModel
+            {
+                id_consultatie = item.Key,
+                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                simptome_consultatie = item.Object.simptome_consultatie,
+                diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                data_consultatie = item.Object.data_consultatie,
+                trimitere_consultatie = item.Object.trimitere_consultatie,
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
+            }).ToList();
+            ViewBag.listaConsultatii = listaConsultatii2;
+
+            var query_alergii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Alergii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            List<AlergieModel> listaAlergii = new List<AlergieModel>();
+
+            listaAlergii = query_alergii.Select(item => new AlergieModel
+            {
+                id_alergie = item.Key,
+                alergie = item.Object.alergie,
+                observatii = item.Object.observatii,
+                tip = item.Object.tip
+            }).ToList();
+            ViewBag.listaAlergii = listaAlergii;
+            
+            TempData["Mesaj"] = "Alergie stearsa.";
+
+            return RedirectToAction("FisaPacient", new { id_pacient = id_pacient });
+        }
+
 
         public async Task<IActionResult> ArhivaConsultatii(string id_pacient, string nume_pacient, string prenume_pacient, string id_medic)
         {
@@ -450,7 +715,9 @@ namespace Teleasis_website.Controllers
                 diagnostic_consultatie = item.Object.diagnostic_consultatie,
                 data_consultatie = item.Object.data_consultatie,
                 trimitere_consultatie = item.Object.trimitere_consultatie,
-                retete_generate_consultatie = item.Object.retete_generate_consultatie
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii;
             ViewBag.prenume_pacient = prenume_pacient;
@@ -1479,7 +1746,9 @@ namespace Teleasis_website.Controllers
                 diagnostic_consultatie = item.Object.diagnostic_consultatie,
                 data_consultatie = item.Object.data_consultatie,
                 trimitere_consultatie = item.Object.trimitere_consultatie,
-                retete_generate_consultatie = item.Object.retete_generate_consultatie
+                retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                tratament_consultatie = item.Object.tratament_consultatie,
+                schema_consultatie = item.Object.schema_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii;
 
