@@ -142,6 +142,25 @@ namespace Teleasis_website.Controllers
             }).ToList();
             ViewBag.listaAlergii = listaAlergii;
 
+
+            List<string> listaDiagnostice = new List<string>();
+
+            // Read the file and display it line by line.  
+            foreach (string line in System.IO.File.ReadLines(@"txt/ICD9.txt"))
+            {
+                listaDiagnostice.Add(line);
+            }
+            ViewBag.listaDiagnostice = listaDiagnostice;
+
+            List<string> listaSubstante = new List<string>();
+
+            // Read the file and display it line by line.  
+            foreach (string line in System.IO.File.ReadLines(@"txt/substances.txt"))
+            {
+                listaSubstante.Add(line);
+            }
+            ViewBag.listaSubstante = listaSubstante;
+
             return View();
         }
 

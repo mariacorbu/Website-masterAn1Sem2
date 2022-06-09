@@ -1,0 +1,348 @@
+alendronate tablet 	Fosamax
+acyclovir capsule 	Zovirax
+acyclovir tablet 	Zovirax
+albuterol inhalation solution 	Albuterol Inhalation Solution
+albuterol sulfate 	ProAir RespiClick Powder Inhaler
+alclometasone dipropionate cream 	Aclovate
+alfuzosin hcl 	Uroxatral
+alitretinoin 	Panretin gel
+allopurinol tablet 	Zyloprim
+alprazolam 	Xanax
+altretamine 	Hexalen capsules
+amiodarone tablet 	Cordarone
+amitriptyline tablet 	Elavil
+amlodipine and valsartan 	Exforge
+amlodipine besylate 	Norvasc
+amlodipine, valsartan, hydrochlorothiazide 	Exforge HCT
+Amlodipine/Benazepril capsule 	Lotrel
+amoxapine tablet 	Amoxapine tablet
+anastrazole 	Arimidex
+antihypertensive combinations 	Hyzaar
+Arsenic Trioxide 	Arsenic Trioxide
+artificial tears 1.4% drops (OTC) 	Artificial Tears 1.4% drops (OTC)
+aspirin EC tablet (OTC) 	Aspirin EC Tablet (OTC)
+atenolol tablet 	Tenormin
+atenolol/chlorthalidone tablet 	Tenoretic
+atorvastatin calcium 	Lipitor
+augmented betamethasone dipropionate 	Diprolene Cream
+azathioprine 	Imuran
+azelastine 	Astepro
+Azelastine nasal spray 	Astelin
+baclofen tablet 	Lioresal
+Belladonna Alkaloids with Phenobarbital 	Donnatal Tablet
+benazepril HCTZ tablet 	Lotensin HCT
+benazepril tablet 	Lotensin
+benzonatate 	Tessalon Capsule
+benzonatate capsule 	Benzonatate capsule
+benztropine tablet 	Benztropine tablet
+bethanechol tablet 	Urecholine
+bicalutamide 	Casodex
+bisoprolol/HCTZ tablet 	Ziac
+Bleomycin 	Bleomycin
+Bortezomib 	Bortezomib
+brimonidine tartrate 	Brimonidine Tartrate 0.2% Solution
+bromocriptine tablet 	Bromocriptine tablet
+budesonide inhalation suspension 	Pulmicort Respules
+bupropion hcl 	Wellbutrin SR
+bupropion hcl 	Wellbutrin XL
+bupropion HCL tablet 	Wellbutrin
+buspirone tablet 	Buspar
+Calcitonin-salmon (rDNA origin) 	Fortical Nasal Spray
+calcitriol capsule 	Rocaltrol
+calcium acetate 	PhosLo gelcaps
+candesartan cilexetil-hydrochlorothiazide 	Atacand HCT
+candesartan cilextil 	Atacand
+capsaicin cream, 0.035% (OTC) 	Capsaicin Cream, 0.035% (OTC)
+captopril tablet 	Capoten
+carbamazepine tablet 	Tegretol
+carbidopa/levo SR tablet 	Sinemet CR
+carbidopa/levo tablet 	Sinemet
+carvedilol 	Coreg tablets
+cetirizine HCl tablet - OTC 	Zyrtec OTC
+cevimeline HCl 	Evoxac
+chlordiazepoxide capsule 	Chlordiazepoxide capsule
+chlorpromazine HCL 	Chlorpromazine HCL
+chlorthalidone tablet 	Chlorthalidone tablet
+cholestyramine 	Prevalite Powder
+cilostazol tablet 	Pletal
+citalopram tablet 	Celexa
+Cladribine 	Cladribine
+clindamycin phosphate 	Cleocin
+Clofarabine 	Clofarabine
+clomipramine hcl 	Anafranil
+clonazepam tablet 	Klonopin
+clonidine HCL tablets 	Catapres
+clonidine patch 	Catapres TTS -3
+clopidogrel bisulfate tablets 	Plavix
+clotrimazole/betamethasone cream 	Lotrisone Cream
+colestipol hcl 	Colestid
+Cytarabine 	Cytarabine
+decitabine 	Dacogen
+Dexmethylphenidate HCl tablet 	Focalin
+dextroamphetamine sulfate ER capsule 	Dextroamphetamine sulfate ER capsule
+dextroamphetamine-amphetamine ER capsule 	Adderall XR
+dextroamphetamine-amphetamine tablet 	Dextroamphetamine-Amphetamine tablet
+diazepam tablet 	Valium
+diclofenac EC tablet 	Voltaren
+diclofenac ER tablet 	Voltaren XR
+dicyclomine capsule 	Bentyl
+dicyclomine tablet 	Bentyl
+digoxin tablets 	Lanoxin
+diltiazem ER capsule 	Dilacor XR
+diltiazem hcl cd 	Cardizem CD
+diphenoxylate hydrochloride/atropine sulfate 	Lomotil
+diphenoxylate/atropine tablet 	Lonox
+Divalproex DR tablet 	Depakote
+donepezil HCI 	Aricept
+dorzolamide HCL 	Trusopt
+doxazosin mesylate 	Cardura
+doxepin capsule 	Doxepin capsule
+Doxorubicin 	Doxorubicin
+enalapril maleate tablet 	Vasotec
+enalapril maleate-hydrochlorothiazide tablets 	Vaseretic
+epinephrine auto injector 	Epinephrine Auto Injector .3mg
+eplerenone tablet 	Eplerenone tablet
+escitalopram oxalate 	Lexapro
+escitalopram oxalate 	Lexapro 20mg
+escitalopram oxalate 	Lexapro 5mg
+esomeprazole DR capsule 	Nexium
+estradiol tablet 	Estrace
+estropipate tablet 	Ogen
+eszopiclone 	Lunesta
+etodolac capsule 	Lodine
+etodolac tablet 	Lodine tablet
+Etoposide 	Etoposide
+famotidine tablet 	Pepcid
+felodipine ER tablet 	Plendil ER
+fenofibrate 	Tricor
+fenofibrate, micronized capsule 	Lofibra
+fenofibric acid DR capsule 	Trilipix
+ferrous sulfate EC tablet 	Ferrous Sulfate EC tablet
+finasteride tablet 	Proscar
+flecainide acetate tablet 	Flecainide Acetate tablet
+fluconazole 	Diflucan
+Fludarabine Phosphate 	Fludarabine Phosphate
+fluoxetine capsule 	Prozac
+fluticasone nasal spray (50 mcg) 	Flonase (50 mcg)
+fluvoxamine maleate tablet 	Fluvoxamine Maleate tablet
+folic acid 2.2 tablet 	Folic Acid 2.2 tablet
+folic acid tablet 	Folic Acid
+Fulvestrant 	Fulvestrant
+furosemide tablet 	Lasix
+gabapentin 	Neurontin
+gemfibrozil 	Lopid
+glatiramer acetate 	Copaxone
+glimepiride 	Amaryl
+glipizide 	Glucotrol
+glipizide extended release 	Glucotrol XL
+glyburide tablet 	Micronase
+glyburide/Metformin tablet 	Glucovance
+guanfacine 	Intuniv Extended Release Tablets
+halobetasol prop ointment, 0.05% 	Ultravate
+haloperidol tablet 	Haloperidol tablet
+hydralazine tablet 	Hydralazine tablet
+hydrochlorothiazide capsule 	Microzide
+hydrochlorothiazide tablet 	hydrochlorothiazide tablet
+hydrocortisone tablet 	Hydrocortisone tablet
+hydroxychloroquine tablet 	Plaquenil
+hydroxyurea capsule 	Hydrea
+hydroxyzine HCL tablet 	Hydroxyzine HCL tablet
+hydroxyzine pamoate 	Vistaril
+ibuprofen tablet 	Motrin
+indapamide tablet 	Indapamide tablet
+Ipratropium/Albuterol Inhalation Solution 	DuoNeb
+irbesartan 	Avapro
+irbesartan-hydrochlorothiazide 	Avalide
+isoniazid tablet 	Isoniazid/INH
+isosorbide mononitrate 	Imdur
+isosorbide mononitrate (10mg,20mg) 	Ismo
+isosorbide mononitrate (10mg,20mg) 	Monoket
+ketotifen fumerate OTC solution 	Alaway OTC
+labetalol HCL tablet 	Trandate
+lactulose oral solution 	Enulose
+lamotrigine 	Lamictal
+lansoprazole DR capsule 	Prevacid
+latanoprost solution 	Xalatan
+letrozole 	Femara
+Leucovorin Calcium 	Leucovorin Calcium
+levalbuterol hcl 	Xopenex
+levetiracetam ER 	Keppra XR tablets
+levetiracetam tablet 	Keppra
+levocetirizine dihydrochloride 	Xyzal tablets
+levothyroxine 	Levoxyl
+levothyroxine 	Synthroid
+lidocaine 2% viscous solution 	Lidocaine 2% viscous solution
+lidocaine patch 5% 	Lidoderm
+liothyronine sodium 	Cytomel
+lisinopril tablet 	Prinivil
+lisinopril tablet 	Zestril
+lisinopril/HCTZ tablet 	Prinzide
+lisinopril/HCTZ tablet 	Zestoretic
+Lithium Carbonate capsule 	Lithium Carbonate
+loperamide capsule 	Loperamide capsule
+loratadine OTC tablet 	Claritin OTC
+lorazepam tablet 	Ativan
+losartan potassium 	Cozaar
+lovastatin tablet 	Mevacor
+loxapine capsule 	Loxapine capsule
+magnesium oxide tablet (OTC) 	Magnesium Oxide tablet (OTC)
+meclizine HCI 	Antivert
+medroxyprogesterone acetate 	Provera
+meloxicam 	Mobic
+Melphalan HCL 	Melphalan HCL
+memantine hcl 	Namenda
+Mesna 	Mesna
+metformin 	Glucophage
+metformin hcl, extended release 	Glucophage XR
+methimazole tablets 	Tapazole
+methocarbamol tablet 	Robaxin
+methotrexate 	Methotrexate
+methylphenidate CD capsule 	Metadate CD
+methylphenidate hcl 	Ritalin LA
+methylphenidate tablet 	Ritalin
+metoclopramide HCL tablet 	Reglan
+metolazone tablet 	Zaroxolyn
+metoprolol succinate/hctz 	Dutoprol Tablet
+metoprolol tartrate tablet 	Lopressor
+micronized glyburide 	Glynase PresTab
+midodrine HCl tablet 	Midodrine HCl tablet
+minocycline capsule 	Minocin
+minocycline HCL capsule 	Dynacin
+mirtazapine tablet 	Remeron
+Mitoxantrone Inj, USP 	Mitoxantrone Inj, USP
+mometasone furoate 	Elocon Cream
+mometasone furoate 	Elocon Ointment
+montelukast sodium 	Singulair
+mycophenolate mofetil 	CellCept
+nabumetone tablet 	Nabumetone tablet
+naproxen sodium tablet 	Anaprox DS
+naproxen tablet 	Naprosyn
+niacin 	Niacin
+niacin extented-release tablets 	Niaspan ER
+niacin SA capsule (OTC) 	Niacin SA capsule (OTC)
+nifedipine capsule 	Nifedipine capsule
+nifedipine CR tablet 	Adalat cc
+nilutamide 	Nilandron tablet
+nitroglycerin SA capsule 	Nitroglycerin SA capsule
+norethindrone tablet 	Ortho Micronor
+norethindrone/ethinyl estradiol tablet 	Ovcon 35
+nortriptyline HCL capsule 	Pamelor
+nyamyc topical powder 	Nystatin powder
+nystatin tablet 	Nystatin tablet
+Octreotide Acetate 	Octreotide Acetate
+olanzapine 	Zyprexa
+omega-3-acid ethyl esters 	Lovaza
+omeprazole capsule 	Prilosec
+ondansetron ODT tablet 	Zofran ODT
+ondansetron tablet 	Zofran
+Oxaliplatin 	Oxaliplatin
+oxandrolone tablet 	Oxandrin
+oxybutynin tablet 	Ditropan
+pantoprazole sodium 	Protonix
+paroxetine HCL tablet 	Paxil
+pentoxifylline ER tablet 	Trental
+perphenazine tablet 	Perphenazine tablet
+Phenobarbital, Hyoscyamine Sulfate, Atropine Sulfate, Scopolamine Hydrobromide 	Donnatal Elixir
+phenoxybenzamine 	Dibenzyline capsule
+phenytoin sodium capsule 	Dilantin
+pilocarpine 	Salagen Tablet
+pioglitazone hydrochloride 	Actos
+PNV Prenatal Multivitamin Plus Iron 	PNV Prenatal Multivitamin Plus Iron
+potassium chloride ER tablet 	K-Dur 20MEQ
+potassium chloride ER tablet 	Klor-Con 10mEQ
+potassium chloride ER tablet 	Klor-Con M20
+potassium Iodide 	SSKI oral solution
+pramipexole dihydrochloride tablets 	Mirapex tablets
+pravastatin tablet 	Pravachol
+prazosin capsule 	prazosin capsule
+prednisone tablet 	Prednisone tablet
+primidone 	Mysoline
+prochlorperazine tablet 	Prochlorperazine tablet
+progesterone capsule 	Progesterone capsule
+propafenone hydrochloride 	Rythmol
+propranolol HCL ER 	Inderal LA Capsules
+propranolol tablet 	Inderal
+propylthiouracil tablet 	Propylthiouracil tablet
+pyridostigmine bromide 	Mestinon
+quetiapine fumarate 	Seroquel
+quinapril HCI 	Accupril
+quinapril/HCTZ tablet 	Accuretic
+rabeprazole sodium 	Aciphex
+raloxifene tablet 	Evista
+ramipril 	Altace
+ranolazine extended-release tablets 	Ranexa
+rasagiline tablets 	Azilect
+repaglinide tablet 	Prandin
+risedronate sodium tablet 	Actonel
+risperidone 	Risperdal
+rivastigmine tartrate capsule 	Exelon
+Romidepsin 	Romidepsin
+ropinirole hydrochloride 	Requip tablets
+rosuvastatin calcium 	Crestor
+rufinamide 	Banzel
+rufinamide 	Banzel Oral Suspension 40mg/ml
+sertraline HCI 	Zoloft
+sildenafil citrate tablet 	Revatio
+sildenefil citrate 	Viagra
+simvastatin tablets 	Zocor
+spironolactone 	Aldactone
+spironolactone and hydrochlorothiazide 	Aldactazide
+sprintec tablet 	Ortho-Cyclen
+SSKI oral solution 	Potassium Iodide
+sucralfate 	Carafate
+sulfamethoxazole/trimethoprim DS tablet 	Bactrim DS
+sulfamethoxazole/trimethoprim DS tablet 	Septra DS
+sulfasalazine 	Azulfidine
+sulfasalazine, USP 	Azulfidine EN-Tabs
+sumatriptan succinate 	Imitrex (Tablets)
+tacrolimus capsule 	Prograf
+tamoxifen citrate tablet 	Tamoxifen citrate tablet
+tamsulosin hydrochloride 	Flomax
+telmisartan 	Micardis
+temazepam 	Restoril
+temazepam capsule 	Restoril
+Temsirolimus 	Temsirolimus
+terazosin capsule 	Hytrin
+testosterone cypionate 	Depo-Testosterone
+testosterone gel 	AndroGel
+testosterone gel packet 	Vogelxo gel packet
+testosterone gel pump 	Vogelxo gel pump
+testosterone gel tube 	Vogelxo gel tube
+Tizanidine 4mg tab 	Zanaflex
+tolterodine tartrate tablet 	Detrol
+topiramate 	Topamax tablets
+topiramate ER 	Qudexy XR capsule
+Topotecan HCl 	Topotecan HCl
+tramadol hydrochloride/acetaminophen tablets 	Ultracet
+tramadol tablet 	Ultram
+trandolapril tablet 	Mavik
+tranylcypromine 	Parnate 10mg tablets
+trazodone tablet 	Desyrel
+tri-previfem tablet 	Ortho-Tri-Cyclen
+tri-sprintec tablet 	Ortho-Tri-Cyclen
+triamcinolone cream, 0.1% 	Triamcinolone cream, 0.1%
+triamcinolone ointment, 0.1% 	Triamcinolone ointment, 0.1%
+triamterene 	Dyrenium capsule
+triamterene/HCTZ capsule 	Dyazide
+triamterene/HCTZ tablet 	Maxzide
+trifluoperazine HCl tablet 	Trifluoperazine HCl tablet
+trospium chloride tablet 	Trospium Chloride tablet
+valacyclovir HCL tablet 	Valtrex tablet
+valproic acid 	Depakene
+valsartan hydrochloride 	Diovan
+valsartan hydrochlorothiazide 	Diovan HCT
+venlafaxine tablet 	Effexor
+verapamil HCl 	Calan
+verapamil SR tablet 	Calan-SR
+verapamil SR tablet 	Isoptin-SR
+VinBLAStine Sulfate 	VinBLAStine Sulfate
+Vitamin B Complex capsule (OTC) 	Vitamin B Complex capsule (OTC)
+Vitamin B-6 tablet (OTC) 	Vitamin B-6 tablet (OTC)
+Vitamin D3 capsule (OTC) 	Vitamin D3 capsule (OTC)
+Vitamin D3 tablet (OTC) 	Vitamin D3 tablet (OTC)
+warfarin sodium 	Jantoven
+zafirlukast 	Accolate
+zaleplon 	Sonata
+zidovudine tablet 	Zidovudine tablet
+Zoledronic Acid 	Zoledronic Acid
+Zolpidem 	Ambien

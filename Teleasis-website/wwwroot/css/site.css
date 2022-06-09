@@ -299,6 +299,22 @@ fieldset {
     background-color: #bb2d3b;
     color: white;
 }
+#diagnostic_consultatie_chosen {
+    width: 50% !important;
+    margin-left: 15px;
+    font-size: 15px !important;
+}
+#substanta_consultatie_chosen {
+    width: 50% !important;
+    margin-left: 15px;
+    font-size: 15px !important;
+}
+.chosen-single{
+    padding: 15px!important;
+}
+.chosen-single span {
+    margin-top: -10px;
+}
 /*----------------------*/
 
 /*---------Recomandari si interventii-------------*/
