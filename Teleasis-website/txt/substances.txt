@@ -1,348 +1,348 @@
-alendronate tablet 	Fosamax
-acyclovir capsule 	Zovirax
-acyclovir tablet 	Zovirax
-albuterol inhalation solution 	Albuterol Inhalation Solution
-albuterol sulfate 	ProAir RespiClick Powder Inhaler
-alclometasone dipropionate cream 	Aclovate
-alfuzosin hcl 	Uroxatral
-alitretinoin 	Panretin gel
-allopurinol tablet 	Zyloprim
-alprazolam 	Xanax
-altretamine 	Hexalen capsules
-amiodarone tablet 	Cordarone
-amitriptyline tablet 	Elavil
-amlodipine and valsartan 	Exforge
-amlodipine besylate 	Norvasc
-amlodipine, valsartan, hydrochlorothiazide 	Exforge HCT
-Amlodipine/Benazepril capsule 	Lotrel
-amoxapine tablet 	Amoxapine tablet
-anastrazole 	Arimidex
-antihypertensive combinations 	Hyzaar
-Arsenic Trioxide 	Arsenic Trioxide
-artificial tears 1.4% drops (OTC) 	Artificial Tears 1.4% drops (OTC)
-aspirin EC tablet (OTC) 	Aspirin EC Tablet (OTC)
-atenolol tablet 	Tenormin
-atenolol/chlorthalidone tablet 	Tenoretic
-atorvastatin calcium 	Lipitor
-augmented betamethasone dipropionate 	Diprolene Cream
-azathioprine 	Imuran
-azelastine 	Astepro
-Azelastine nasal spray 	Astelin
-baclofen tablet 	Lioresal
-Belladonna Alkaloids with Phenobarbital 	Donnatal Tablet
-benazepril HCTZ tablet 	Lotensin HCT
-benazepril tablet 	Lotensin
-benzonatate 	Tessalon Capsule
-benzonatate capsule 	Benzonatate capsule
-benztropine tablet 	Benztropine tablet
-bethanechol tablet 	Urecholine
-bicalutamide 	Casodex
-bisoprolol/HCTZ tablet 	Ziac
-Bleomycin 	Bleomycin
-Bortezomib 	Bortezomib
-brimonidine tartrate 	Brimonidine Tartrate 0.2% Solution
-bromocriptine tablet 	Bromocriptine tablet
-budesonide inhalation suspension 	Pulmicort Respules
-bupropion hcl 	Wellbutrin SR
-bupropion hcl 	Wellbutrin XL
-bupropion HCL tablet 	Wellbutrin
-buspirone tablet 	Buspar
-Calcitonin-salmon (rDNA origin) 	Fortical Nasal Spray
-calcitriol capsule 	Rocaltrol
-calcium acetate 	PhosLo gelcaps
-candesartan cilexetil-hydrochlorothiazide 	Atacand HCT
-candesartan cilextil 	Atacand
-capsaicin cream, 0.035% (OTC) 	Capsaicin Cream, 0.035% (OTC)
-captopril tablet 	Capoten
-carbamazepine tablet 	Tegretol
-carbidopa/levo SR tablet 	Sinemet CR
-carbidopa/levo tablet 	Sinemet
-carvedilol 	Coreg tablets
-cetirizine HCl tablet - OTC 	Zyrtec OTC
-cevimeline HCl 	Evoxac
-chlordiazepoxide capsule 	Chlordiazepoxide capsule
-chlorpromazine HCL 	Chlorpromazine HCL
-chlorthalidone tablet 	Chlorthalidone tablet
-cholestyramine 	Prevalite Powder
-cilostazol tablet 	Pletal
-citalopram tablet 	Celexa
-Cladribine 	Cladribine
-clindamycin phosphate 	Cleocin
-Clofarabine 	Clofarabine
-clomipramine hcl 	Anafranil
-clonazepam tablet 	Klonopin
-clonidine HCL tablets 	Catapres
-clonidine patch 	Catapres TTS -3
-clopidogrel bisulfate tablets 	Plavix
-clotrimazole/betamethasone cream 	Lotrisone Cream
-colestipol hcl 	Colestid
-Cytarabine 	Cytarabine
-decitabine 	Dacogen
-Dexmethylphenidate HCl tablet 	Focalin
-dextroamphetamine sulfate ER capsule 	Dextroamphetamine sulfate ER capsule
-dextroamphetamine-amphetamine ER capsule 	Adderall XR
-dextroamphetamine-amphetamine tablet 	Dextroamphetamine-Amphetamine tablet
-diazepam tablet 	Valium
-diclofenac EC tablet 	Voltaren
-diclofenac ER tablet 	Voltaren XR
-dicyclomine capsule 	Bentyl
-dicyclomine tablet 	Bentyl
-digoxin tablets 	Lanoxin
-diltiazem ER capsule 	Dilacor XR
-diltiazem hcl cd 	Cardizem CD
-diphenoxylate hydrochloride/atropine sulfate 	Lomotil
-diphenoxylate/atropine tablet 	Lonox
-Divalproex DR tablet 	Depakote
-donepezil HCI 	Aricept
-dorzolamide HCL 	Trusopt
-doxazosin mesylate 	Cardura
-doxepin capsule 	Doxepin capsule
-Doxorubicin 	Doxorubicin
-enalapril maleate tablet 	Vasotec
-enalapril maleate-hydrochlorothiazide tablets 	Vaseretic
-epinephrine auto injector 	Epinephrine Auto Injector .3mg
-eplerenone tablet 	Eplerenone tablet
-escitalopram oxalate 	Lexapro
-escitalopram oxalate 	Lexapro 20mg
-escitalopram oxalate 	Lexapro 5mg
-esomeprazole DR capsule 	Nexium
-estradiol tablet 	Estrace
-estropipate tablet 	Ogen
-eszopiclone 	Lunesta
-etodolac capsule 	Lodine
-etodolac tablet 	Lodine tablet
-Etoposide 	Etoposide
-famotidine tablet 	Pepcid
-felodipine ER tablet 	Plendil ER
-fenofibrate 	Tricor
-fenofibrate, micronized capsule 	Lofibra
-fenofibric acid DR capsule 	Trilipix
-ferrous sulfate EC tablet 	Ferrous Sulfate EC tablet
-finasteride tablet 	Proscar
-flecainide acetate tablet 	Flecainide Acetate tablet
-fluconazole 	Diflucan
-Fludarabine Phosphate 	Fludarabine Phosphate
-fluoxetine capsule 	Prozac
-fluticasone nasal spray (50 mcg) 	Flonase (50 mcg)
-fluvoxamine maleate tablet 	Fluvoxamine Maleate tablet
-folic acid 2.2 tablet 	Folic Acid 2.2 tablet
-folic acid tablet 	Folic Acid
-Fulvestrant 	Fulvestrant
-furosemide tablet 	Lasix
-gabapentin 	Neurontin
-gemfibrozil 	Lopid
-glatiramer acetate 	Copaxone
-glimepiride 	Amaryl
-glipizide 	Glucotrol
-glipizide extended release 	Glucotrol XL
-glyburide tablet 	Micronase
-glyburide/Metformin tablet 	Glucovance
-guanfacine 	Intuniv Extended Release Tablets
-halobetasol prop ointment, 0.05% 	Ultravate
-haloperidol tablet 	Haloperidol tablet
-hydralazine tablet 	Hydralazine tablet
-hydrochlorothiazide capsule 	Microzide
-hydrochlorothiazide tablet 	hydrochlorothiazide tablet
-hydrocortisone tablet 	Hydrocortisone tablet
-hydroxychloroquine tablet 	Plaquenil
-hydroxyurea capsule 	Hydrea
-hydroxyzine HCL tablet 	Hydroxyzine HCL tablet
-hydroxyzine pamoate 	Vistaril
-ibuprofen tablet 	Motrin
-indapamide tablet 	Indapamide tablet
-Ipratropium/Albuterol Inhalation Solution 	DuoNeb
-irbesartan 	Avapro
-irbesartan-hydrochlorothiazide 	Avalide
-isoniazid tablet 	Isoniazid/INH
-isosorbide mononitrate 	Imdur
-isosorbide mononitrate (10mg,20mg) 	Ismo
-isosorbide mononitrate (10mg,20mg) 	Monoket
-ketotifen fumerate OTC solution 	Alaway OTC
-labetalol HCL tablet 	Trandate
-lactulose oral solution 	Enulose
-lamotrigine 	Lamictal
-lansoprazole DR capsule 	Prevacid
-latanoprost solution 	Xalatan
-letrozole 	Femara
-Leucovorin Calcium 	Leucovorin Calcium
-levalbuterol hcl 	Xopenex
-levetiracetam ER 	Keppra XR tablets
-levetiracetam tablet 	Keppra
-levocetirizine dihydrochloride 	Xyzal tablets
-levothyroxine 	Levoxyl
-levothyroxine 	Synthroid
-lidocaine 2% viscous solution 	Lidocaine 2% viscous solution
-lidocaine patch 5% 	Lidoderm
-liothyronine sodium 	Cytomel
-lisinopril tablet 	Prinivil
-lisinopril tablet 	Zestril
-lisinopril/HCTZ tablet 	Prinzide
-lisinopril/HCTZ tablet 	Zestoretic
-Lithium Carbonate capsule 	Lithium Carbonate
-loperamide capsule 	Loperamide capsule
-loratadine OTC tablet 	Claritin OTC
-lorazepam tablet 	Ativan
-losartan potassium 	Cozaar
-lovastatin tablet 	Mevacor
-loxapine capsule 	Loxapine capsule
-magnesium oxide tablet (OTC) 	Magnesium Oxide tablet (OTC)
-meclizine HCI 	Antivert
-medroxyprogesterone acetate 	Provera
-meloxicam 	Mobic
-Melphalan HCL 	Melphalan HCL
-memantine hcl 	Namenda
-Mesna 	Mesna
-metformin 	Glucophage
-metformin hcl, extended release 	Glucophage XR
-methimazole tablets 	Tapazole
-methocarbamol tablet 	Robaxin
-methotrexate 	Methotrexate
-methylphenidate CD capsule 	Metadate CD
-methylphenidate hcl 	Ritalin LA
-methylphenidate tablet 	Ritalin
-metoclopramide HCL tablet 	Reglan
-metolazone tablet 	Zaroxolyn
-metoprolol succinate/hctz 	Dutoprol Tablet
-metoprolol tartrate tablet 	Lopressor
-micronized glyburide 	Glynase PresTab
-midodrine HCl tablet 	Midodrine HCl tablet
-minocycline capsule 	Minocin
-minocycline HCL capsule 	Dynacin
-mirtazapine tablet 	Remeron
-Mitoxantrone Inj, USP 	Mitoxantrone Inj, USP
-mometasone furoate 	Elocon Cream
-mometasone furoate 	Elocon Ointment
-montelukast sodium 	Singulair
-mycophenolate mofetil 	CellCept
-nabumetone tablet 	Nabumetone tablet
-naproxen sodium tablet 	Anaprox DS
-naproxen tablet 	Naprosyn
-niacin 	Niacin
-niacin extented-release tablets 	Niaspan ER
-niacin SA capsule (OTC) 	Niacin SA capsule (OTC)
-nifedipine capsule 	Nifedipine capsule
-nifedipine CR tablet 	Adalat cc
-nilutamide 	Nilandron tablet
-nitroglycerin SA capsule 	Nitroglycerin SA capsule
-norethindrone tablet 	Ortho Micronor
-norethindrone/ethinyl estradiol tablet 	Ovcon 35
-nortriptyline HCL capsule 	Pamelor
-nyamyc topical powder 	Nystatin powder
-nystatin tablet 	Nystatin tablet
-Octreotide Acetate 	Octreotide Acetate
-olanzapine 	Zyprexa
-omega-3-acid ethyl esters 	Lovaza
-omeprazole capsule 	Prilosec
-ondansetron ODT tablet 	Zofran ODT
-ondansetron tablet 	Zofran
-Oxaliplatin 	Oxaliplatin
-oxandrolone tablet 	Oxandrin
-oxybutynin tablet 	Ditropan
-pantoprazole sodium 	Protonix
-paroxetine HCL tablet 	Paxil
-pentoxifylline ER tablet 	Trental
-perphenazine tablet 	Perphenazine tablet
-Phenobarbital, Hyoscyamine Sulfate, Atropine Sulfate, Scopolamine Hydrobromide 	Donnatal Elixir
-phenoxybenzamine 	Dibenzyline capsule
-phenytoin sodium capsule 	Dilantin
-pilocarpine 	Salagen Tablet
-pioglitazone hydrochloride 	Actos
-PNV Prenatal Multivitamin Plus Iron 	PNV Prenatal Multivitamin Plus Iron
-potassium chloride ER tablet 	K-Dur 20MEQ
-potassium chloride ER tablet 	Klor-Con 10mEQ
-potassium chloride ER tablet 	Klor-Con M20
-potassium Iodide 	SSKI oral solution
-pramipexole dihydrochloride tablets 	Mirapex tablets
-pravastatin tablet 	Pravachol
-prazosin capsule 	prazosin capsule
-prednisone tablet 	Prednisone tablet
-primidone 	Mysoline
-prochlorperazine tablet 	Prochlorperazine tablet
-progesterone capsule 	Progesterone capsule
-propafenone hydrochloride 	Rythmol
-propranolol HCL ER 	Inderal LA Capsules
-propranolol tablet 	Inderal
-propylthiouracil tablet 	Propylthiouracil tablet
-pyridostigmine bromide 	Mestinon
-quetiapine fumarate 	Seroquel
-quinapril HCI 	Accupril
-quinapril/HCTZ tablet 	Accuretic
-rabeprazole sodium 	Aciphex
-raloxifene tablet 	Evista
-ramipril 	Altace
-ranolazine extended-release tablets 	Ranexa
-rasagiline tablets 	Azilect
-repaglinide tablet 	Prandin
-risedronate sodium tablet 	Actonel
-risperidone 	Risperdal
-rivastigmine tartrate capsule 	Exelon
-Romidepsin 	Romidepsin
-ropinirole hydrochloride 	Requip tablets
-rosuvastatin calcium 	Crestor
-rufinamide 	Banzel
-rufinamide 	Banzel Oral Suspension 40mg/ml
-sertraline HCI 	Zoloft
-sildenafil citrate tablet 	Revatio
-sildenefil citrate 	Viagra
-simvastatin tablets 	Zocor
-spironolactone 	Aldactone
-spironolactone and hydrochlorothiazide 	Aldactazide
-sprintec tablet 	Ortho-Cyclen
-SSKI oral solution 	Potassium Iodide
-sucralfate 	Carafate
-sulfamethoxazole/trimethoprim DS tablet 	Bactrim DS
-sulfamethoxazole/trimethoprim DS tablet 	Septra DS
-sulfasalazine 	Azulfidine
-sulfasalazine, USP 	Azulfidine EN-Tabs
-sumatriptan succinate 	Imitrex (Tablets)
-tacrolimus capsule 	Prograf
-tamoxifen citrate tablet 	Tamoxifen citrate tablet
-tamsulosin hydrochloride 	Flomax
-telmisartan 	Micardis
-temazepam 	Restoril
-temazepam capsule 	Restoril
-Temsirolimus 	Temsirolimus
-terazosin capsule 	Hytrin
-testosterone cypionate 	Depo-Testosterone
-testosterone gel 	AndroGel
-testosterone gel packet 	Vogelxo gel packet
-testosterone gel pump 	Vogelxo gel pump
-testosterone gel tube 	Vogelxo gel tube
-Tizanidine 4mg tab 	Zanaflex
-tolterodine tartrate tablet 	Detrol
-topiramate 	Topamax tablets
-topiramate ER 	Qudexy XR capsule
-Topotecan HCl 	Topotecan HCl
-tramadol hydrochloride/acetaminophen tablets 	Ultracet
-tramadol tablet 	Ultram
-trandolapril tablet 	Mavik
-tranylcypromine 	Parnate 10mg tablets
-trazodone tablet 	Desyrel
-tri-previfem tablet 	Ortho-Tri-Cyclen
-tri-sprintec tablet 	Ortho-Tri-Cyclen
-triamcinolone cream, 0.1% 	Triamcinolone cream, 0.1%
-triamcinolone ointment, 0.1% 	Triamcinolone ointment, 0.1%
-triamterene 	Dyrenium capsule
-triamterene/HCTZ capsule 	Dyazide
-triamterene/HCTZ tablet 	Maxzide
-trifluoperazine HCl tablet 	Trifluoperazine HCl tablet
-trospium chloride tablet 	Trospium Chloride tablet
-valacyclovir HCL tablet 	Valtrex tablet
-valproic acid 	Depakene
-valsartan hydrochloride 	Diovan
-valsartan hydrochlorothiazide 	Diovan HCT
-venlafaxine tablet 	Effexor
-verapamil HCl 	Calan
-verapamil SR tablet 	Calan-SR
-verapamil SR tablet 	Isoptin-SR
-VinBLAStine Sulfate 	VinBLAStine Sulfate
-Vitamin B Complex capsule (OTC) 	Vitamin B Complex capsule (OTC)
-Vitamin B-6 tablet (OTC) 	Vitamin B-6 tablet (OTC)
-Vitamin D3 capsule (OTC) 	Vitamin D3 capsule (OTC)
-Vitamin D3 tablet (OTC) 	Vitamin D3 tablet (OTC)
-warfarin sodium 	Jantoven
-zafirlukast 	Accolate
-zaleplon 	Sonata
-zidovudine tablet 	Zidovudine tablet
-Zoledronic Acid 	Zoledronic Acid
-Zolpidem 	Ambien
+alendronate&nbsp;tablet&nbsp;Fosamax
+acyclovir&nbsp;capsule&nbsp;Zovirax
+acyclovir&nbsp;tablet&nbsp;Zovirax
+albuterol&nbsp;inhalation&nbsp;solution&nbsp;Albuterol&nbsp;Inhalation&nbsp;Solution
+albuterol&nbsp;sulfate&nbsp;ProAir&nbsp;RespiClick&nbsp;Powder&nbsp;Inhaler
+alclometasone&nbsp;dipropionate&nbsp;cream&nbsp;Aclovate
+alfuzosin&nbsp;hcl&nbsp;Uroxatral
+alitretinoin&nbsp;Panretin&nbsp;gel
+allopurinol&nbsp;tablet&nbsp;Zyloprim
+alprazolam&nbsp;Xanax
+altretamine&nbsp;Hexalen&nbsp;capsules
+amiodarone&nbsp;tablet&nbsp;Cordarone
+amitriptyline&nbsp;tablet&nbsp;Elavil
+amlodipine&nbsp;and&nbsp;valsartan&nbsp;Exforge
+amlodipine&nbsp;besylate&nbsp;Norvasc
+amlodipine,&nbsp;valsartan,&nbsp;hydrochlorothiazide&nbsp;Exforge&nbsp;HCT
+Amlodipine&nbsp;/&nbsp;Benazepril&nbsp;capsule&nbsp;Lotrel
+amoxapine&nbsp;tablet&nbsp;Amoxapine&nbsp;tablet
+anastrazole&nbsp;Arimidex
+antihypertensive&nbsp;combinations&nbsp;Hyzaar
+Arsenic&nbsp;Trioxide&nbsp;Arsenic&nbsp;Trioxide
+artificial&nbsp;tears&nbsp;1.4&nbsp;%&nbsp;&nbsp;&nbsp;drops&nbsp;(OTC)&nbsp;Artificial&nbsp;Tears&nbsp;1.4&nbsp;%&nbsp;&nbsp;&nbsp;drops&nbsp;(OTC)
+aspirin&nbsp;EC&nbsp;tablet&nbsp;(OTC)&nbsp;Aspirin&nbsp;EC&nbsp;Tablet&nbsp;(OTC)
+atenolol&nbsp;tablet&nbsp;Tenormin
+atenolol&nbsp;/&nbsp;chlorthalidone&nbsp;tablet&nbsp;Tenoretic
+atorvastatin&nbsp;calcium&nbsp;Lipitor
+augmented&nbsp;betamethasone&nbsp;dipropionate&nbsp;Diprolene&nbsp;Cream
+azathioprine&nbsp;Imuran
+azelastine&nbsp;Astepro
+Azelastine&nbsp;nasal&nbsp;spray&nbsp;Astelin
+baclofen&nbsp;tablet&nbsp;Lioresal
+Belladonna&nbsp;Alkaloids&nbsp;with&nbsp;Phenobarbital&nbsp;Donnatal&nbsp;Tablet
+benazepril&nbsp;HCTZ&nbsp;tablet&nbsp;Lotensin&nbsp;HCT
+benazepril&nbsp;tablet&nbsp;Lotensin
+benzonatate&nbsp;Tessalon&nbsp;Capsule
+benzonatate&nbsp;capsule&nbsp;Benzonatate&nbsp;capsule
+benztropine&nbsp;tablet&nbsp;Benztropine&nbsp;tablet
+bethanechol&nbsp;tablet&nbsp;Urecholine
+bicalutamide&nbsp;Casodex
+bisoprolol&nbsp;/&nbsp;HCTZ&nbsp;tablet&nbsp;Ziac
+Bleomycin&nbsp;Bleomycin
+Bortezomib&nbsp;Bortezomib
+brimonidine&nbsp;tartrate&nbsp;Brimonidine&nbsp;Tartrate&nbsp;0.2&nbsp;%&nbsp;&nbsp;&nbsp;Solution
+bromocriptine&nbsp;tablet&nbsp;Bromocriptine&nbsp;tablet
+budesonide&nbsp;inhalation&nbsp;suspension&nbsp;Pulmicort&nbsp;Respules
+bupropion&nbsp;hcl&nbsp;Wellbutrin&nbsp;SR
+bupropion&nbsp;hcl&nbsp;Wellbutrin&nbsp;XL
+bupropion&nbsp;HCL&nbsp;tablet&nbsp;Wellbutrin
+buspirone&nbsp;tablet&nbsp;Buspar
+Calcitonin-salmon&nbsp;(rDNA&nbsp;origin)&nbsp;Fortical&nbsp;Nasal&nbsp;Spray
+calcitriol&nbsp;capsule&nbsp;Rocaltrol
+calcium&nbsp;acetate&nbsp;PhosLo&nbsp;gelcaps
+candesartan&nbsp;cilexetil-hydrochlorothiazide&nbsp;Atacand&nbsp;HCT
+candesartan&nbsp;cilextil&nbsp;Atacand
+capsaicin&nbsp;cream,&nbsp;0.035&nbsp;%&nbsp;&nbsp;&nbsp;(OTC)&nbsp;Capsaicin&nbsp;Cream,&nbsp;0.035&nbsp;%&nbsp;&nbsp;&nbsp;(OTC)
+captopril&nbsp;tablet&nbsp;Capoten
+carbamazepine&nbsp;tablet&nbsp;Tegretol
+carbidopa&nbsp;/&nbsp;levo&nbsp;SR&nbsp;tablet&nbsp;Sinemet&nbsp;CR
+carbidopa&nbsp;/&nbsp;levo&nbsp;tablet&nbsp;Sinemet
+carvedilol&nbsp;Coreg&nbsp;tablets
+cetirizine&nbsp;HCl&nbsp;tablet&nbsp;-&nbsp;OTC&nbsp;Zyrtec&nbsp;OTC
+cevimeline&nbsp;HCl&nbsp;Evoxac
+chlordiazepoxide&nbsp;capsule&nbsp;Chlordiazepoxide&nbsp;capsule
+chlorpromazine&nbsp;HCL&nbsp;Chlorpromazine&nbsp;HCL
+chlorthalidone&nbsp;tablet&nbsp;Chlorthalidone&nbsp;tablet
+cholestyramine&nbsp;Prevalite&nbsp;Powder
+cilostazol&nbsp;tablet&nbsp;Pletal
+citalopram&nbsp;tablet&nbsp;Celexa
+Cladribine&nbsp;Cladribine
+clindamycin&nbsp;phosphate&nbsp;Cleocin
+Clofarabine&nbsp;Clofarabine
+clomipramine&nbsp;hcl&nbsp;Anafranil
+clonazepam&nbsp;tablet&nbsp;Klonopin
+clonidine&nbsp;HCL&nbsp;tablets&nbsp;Catapres
+clonidine&nbsp;patch&nbsp;Catapres&nbsp;TTS&nbsp;-3
+clopidogrel&nbsp;bisulfate&nbsp;tablets&nbsp;Plavix
+clotrimazole&nbsp;/&nbsp;betamethasone&nbsp;cream&nbsp;Lotrisone&nbsp;Cream
+colestipol&nbsp;hcl&nbsp;Colestid
+Cytarabine&nbsp;Cytarabine
+decitabine&nbsp;Dacogen
+Dexmethylphenidate&nbsp;HCl&nbsp;tablet&nbsp;Focalin
+dextroamphetamine&nbsp;sulfate&nbsp;ER&nbsp;capsule&nbsp;Dextroamphetamine&nbsp;sulfate&nbsp;ER&nbsp;capsule
+dextroamphetamine-amphetamine&nbsp;ER&nbsp;capsule&nbsp;Adderall&nbsp;XR
+dextroamphetamine-amphetamine&nbsp;tablet&nbsp;Dextroamphetamine-Amphetamine&nbsp;tablet
+diazepam&nbsp;tablet&nbsp;Valium
+diclofenac&nbsp;EC&nbsp;tablet&nbsp;Voltaren
+diclofenac&nbsp;ER&nbsp;tablet&nbsp;Voltaren&nbsp;XR
+dicyclomine&nbsp;capsule&nbsp;Bentyl
+dicyclomine&nbsp;tablet&nbsp;Bentyl
+digoxin&nbsp;tablets&nbsp;Lanoxin
+diltiazem&nbsp;ER&nbsp;capsule&nbsp;Dilacor&nbsp;XR
+diltiazem&nbsp;hcl&nbsp;cd&nbsp;Cardizem&nbsp;CD
+diphenoxylate&nbsp;hydrochloride&nbsp;/&nbsp;atropine&nbsp;sulfate&nbsp;Lomotil
+diphenoxylate&nbsp;/&nbsp;atropine&nbsp;tablet&nbsp;Lonox
+Divalproex&nbsp;DR&nbsp;tablet&nbsp;Depakote
+donepezil&nbsp;HCI&nbsp;Aricept
+dorzolamide&nbsp;HCL&nbsp;Trusopt
+doxazosin&nbsp;mesylate&nbsp;Cardura
+doxepin&nbsp;capsule&nbsp;Doxepin&nbsp;capsule
+Doxorubicin&nbsp;Doxorubicin
+enalapril&nbsp;maleate&nbsp;tablet&nbsp;Vasotec
+enalapril&nbsp;maleate-hydrochlorothiazide&nbsp;tablets&nbsp;Vaseretic
+epinephrine&nbsp;auto&nbsp;injector&nbsp;Epinephrine&nbsp;Auto&nbsp;Injector&nbsp;.3mg
+eplerenone&nbsp;tablet&nbsp;Eplerenone&nbsp;tablet
+escitalopram&nbsp;oxalate&nbsp;Lexapro
+escitalopram&nbsp;oxalate&nbsp;Lexapro&nbsp;20mg
+escitalopram&nbsp;oxalate&nbsp;Lexapro&nbsp;5mg
+esomeprazole&nbsp;DR&nbsp;capsule&nbsp;Nexium
+estradiol&nbsp;tablet&nbsp;Estrace
+estropipate&nbsp;tablet&nbsp;Ogen
+eszopiclone&nbsp;Lunesta
+etodolac&nbsp;capsule&nbsp;Lodine
+etodolac&nbsp;tablet&nbsp;Lodine&nbsp;tablet
+Etoposide&nbsp;Etoposide
+famotidine&nbsp;tablet&nbsp;Pepcid
+felodipine&nbsp;ER&nbsp;tablet&nbsp;Plendil&nbsp;ER
+fenofibrate&nbsp;Tricor
+fenofibrate,&nbsp;micronized&nbsp;capsule&nbsp;Lofibra
+fenofibric&nbsp;acid&nbsp;DR&nbsp;capsule&nbsp;Trilipix
+ferrous&nbsp;sulfate&nbsp;EC&nbsp;tablet&nbsp;Ferrous&nbsp;Sulfate&nbsp;EC&nbsp;tablet
+finasteride&nbsp;tablet&nbsp;Proscar
+flecainide&nbsp;acetate&nbsp;tablet&nbsp;Flecainide&nbsp;Acetate&nbsp;tablet
+fluconazole&nbsp;Diflucan
+Fludarabine&nbsp;Phosphate&nbsp;Fludarabine&nbsp;Phosphate
+fluoxetine&nbsp;capsule&nbsp;Prozac
+fluticasone&nbsp;nasal&nbsp;spray&nbsp;(50&nbsp;mcg)&nbsp;Flonase&nbsp;(50&nbsp;mcg)
+fluvoxamine&nbsp;maleate&nbsp;tablet&nbsp;Fluvoxamine&nbsp;Maleate&nbsp;tablet
+folic&nbsp;acid&nbsp;2.2&nbsp;tablet&nbsp;Folic&nbsp;Acid&nbsp;2.2&nbsp;tablet
+folic&nbsp;acid&nbsp;tablet&nbsp;Folic&nbsp;Acid
+Fulvestrant&nbsp;Fulvestrant
+furosemide&nbsp;tablet&nbsp;Lasix
+gabapentin&nbsp;Neurontin
+gemfibrozil&nbsp;Lopid
+glatiramer&nbsp;acetate&nbsp;Copaxone
+glimepiride&nbsp;Amaryl
+glipizide&nbsp;Glucotrol
+glipizide&nbsp;extended&nbsp;release&nbsp;Glucotrol&nbsp;XL
+glyburide&nbsp;tablet&nbsp;Micronase
+glyburide&nbsp;/&nbsp;Metformin&nbsp;tablet&nbsp;Glucovance
+guanfacine&nbsp;Intuniv&nbsp;Extended&nbsp;Release&nbsp;Tablets
+halobetasol&nbsp;prop&nbsp;ointment,&nbsp;0.05&nbsp;%&nbsp;&nbsp;&nbsp;Ultravate
+haloperidol&nbsp;tablet&nbsp;Haloperidol&nbsp;tablet
+hydralazine&nbsp;tablet&nbsp;Hydralazine&nbsp;tablet
+hydrochlorothiazide&nbsp;capsule&nbsp;Microzide
+hydrochlorothiazide&nbsp;tablet&nbsp;hydrochlorothiazide&nbsp;tablet
+hydrocortisone&nbsp;tablet&nbsp;Hydrocortisone&nbsp;tablet
+hydroxychloroquine&nbsp;tablet&nbsp;Plaquenil
+hydroxyurea&nbsp;capsule&nbsp;Hydrea
+hydroxyzine&nbsp;HCL&nbsp;tablet&nbsp;Hydroxyzine&nbsp;HCL&nbsp;tablet
+hydroxyzine&nbsp;pamoate&nbsp;Vistaril
+ibuprofen&nbsp;tablet&nbsp;Motrin
+indapamide&nbsp;tablet&nbsp;Indapamide&nbsp;tablet
+Ipratropium&nbsp;/&nbsp;Albuterol&nbsp;Inhalation&nbsp;Solution&nbsp;DuoNeb
+irbesartan&nbsp;Avapro
+irbesartan-hydrochlorothiazide&nbsp;Avalide
+isoniazid&nbsp;tablet&nbsp;Isoniazid&nbsp;/&nbsp;INH
+isosorbide&nbsp;mononitrate&nbsp;Imdur
+isosorbide&nbsp;mononitrate&nbsp;(10mg,20mg)&nbsp;Ismo
+isosorbide&nbsp;mononitrate&nbsp;(10mg,20mg)&nbsp;Monoket
+ketotifen&nbsp;fumerate&nbsp;OTC&nbsp;solution&nbsp;Alaway&nbsp;OTC
+labetalol&nbsp;HCL&nbsp;tablet&nbsp;Trandate
+lactulose&nbsp;oral&nbsp;solution&nbsp;Enulose
+lamotrigine&nbsp;Lamictal
+lansoprazole&nbsp;DR&nbsp;capsule&nbsp;Prevacid
+latanoprost&nbsp;solution&nbsp;Xalatan
+letrozole&nbsp;Femara
+Leucovorin&nbsp;Calcium&nbsp;Leucovorin&nbsp;Calcium
+levalbuterol&nbsp;hcl&nbsp;Xopenex
+levetiracetam&nbsp;ER&nbsp;Keppra&nbsp;XR&nbsp;tablets
+levetiracetam&nbsp;tablet&nbsp;Keppra
+levocetirizine&nbsp;dihydrochloride&nbsp;Xyzal&nbsp;tablets
+levothyroxine&nbsp;Levoxyl
+levothyroxine&nbsp;Synthroid
+lidocaine&nbsp;2&nbsp;%&nbsp;&nbsp;&nbsp;viscous&nbsp;solution&nbsp;Lidocaine&nbsp;2&nbsp;%&nbsp;&nbsp;&nbsp;viscous&nbsp;solution
+lidocaine&nbsp;patch&nbsp;5&nbsp;%&nbsp;&nbsp;&nbsp;Lidoderm
+liothyronine&nbsp;sodium&nbsp;Cytomel
+lisinopril&nbsp;tablet&nbsp;Prinivil
+lisinopril&nbsp;tablet&nbsp;Zestril
+lisinopril&nbsp;/&nbsp;HCTZ&nbsp;tablet&nbsp;Prinzide
+lisinopril&nbsp;/&nbsp;HCTZ&nbsp;tablet&nbsp;Zestoretic
+Lithium&nbsp;Carbonate&nbsp;capsule&nbsp;Lithium&nbsp;Carbonate
+loperamide&nbsp;capsule&nbsp;Loperamide&nbsp;capsule
+loratadine&nbsp;OTC&nbsp;tablet&nbsp;Claritin&nbsp;OTC
+lorazepam&nbsp;tablet&nbsp;Ativan
+losartan&nbsp;potassium&nbsp;Cozaar
+lovastatin&nbsp;tablet&nbsp;Mevacor
+loxapine&nbsp;capsule&nbsp;Loxapine&nbsp;capsule
+magnesium&nbsp;oxide&nbsp;tablet&nbsp;(OTC)&nbsp;Magnesium&nbsp;Oxide&nbsp;tablet&nbsp;(OTC)
+meclizine&nbsp;HCI&nbsp;Antivert
+medroxyprogesterone&nbsp;acetate&nbsp;Provera
+meloxicam&nbsp;Mobic
+Melphalan&nbsp;HCL&nbsp;Melphalan&nbsp;HCL
+memantine&nbsp;hcl&nbsp;Namenda
+Mesna&nbsp;Mesna
+metformin&nbsp;Glucophage
+metformin&nbsp;hcl,&nbsp;extended&nbsp;release&nbsp;Glucophage&nbsp;XR
+methimazole&nbsp;tablets&nbsp;Tapazole
+methocarbamol&nbsp;tablet&nbsp;Robaxin
+methotrexate&nbsp;Methotrexate
+methylphenidate&nbsp;CD&nbsp;capsule&nbsp;Metadate&nbsp;CD
+methylphenidate&nbsp;hcl&nbsp;Ritalin&nbsp;LA
+methylphenidate&nbsp;tablet&nbsp;Ritalin
+metoclopramide&nbsp;HCL&nbsp;tablet&nbsp;Reglan
+metolazone&nbsp;tablet&nbsp;Zaroxolyn
+metoprolol&nbsp;succinate&nbsp;/&nbsp;hctz&nbsp;Dutoprol&nbsp;Tablet
+metoprolol&nbsp;tartrate&nbsp;tablet&nbsp;Lopressor
+micronized&nbsp;glyburide&nbsp;Glynase&nbsp;PresTab
+midodrine&nbsp;HCl&nbsp;tablet&nbsp;Midodrine&nbsp;HCl&nbsp;tablet
+minocycline&nbsp;capsule&nbsp;Minocin
+minocycline&nbsp;HCL&nbsp;capsule&nbsp;Dynacin
+mirtazapine&nbsp;tablet&nbsp;Remeron
+Mitoxantrone&nbsp;Inj,&nbsp;USP&nbsp;Mitoxantrone&nbsp;Inj,&nbsp;USP
+mometasone&nbsp;furoate&nbsp;Elocon&nbsp;Cream
+mometasone&nbsp;furoate&nbsp;Elocon&nbsp;Ointment
+montelukast&nbsp;sodium&nbsp;Singulair
+mycophenolate&nbsp;mofetil&nbsp;CellCept
+nabumetone&nbsp;tablet&nbsp;Nabumetone&nbsp;tablet
+naproxen&nbsp;sodium&nbsp;tablet&nbsp;Anaprox&nbsp;DS
+naproxen&nbsp;tablet&nbsp;Naprosyn
+niacin&nbsp;Niacin
+niacin&nbsp;extented-release&nbsp;tablets&nbsp;Niaspan&nbsp;ER
+niacin&nbsp;SA&nbsp;capsule&nbsp;(OTC)&nbsp;Niacin&nbsp;SA&nbsp;capsule&nbsp;(OTC)
+nifedipine&nbsp;capsule&nbsp;Nifedipine&nbsp;capsule
+nifedipine&nbsp;CR&nbsp;tablet&nbsp;Adalat&nbsp;cc
+nilutamide&nbsp;Nilandron&nbsp;tablet
+nitroglycerin&nbsp;SA&nbsp;capsule&nbsp;Nitroglycerin&nbsp;SA&nbsp;capsule
+norethindrone&nbsp;tablet&nbsp;Ortho&nbsp;Micronor
+norethindrone&nbsp;/&nbsp;ethinyl&nbsp;estradiol&nbsp;tablet&nbsp;Ovcon&nbsp;35
+nortriptyline&nbsp;HCL&nbsp;capsule&nbsp;Pamelor
+nyamyc&nbsp;topical&nbsp;powder&nbsp;Nystatin&nbsp;powder
+nystatin&nbsp;tablet&nbsp;Nystatin&nbsp;tablet
+Octreotide&nbsp;Acetate&nbsp;Octreotide&nbsp;Acetate
+olanzapine&nbsp;Zyprexa
+omega-3-acid&nbsp;ethyl&nbsp;esters&nbsp;Lovaza
+omeprazole&nbsp;capsule&nbsp;Prilosec
+ondansetron&nbsp;ODT&nbsp;tablet&nbsp;Zofran&nbsp;ODT
+ondansetron&nbsp;tablet&nbsp;Zofran
+Oxaliplatin&nbsp;Oxaliplatin
+oxandrolone&nbsp;tablet&nbsp;Oxandrin
+oxybutynin&nbsp;tablet&nbsp;Ditropan
+pantoprazole&nbsp;sodium&nbsp;Protonix
+paroxetine&nbsp;HCL&nbsp;tablet&nbsp;Paxil
+pentoxifylline&nbsp;ER&nbsp;tablet&nbsp;Trental
+perphenazine&nbsp;tablet&nbsp;Perphenazine&nbsp;tablet
+Phenobarbital,&nbsp;Hyoscyamine&nbsp;Sulfate,&nbsp;Atropine&nbsp;Sulfate,&nbsp;Scopolamine&nbsp;Hydrobromide&nbsp;Donnatal&nbsp;Elixir
+phenoxybenzamine&nbsp;Dibenzyline&nbsp;capsule
+phenytoin&nbsp;sodium&nbsp;capsule&nbsp;Dilantin
+pilocarpine&nbsp;Salagen&nbsp;Tablet
+pioglitazone&nbsp;hydrochloride&nbsp;Actos
+PNV&nbsp;Prenatal&nbsp;Multivitamin&nbsp;Plus&nbsp;Iron&nbsp;PNV&nbsp;Prenatal&nbsp;Multivitamin&nbsp;Plus&nbsp;Iron
+potassium&nbsp;chloride&nbsp;ER&nbsp;tablet&nbsp;K-Dur&nbsp;20MEQ
+potassium&nbsp;chloride&nbsp;ER&nbsp;tablet&nbsp;Klor-Con&nbsp;10mEQ
+potassium&nbsp;chloride&nbsp;ER&nbsp;tablet&nbsp;Klor-Con&nbsp;M20
+potassium&nbsp;Iodide&nbsp;SSKI&nbsp;oral&nbsp;solution
+pramipexole&nbsp;dihydrochloride&nbsp;tablets&nbsp;Mirapex&nbsp;tablets
+pravastatin&nbsp;tablet&nbsp;Pravachol
+prazosin&nbsp;capsule&nbsp;prazosin&nbsp;capsule
+prednisone&nbsp;tablet&nbsp;Prednisone&nbsp;tablet
+primidone&nbsp;Mysoline
+prochlorperazine&nbsp;tablet&nbsp;Prochlorperazine&nbsp;tablet
+progesterone&nbsp;capsule&nbsp;Progesterone&nbsp;capsule
+propafenone&nbsp;hydrochloride&nbsp;Rythmol
+propranolol&nbsp;HCL&nbsp;ER&nbsp;Inderal&nbsp;LA&nbsp;Capsules
+propranolol&nbsp;tablet&nbsp;Inderal
+propylthiouracil&nbsp;tablet&nbsp;Propylthiouracil&nbsp;tablet
+pyridostigmine&nbsp;bromide&nbsp;Mestinon
+quetiapine&nbsp;fumarate&nbsp;Seroquel
+quinapril&nbsp;HCI&nbsp;Accupril
+quinapril&nbsp;/&nbsp;HCTZ&nbsp;tablet&nbsp;Accuretic
+rabeprazole&nbsp;sodium&nbsp;Aciphex
+raloxifene&nbsp;tablet&nbsp;Evista
+ramipril&nbsp;Altace
+ranolazine&nbsp;extended-release&nbsp;tablets&nbsp;Ranexa
+rasagiline&nbsp;tablets&nbsp;Azilect
+repaglinide&nbsp;tablet&nbsp;Prandin
+risedronate&nbsp;sodium&nbsp;tablet&nbsp;Actonel
+risperidone&nbsp;Risperdal
+rivastigmine&nbsp;tartrate&nbsp;capsule&nbsp;Exelon
+Romidepsin&nbsp;Romidepsin
+ropinirole&nbsp;hydrochloride&nbsp;Requip&nbsp;tablets
+rosuvastatin&nbsp;calcium&nbsp;Crestor
+rufinamide&nbsp;Banzel
+rufinamide&nbsp;Banzel&nbsp;Oral&nbsp;Suspension&nbsp;40mg&nbsp;/&nbsp;ml
+sertraline&nbsp;HCI&nbsp;Zoloft
+sildenafil&nbsp;citrate&nbsp;tablet&nbsp;Revatio
+sildenefil&nbsp;citrate&nbsp;Viagra
+simvastatin&nbsp;tablets&nbsp;Zocor
+spironolactone&nbsp;Aldactone
+spironolactone&nbsp;and&nbsp;hydrochlorothiazide&nbsp;Aldactazide
+sprintec&nbsp;tablet&nbsp;Ortho-Cyclen
+SSKI&nbsp;oral&nbsp;solution&nbsp;Potassium&nbsp;Iodide
+sucralfate&nbsp;Carafate
+sulfamethoxazole&nbsp;/&nbsp;trimethoprim&nbsp;DS&nbsp;tablet&nbsp;Bactrim&nbsp;DS
+sulfamethoxazole&nbsp;/&nbsp;trimethoprim&nbsp;DS&nbsp;tablet&nbsp;Septra&nbsp;DS
+sulfasalazine&nbsp;Azulfidine
+sulfasalazine,&nbsp;USP&nbsp;Azulfidine&nbsp;EN-Tabs
+sumatriptan&nbsp;succinate&nbsp;Imitrex&nbsp;(Tablets)
+tacrolimus&nbsp;capsule&nbsp;Prograf
+tamoxifen&nbsp;citrate&nbsp;tablet&nbsp;Tamoxifen&nbsp;citrate&nbsp;tablet
+tamsulosin&nbsp;hydrochloride&nbsp;Flomax
+telmisartan&nbsp;Micardis
+temazepam&nbsp;Restoril
+temazepam&nbsp;capsule&nbsp;Restoril
+Temsirolimus&nbsp;Temsirolimus
+terazosin&nbsp;capsule&nbsp;Hytrin
+testosterone&nbsp;cypionate&nbsp;Depo-Testosterone
+testosterone&nbsp;gel&nbsp;AndroGel
+testosterone&nbsp;gel&nbsp;packet&nbsp;Vogelxo&nbsp;gel&nbsp;packet
+testosterone&nbsp;gel&nbsp;pump&nbsp;Vogelxo&nbsp;gel&nbsp;pump
+testosterone&nbsp;gel&nbsp;tube&nbsp;Vogelxo&nbsp;gel&nbsp;tube
+Tizanidine&nbsp;4mg&nbsp;tab&nbsp;Zanaflex
+tolterodine&nbsp;tartrate&nbsp;tablet&nbsp;Detrol
+topiramate&nbsp;Topamax&nbsp;tablets
+topiramate&nbsp;ER&nbsp;Qudexy&nbsp;XR&nbsp;capsule
+Topotecan&nbsp;HCl&nbsp;Topotecan&nbsp;HCl
+tramadol&nbsp;hydrochloride&nbsp;/&nbsp;acetaminophen&nbsp;tablets&nbsp;Ultracet
+tramadol&nbsp;tablet&nbsp;Ultram
+trandolapril&nbsp;tablet&nbsp;Mavik
+tranylcypromine&nbsp;Parnate&nbsp;10mg&nbsp;tablets
+trazodone&nbsp;tablet&nbsp;Desyrel
+tri-previfem&nbsp;tablet&nbsp;Ortho-Tri-Cyclen
+tri-sprintec&nbsp;tablet&nbsp;Ortho-Tri-Cyclen
+triamcinolone&nbsp;cream,&nbsp;0.1&nbsp;%&nbsp;&nbsp;&nbsp;Triamcinolone&nbsp;cream,&nbsp;0.1&nbsp;%&nbsp;&nbsp;
+triamcinolone&nbsp;ointment,&nbsp;0.1&nbsp;%&nbsp;&nbsp;&nbsp;Triamcinolone&nbsp;ointment,&nbsp;0.1&nbsp;%&nbsp;&nbsp;
+triamterene&nbsp;Dyrenium&nbsp;capsule
+triamterene&nbsp;/&nbsp;HCTZ&nbsp;capsule&nbsp;Dyazide
+triamterene&nbsp;/&nbsp;HCTZ&nbsp;tablet&nbsp;Maxzide
+trifluoperazine&nbsp;HCl&nbsp;tablet&nbsp;Trifluoperazine&nbsp;HCl&nbsp;tablet
+trospium&nbsp;chloride&nbsp;tablet&nbsp;Trospium&nbsp;Chloride&nbsp;tablet
+valacyclovir&nbsp;HCL&nbsp;tablet&nbsp;Valtrex&nbsp;tablet
+valproic&nbsp;acid&nbsp;Depakene
+valsartan&nbsp;hydrochloride&nbsp;Diovan
+valsartan&nbsp;hydrochlorothiazide&nbsp;Diovan&nbsp;HCT
+venlafaxine&nbsp;tablet&nbsp;Effexor
+verapamil&nbsp;HCl&nbsp;Calan
+verapamil&nbsp;SR&nbsp;tablet&nbsp;Calan-SR
+verapamil&nbsp;SR&nbsp;tablet&nbsp;Isoptin-SR
+VinBLAStine&nbsp;Sulfate&nbsp;VinBLAStine&nbsp;Sulfate
+Vitamin&nbsp;B&nbsp;Complex&nbsp;capsule&nbsp;(OTC)&nbsp;Vitamin&nbsp;B&nbsp;Complex&nbsp;capsule&nbsp;(OTC)
+Vitamin&nbsp;B-6&nbsp;tablet&nbsp;(OTC)&nbsp;Vitamin&nbsp;B-6&nbsp;tablet&nbsp;(OTC)
+Vitamin&nbsp;D3&nbsp;capsule&nbsp;(OTC)&nbsp;Vitamin&nbsp;D3&nbsp;capsule&nbsp;(OTC)
+Vitamin&nbsp;D3&nbsp;tablet&nbsp;(OTC)&nbsp;Vitamin&nbsp;D3&nbsp;tablet&nbsp;(OTC)
+warfarin&nbsp;sodium&nbsp;Jantoven
+zafirlukast&nbsp;Accolate
+zaleplon&nbsp;Sonata
+zidovudine&nbsp;tablet&nbsp;Zidovudine&nbsp;tablet
+Zoledronic&nbsp;Acid&nbsp;Zoledronic&nbsp;Acid
+Zolpidem&nbsp;Ambien

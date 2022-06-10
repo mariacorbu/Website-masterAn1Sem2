@@ -110,7 +110,7 @@ namespace Teleasis_website.Controllers
             }
 
             var query_consultatii = await firebase.Child("Conturi/Pacienti/" + id_pacient + "/Consultatii").OrderByKey().StartAt("1").OnceAsync<dynamic>();
-
+            
             List<ConsultatieModel> listaConsultatii = new List<ConsultatieModel>();
 
             listaConsultatii = query_consultatii.Select(item => new ConsultatieModel
@@ -146,7 +146,7 @@ namespace Teleasis_website.Controllers
             List<string> listaDiagnostice = new List<string>();
 
             // Read the file and display it line by line.  
-            foreach (string line in System.IO.File.ReadLines(@"txt/ICD9.txt"))
+            foreach (string line in System.IO.File.ReadLines("txt/ICD9.txt"))
             {
                 listaDiagnostice.Add(line);
             }
@@ -155,7 +155,7 @@ namespace Teleasis_website.Controllers
             List<string> listaSubstante = new List<string>();
 
             // Read the file and display it line by line.  
-            foreach (string line in System.IO.File.ReadLines(@"txt/substances.txt"))
+            foreach (string line in System.IO.File.ReadLines("txt/substances.txt"))
             {
                 listaSubstante.Add(line);
             }
@@ -325,11 +325,14 @@ namespace Teleasis_website.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdaugareConsultatie(ConsultatieModel consultatie, string id_pacient)
+        public async Task<IActionResult> AdaugareConsultatie(ConsultatieModel consultatie, string id_pacient, string string_complet)
         {
             string cale = "Conturi/Pacienti/" + id_pacient + "/Consultatii";
 
             var consultatii = await firebase.Child(cale).OrderByKey().StartAt("1").OnceAsync<dynamic>();
+
+            consultatie.retete_generate_consultatie = string_complet;
+
 
             if (!consultatii.Any())
             {
@@ -423,7 +426,9 @@ namespace Teleasis_website.Controllers
             }).ToList();
             ViewBag.listaAlergii = listaAlergii;
 
-           
+
+            
+
 
             TempData["Mesaj"] = "Consultatie adaugata.";
 
@@ -688,16 +693,16 @@ namespace Teleasis_website.Controllers
             List<ConsultatieModel> listaConsultatii2 = new List<ConsultatieModel>();
 
             listaConsultatii2 = query_consultatii.Select(item => new ConsultatieModel
-            {
-                id_consultatie = item.Key,
-                motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
-                simptome_consultatie = item.Object.simptome_consultatie,
-                diagnostic_consultatie = item.Object.diagnostic_consultatie,
-                data_consultatie = item.Object.data_consultatie,
-                trimitere_consultatie = item.Object.trimitere_consultatie,
-                retete_generate_consultatie = item.Object.retete_generate_consultatie,
-                tratament_consultatie = item.Object.tratament_consultatie,
-                schema_consultatie = item.Object.schema_consultatie
+                {
+                    id_consultatie = item.Key,
+                    motiv_prezentare_consultatie = item.Object.motiv_prezentare_consultatie,
+                    simptome_consultatie = item.Object.simptome_consultatie,
+                    diagnostic_consultatie = item.Object.diagnostic_consultatie,
+                    data_consultatie = item.Object.data_consultatie,
+                    trimitere_consultatie = item.Object.trimitere_consultatie,
+                    retete_generate_consultatie = item.Object.retete_generate_consultatie,
+                    tratament_consultatie = item.Object.tratament_consultatie,
+                    schema_consultatie = item.Object.schema_consultatie
             }).ToList();
             ViewBag.listaConsultatii = listaConsultatii2;
 

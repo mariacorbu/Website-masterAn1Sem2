@@ -184,7 +184,7 @@
                             {
                                 <tr>
                                 <td>@(consultatie.data_consultatie)</td>
-                                <td>@(consultatie.diagnostic_consultatie)</td>
+                                <td>@(consultatie.diagnostic_consultatie.Replace("&nbsp;"," "))</td>
                                 <td class="text-end">
                                     <a role="button" id="accesare_consultatie" class="btn  btn-circle" data-toggle="tooltip" data-bs-toggle="modal" onclick=sendIdConsultatie("@(consultatie.id_consultatie)#@(consultatie.motiv_prezentare_consultatie)#@(consultatie.data_consultatie)#@(consultatie.simptome_consultatie)#@(consultatie.diagnostic_consultatie)#@(consultatie.trimitere_consultatie)#@(consultatie.retete_generate_consultatie)#@(consultatie.tratament_consultatie)#@(consultatie.schema_consultatie)") data-bs-target="#AccesareConsultatieModal" data-placement="bottom" title="Accesare Consultatie"><i class="fa-solid fa-eye"></i></a>
                                    
@@ -272,7 +272,9 @@
                         </div>
                         <div class="mb-3">
                             <label  class="col-form-label">Rețete generate:</label>
-                            <textarea class="form-control" disabled type="text" id="input-retete-generate1" name="retete_generate_consultatie"></textarea>
+                            <ul id="input-retete-generate1">
+
+                            </ul>
                         </div>
                         <div class="mb-3">
                             <label  class="col-form-label">Data consultație:</label>
@@ -414,17 +416,32 @@
         
     }
 
-    function sendIdConsultatie(id){
-        var date =  id.split("#");
-        console.log(date[1]);
+    function sendIdConsultatie(id) {
+
+        var date = id.split('#');
+        var repl = date[6].replaceAll("&nbsp;", " ");
+        var repl2 = date[4].replaceAll("&nbsp;", " ");
+        var listadeAfisat = document.getElementById("input-retete-generate1");
+        
+        listadeAfisat.innerHTML="";
+
         document.getElementById("input-motiv-prezentare1").innerText = date[1];
         document.getElementById("input-data-consultatie1").value = date[2];
         document.getElementById("input-simptome1").innerText = date[3];
-        document.getElementById("input-diagnostic1").innerText = date[4];
+        document.getElementById("input-diagnostic1").innerText = repl2;
         document.getElementById("input-trimitere1").innerText = date[5];
-        document.getElementById("input-retete-generate1").innerText = date[6];
+        @*document.getElementById("input-retete-generate1").innerText = repl;*@
         document.getElementById("input-tratament1").innerText = date[7];
         document.getElementById("input-schema1").innerText = date[8];
-    }
+
+        var retete = repl.split("_");
+        retete.forEach( element =>{
+            var reteta_despartita = element.split(";");
+            var afisare = "Substanta: " + reteta_despartita[0] + " Durata: " + reteta_despartita[1] + " Perioada: " + reteta_despartita[2] + " Cantitatea: " + reteta_despartita[3] + " Frecvența: " + reteta_despartita[4];
+            var liCard = document.createElement("li");
+            liCard.innerHTML = afisare;
+            listadeAfisat.appendChild(liCard);
+        }); 
+   }
 
 </script>

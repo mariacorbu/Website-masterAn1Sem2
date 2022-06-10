@@ -1,110 +1,88 @@
 ﻿@model Teleasis_website.Models.ConsultatieModel
- @{
-        List<string> listaRetete = new List<string>();
-  }
-
 <div class="mb-3">
-    <label class="col-form-label">Motivul Prezentării:</label>
-    <textarea type="text" class="form-control" id="input-motiv-prezentare" name="motiv_prezentare_consultatie" onfocusout='validareText(event)'></textarea>
-    <span id="eroare-input-motiv-prezentare" class="text-danger"></span>
-
+   <label class="col-form-label">Motivul Prezentării:</label>
+   <textarea type="text" class="form-control" id="input-motiv-prezentare" name="motiv_prezentare_consultatie" onfocusout='validareText(event)'></textarea>
+   <span id="eroare-input-motiv-prezentare" class="text-danger"></span>
 </div>
 <div class="mb-3">
-    <label class="col-form-label">Simptome:</label>
-    <textarea type="text" class="form-control" id="input-simptome" name="simptome_consultatie" onfocusout='validareText(event)'></textarea>
-    <span id="eroare-input-simptome" class="text-danger"></span>
+   <label class="col-form-label">Simptome:</label>
+   <textarea type="text" class="form-control" id="input-simptome" name="simptome_consultatie" onfocusout='validareText(event)'></textarea>
+   <span id="eroare-input-simptome" class="text-danger"></span>
 </div>
 <div class="mb-3" >
-    <label for="message-text" class="col-form-label">Alegeți diagnosticul:</label>
-        <select name="diagnostic_consultatie" id="diagnostic_consultatie" class="diagnostice">
-             @foreach(var diagnostic in ViewBag.listaDiagnostice)
-            {
-                <option value="@(diagnostic)">@(diagnostic)</option>
-            }      
-           
-        </select>
+   <label for="message-text" class="col-form-label">Alegeți diagnosticul:</label>
+   <select name="diagnostic_consultatie" id="diagnostic_consultatie" class="diagnostice">
+      @foreach(var diagnostic in ViewBag.listaDiagnostice)
+      {
+      <option value="@(diagnostic)">@(diagnostic.Replace("&nbsp;", " "))</option>
+      }      
+   </select>
 </div>
 <div class="mb-3">
-    <label class="col-form-label">Tratament:</label>
-    <textarea type="text" class="form-control" id="input-tratament" name="tratament_consultatie" onfocusout='validareText(event)'></textarea>
-    <span id="eroare-input-tratament" class="text-danger"></span>
+   <label class="col-form-label">Tratament:</label>
+   <textarea type="text" class="form-control" id="input-tratament" name="tratament_consultatie" onfocusout='validareText(event)'></textarea>
+   <span id="eroare-input-tratament" class="text-danger"></span>
 </div>
 <div class="mb-3">
-    <label class="col-form-label">Schema de medicatie:</label>
-    <textarea type="text" class="form-control" id="input-schema" name="schema_consultatie" onfocusout='validareText(event)'></textarea>
-    <span id="eroare-input-schema" class="text-danger"></span>
+   <label class="col-form-label">Schema de medicatie:</label>
+   <textarea type="text" class="form-control" id="input-schema" name="schema_consultatie" onfocusout='validareText(event)'></textarea>
+   <span id="eroare-input-schema" class="text-danger"></span>
 </div>
 <div class="mb-3">
-    <label  class="col-form-label">Trimiteri:</label>
-    <textarea type="text" class="form-control" id="input-trimitere" name="trimitere_consultatie"></textarea>
+   <label  class="col-form-label">Trimiteri:</label>
+   <textarea type="text" class="form-control" id="input-trimitere" name="trimitere_consultatie"></textarea>
 </div>
 <div class="mb-3">
-    <label  class="col-form-label">Rețete:</label>
-    <br />
-    <fieldset>
-        <label for="message-text" class="col-form-label">Alegeți substanța:</label>
-            <select name="substanta_consultatie" id="substanta_consultatie" class="substante">
-                 @foreach(var substanta in ViewBag.listaSubstante)
-                {
-                    <option value="@(substanta)">@(substanta)</option>
-                }      
-           
-            </select>
-         <br />
-         <br />
-         <label for="message-text" class="col-form-label">Scrieți durata:</label>
-         <input id="durata"/>
-         <label for="message-text" class="col-form-label">Alegeți perioada:</label>
-         <select id="select_saptamana">
-             <option value="zile">zile</option>
-             <option value="săptămâni">săptămâni</option>
-             <option value="luni">luni</option>
-         </select>
-         <br />
-         <br />
-         <label for="message-text" class="col-form-label">Scrieți cantitatea/administrare:</label>
-         <input id="cantitate"/>
-         <label for="message-text" class="col-form-label">Alegeți de câte ori pe zi:</label>
-         <select id="select_dimineata">
-             <option value="dimineața">dimineața</option>
-             <option value="după-masă">după-masă</option>
-             <option value="seara">seara</option>
-             <option value="dimineața și după-masa">dimineața și după-masa</option>
-             <option value="dimineața și seara">dimineața și seara</option>
-             <option value="după-masa și seara">după-masa și seara</option>
-             <option value="dimineața, după-masa și seara">dimineața, după-masa și seara</option>
-         </select>
-         <br />
-         <br />
-         <a type="button" id="adaugareListaRetete" class="btn btn-primary" onclick=addToList() >Adăugare medicament</a>
-         <br />
-         <br />
-
-     </fieldset>
-@*    <textarea class="form-control" type="text" id="input-retete-generate" name="retete_generate_consultatie"></textarea>
-*@</div>
-<div class="mb-3">
-    <label  class="col-form-label">Data consultație:</label>
-    <input class="form-control" type="date" id="input-data-consultatie" name="data_consultatie"/>
+   <label  class="col-form-label">Rețete:</label>
+   <br />
+   <fieldset>
+      <label for="message-text" class="col-form-label">Alegeți substanța:</label>
+      <select name="substanta_consultatie" id="substanta_consultatie" class="substante">
+         @foreach(var substanta in ViewBag.listaSubstante)
+         {
+         <option value="@(substanta)">@(substanta.Replace("&nbsp;", " "))</option>
+         }      
+      </select>
+      <br />
+      <br />
+      <label for="message-text" class="col-form-label">Scrieți durata:</label>
+      <input id="durata"/>
+      <label for="message-text" class="col-form-label">Alegeți perioada:</label>
+      <select id="select_saptamana">
+         <option value="zile">zile</option>
+         <option value="saptamani">săptămâni</option>
+         <option value="luni">luni</option>
+      </select>
+      <br />
+      <br />
+      <label for="message-text" class="col-form-label">Scrieți cantitatea / administrare:</label>
+      <input id="cantitate"/>
+      <label for="message-text" class="col-form-label">Alegeți de câte ori pe zi:</label>
+      <select id="select_dimineata">
+         <option value="dimineata">dimineața</option>
+         <option value="dupa-masa">după-masă</option>
+         <option value="seara">seara</option>
+         <option value="dimineata si dupa-masa">dimineața și după-masa</option>
+         <option value="dimineata si seara">dimineața și seara</option>
+         <option value="dupa-masa si seara">după-masa și seara</option>
+         <option value="dimineata, dupa-masa si seara">dimineața, după-masa și seara</option>
+      </select>
+      <br />
+      <br />
+      <a type="button" id="adaugareListaRetete" class="btn btn-primary" onclick="addToList()"> Adăugare medicament</a>
+      <br />
+      <br />
+      <div>
+         <input hidden id="string_complet" name="string_complet"/>
+         <ul id="listaMedicamente">
+         </ul>
+      </div>
+   </fieldset>
+   @*    
+   <textarea class="form-control" type="text" id="input-retete-generate" name="retete_generate_consultatie"></textarea>
+   *@
 </div>
-
-
-<script>
-
-    
-
-    $(document).ready(function(){
-        function addToList(){
-            console.log("caca");
-            var substanta = document.getElementById("substanta_consultatie").value;
-            var dur = document.getElementById("durata").value;
-            var saptamana = document.getElementById("select_saptamana").value;
-            var cant = document.getElementById("cantitate").value;
-            var dimineata = document.getElementById("select_dimineata").value;
-            @(listaRetete).push("Substanta: "+substanta+" Durata: "+dur +" Perioada: "+ saptamana +" Cantitatea: "+ cant+" Frecvența: "+dimineata);
-        }
-        //$("#adaugareListaRetete").click(addToList);
-    }
-    
-    console.log(@(listaRetete));
-</script>
+<div class="mb-3">
+   <label  class="col-form-label">Data consultație:</label>
+   <input class="form-control" type="date" id="input-data-consultatie" name="data_consultatie"/>
+</div>
