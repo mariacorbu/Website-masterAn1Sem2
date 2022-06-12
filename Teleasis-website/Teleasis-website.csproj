@@ -11,10 +11,13 @@
     <PackageReference Include="Firebase.Auth" Version="1.0.0" />
     <PackageReference Include="FirebaseAdmin" Version="2.3.0" />
     <PackageReference Include="FirebaseDatabase.net" Version="4.0.7" />
+    <PackageReference Include="Hl7.Fhir.STU3" Version="0.93.4" />
+    <PackageReference Include="Hl7.FhirPath" Version="0.4.2" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Pacient\NewFolder\" />
     <Folder Include="wwwroot\NewFolder\" />
   </ItemGroup>
 

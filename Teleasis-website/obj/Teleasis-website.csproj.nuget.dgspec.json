@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Google Drive\\M A S T E R\\AN I\\SEM II\\Proiect echipa\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj": {}
+    "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\Teleasis-website.csproj": {}
   },
   "projects": {
-    "D:\\Google Drive\\M A S T E R\\AN I\\SEM II\\Proiect echipa\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj": {
+    "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\Teleasis-website.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Google Drive\\M A S T E R\\AN I\\SEM II\\Proiect echipa\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
+        "projectUniqueName": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\Teleasis-website.csproj",
         "projectName": "Teleasis-website",
-        "projectPath": "D:\\Google Drive\\M A S T E R\\AN I\\SEM II\\Proiect echipa\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\Google Drive\\M A S T E R\\AN I\\SEM II\\Proiect echipa\\Website-masterAn1Sem2\\Teleasis-website\\obj\\",
+        "projectPath": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\Teleasis-website.csproj",
+        "packagesPath": "C:\\Users\\iroxa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iroxa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,6 +55,14 @@
               "target": "Package",
               "version": "[4.0.7, )"
             },
+            "Hl7.Fhir.STU3": {
+              "target": "Package",
+              "version": "[0.93.4, )"
+            },
+            "Hl7.FhirPath": {
+              "target": "Package",
+              "version": "[0.4.2, )"
+            },
             "Microsoft.AspNetCore.Session": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -75,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReferralRequest xmlns="http://hl7.org/fhir">
+  <id value="12d9dab3-0e35-411a-a6c2-b8b8dd97e25b" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2022-06-12T12:10:02.324+00:00" />
+  </meta>
+  <type>
+    <text value="Analize" />
+  </type>
+  <subject>
+    <identifier>
+      <system value="http://ns.electronichealth.net.au/id/hi/ihi/1.0" />
+      <value value="LIAV91DMWZgzvEqkDDiEHGAhXKg2" />
+    </identifier>
+  </subject>
+  <description value="jkljlk" />
+</ReferralRequest>

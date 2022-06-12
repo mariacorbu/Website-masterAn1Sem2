@@ -1,0 +1,16 @@
+﻿@model Teleasis_website.Models.TrimitereModel
+<div class="mb-3">
+   <label class="col-form-label">Tip:</label>
+   <select name="tip" id="tip">
+      <option value="Analize">Analize</option>
+      <option value="Consult de specialitate">Consult de specialitate</option>
+      <option value="Tratamente">Tratamente</option>
+      <option value="Proceduri">Proceduri</option>
+   </select>
+</div>
+
+<div class="mb-3">
+   <label class="col-form-label">Observații:</label>
+   <textarea type="text" class="form-control" id="input-observatii" name="observatii" onfocusout='validareText(event)'></textarea>
+   <span id="eroare-input-observatii" class="text-danger"></span>
+</div>

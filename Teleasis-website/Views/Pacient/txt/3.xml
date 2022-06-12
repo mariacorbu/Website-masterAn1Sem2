@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReferralRequest xmlns="http://hl7.org/fhir">
+  <id value="538672c1-600c-44bf-a4c0-cd5d5f0e3ee1" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2022-06-12T13:09:05.919+00:00" />
+  </meta>
+  <type>
+    <text value="Proceduri" />
+  </type>
+  <subject>
+    <identifier>
+      <system value="http://ns.electronichealth.net.au/id/hi/ihi/1.0" />
+      <value value="LIAV91DMWZgzvEqkDDiEHGAhXKg2" />
+    </identifier>
+  </subject>
+  <description value="cssss" />
+</ReferralRequest>
