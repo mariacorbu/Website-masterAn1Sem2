@@ -6516,23 +6516,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iroxa\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\Teleasis-website.csproj",
+      "projectUniqueName": "D:\\Google Drive\\M A S T E R\\AN I\\SEM II\\Proiect echipa\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
       "projectName": "Teleasis-website",
-      "projectPath": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\Teleasis-website.csproj",
-      "packagesPath": "C:\\Users\\iroxa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iroxa\\OneDrive\\Rocksana poli stuff\\MASTER\\AN 1\\SEMESTRUL 2\\proiect\\Teleasis-website\\obj\\",
+      "projectPath": "D:\\Google Drive\\M A S T E R\\AN I\\SEM II\\Proiect echipa\\Website-masterAn1Sem2\\Teleasis-website\\Teleasis-website.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "D:\\Google Drive\\M A S T E R\\AN I\\SEM II\\Proiect echipa\\Website-masterAn1Sem2\\Teleasis-website\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\iroxa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6601,7 +6597,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

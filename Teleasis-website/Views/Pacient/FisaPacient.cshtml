@@ -229,11 +229,6 @@
                             {         
                                 <a role="button" id="send_trimitere" class="btn  btn-circle" onclick="location.href='@Url.Action("SendTrimitere","Pacient",new { id_trimitere = @trimitere.id_trimitere, id_pacient = @ViewBag.pacient.id_pacient })'"  data-toggle="tooltip" data-placement="bottom" title="Trimitere la HL-7 Trimitere"><i class="fa-solid fa-share"></i></a>
                             }
-                            else
-                            {
-                                <a role="button" id="afisare_trimitere" class="btn  btn-circle"  data-bs-toggle="modal" onclick=sendIdTrimitereAfisare("@(trimitere.id_trimitere)")  data-bs-target="#afisareModalTrimitere" data-bs-id="@(trimitere.id_trimitere)" data-toggle="tooltip" data-placement="bottom" title="Afisare XML Trimitere"><i class="fa-solid fa-eye"></i></a>
-                                  var idul = trimitere.id_trimitere; 
-                            }
                                                               
                         </td>
                      </tr>
@@ -435,12 +430,8 @@
                         <textarea type="text" disabled class="form-control" id="input-tratament1" name="tratament_consultatie"></textarea>
                      </div>
                      <div class="mb-3">
-                        <label class="col-form-label">Schema de medicatie:</label>
+                        <label class="col-form-label">Observații:</label>
                         <textarea type="text" disabled class="form-control" id="input-schema1" name="schema_consultatie"></textarea>
-                     </div>
-                     <div class="mb-3">
-                        <label  class="col-form-label">Trimiteri:</label>
-                        <textarea type="text" disabled class="form-control" id="input-trimitere1" name="trimitere_consultatie"></textarea>
                      </div>
                      <div class="mb-3">
                         <label  class="col-form-label">Rețete generate:</label>
@@ -522,7 +513,6 @@
         document.getElementById("input-data-consultatie1").value = date[2];
         document.getElementById("input-simptome1").innerText = date[3];
         document.getElementById("input-diagnostic1").innerText = repl2;
-        document.getElementById("input-trimitere1").innerText = date[5];
         @*document.getElementById("input-retete-generate1").innerText = repl;*@
         document.getElementById("input-tratament1").innerText = date[7];
         document.getElementById("input-schema1").innerText = date[8];

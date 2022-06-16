@@ -191,8 +191,9 @@ myCalender.onValueChange((currentValue) => {
 
             datePuls.forEach(dp => {
                 var dataPuls = dp.split("#")[0];
+                var dataSimpla2 = dataPuls.split(" ")[0];
                 var valoarePuls = dp.split("#")[1];
-                if (dataPuls === dataSelectata) {
+                if (dataSimpla2 === dataSelectata) {
                     console.log(dataPuls + "**********")
                     var element = dataPuls + "+" + valoarePuls;
                     listaValoriPuls.push(element);
@@ -201,11 +202,12 @@ myCalender.onValueChange((currentValue) => {
 
             dateMediu.forEach(dm => {
                 var dataMediu = dm.split("#")[0];
+                var dataSimpla = dataMediu.split(" ")[0];
                 var valoareGaz = dm.split("#")[1];
                 var valoareTemperatura = dm.split("#")[2];
                 var valoarePrezenta = dm.split("#")[3];
                 var valoareUmiditate = dm.split("#")[4];
-                if (dataMediu === dataSelectata) {
+                if (dataSimpla === dataSelectata) {
                     var elementM = dataMediu + "+" + valoareGaz+ "+"+valoareTemperatura + "+" + valoarePrezenta + "+" + valoareUmiditate;
                     listaValoriMediu.push(elementM);
                 }

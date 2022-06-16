@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReferralRequest xmlns="http://hl7.org/fhir">
+  <id value="607a8ba8-4dcc-4396-835c-588faf8d94f2" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2022-06-13T15:33:10.19+00:00" />
+  </meta>
+  <type>
+    <text value="Consult de specialitate" />
+  </type>
+  <subject>
+    <identifier>
+      <system value="http://ns.electronichealth.net.au/id/hi/ihi/1.0" />
+      <value value="LIAV91DMWZgzvEqkDDiEHGAhXKg2" />
+    </identifier>
+  </subject>
+  <description value="Trimitere pacient la cabinetul de Cardiologie." />
+</ReferralRequest>

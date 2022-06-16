@@ -177,3 +177,6 @@ C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Tele
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Hl7.Fhir.STU3.Core.dll
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Hl7.Fhir.Support.dll
 C:\Users\iroxa\OneDrive\Rocksana poli stuff\MASTER\AN 1\SEMESTRUL 2\proiect\Teleasis-website\bin\Debug\net6.0\Hl7.FhirPath.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Hl7.Fhir.STU3.Core.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Hl7.Fhir.Support.dll
+D:\Google Drive\M A S T E R\AN I\SEM II\Proiect echipa\Website-masterAn1Sem2\Teleasis-website\bin\Debug\net6.0\Hl7.FhirPath.dll
